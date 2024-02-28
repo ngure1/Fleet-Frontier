@@ -148,6 +148,7 @@ Partial Class Form1
         tripButton.FlatStyle = FlatStyle.Flat
         tripButton.Font = New Font("Gabriola", 9F)
         tripButton.ForeColor = Color.White
+        tripButton.Image = CType(resources.GetObject("tripButton.Image"), Image)
         tripButton.ImageAlign = ContentAlignment.MiddleLeft
         tripButton.Location = New Point(0, 272)
         tripButton.Margin = New Padding(2, 3, 2, 3)
@@ -190,6 +191,7 @@ Partial Class Form1
         rentButton.FlatStyle = FlatStyle.Flat
         rentButton.Font = New Font("Gabriola", 9F)
         rentButton.ForeColor = Color.White
+        rentButton.Image = CType(resources.GetObject("rentButton.Image"), Image)
         rentButton.ImageAlign = ContentAlignment.MiddleLeft
         rentButton.Location = New Point(0, 237)
         rentButton.Margin = New Padding(2, 3, 2, 3)
@@ -211,6 +213,7 @@ Partial Class Form1
         staffButton.FlatStyle = FlatStyle.Flat
         staffButton.Font = New Font("Gabriola", 9F)
         staffButton.ForeColor = Color.White
+        staffButton.Image = CType(resources.GetObject("staffButton.Image"), Image)
         staffButton.ImageAlign = ContentAlignment.MiddleLeft
         staffButton.Location = New Point(0, 202)
         staffButton.Margin = New Padding(2, 3, 2, 3)
@@ -234,6 +237,7 @@ Partial Class Form1
         vehicleButton.FlatStyle = FlatStyle.Flat
         vehicleButton.Font = New Font("Gabriola", 9F)
         vehicleButton.ForeColor = Color.White
+        vehicleButton.Image = CType(resources.GetObject("vehicleButton.Image"), Image)
         vehicleButton.ImageAlign = ContentAlignment.MiddleLeft
         vehicleButton.Location = New Point(0, 167)
         vehicleButton.Margin = New Padding(2, 3, 2, 3)
