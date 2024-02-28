@@ -15,3 +15,4 @@ C:\Users\Peaches\source\repos\Fleet-Frontier\Fleet-Frontier\obj\Debug\net8.0-win
 C:\Users\Peaches\source\repos\Fleet-Frontier\Fleet-Frontier\obj\Debug\net8.0-windows\Fleet-Frontier.pdb
 C:\Users\Peaches\source\repos\Fleet-Frontier\Fleet-Frontier\obj\Debug\net8.0-windows\Fleet-Frontier.genruntimeconfig.cache
 C:\Users\Peaches\source\repos\Fleet-Frontier\Fleet-Frontier\obj\Debug\net8.0-windows\ref\Fleet-Frontier.dll
+C:\Users\Peaches\source\repos\Fleet-Frontier\Fleet-Frontier\obj\Debug\net8.0-windows\Fleet_Frontier.Resources.resources
