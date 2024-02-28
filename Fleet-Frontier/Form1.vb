@@ -8,4 +8,6 @@ Public Class Form1
     Private Sub minimizeButton_Click(sender As Object, e As EventArgs) Handles minimizeButton.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+
 End Class
