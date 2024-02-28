@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Fleet-Frontier/.vs/Fleet-Frontier/FileContentIndex/13439c77-e979-49a6-903f-c15be22855a7.vsidx
+/.vs/Fleet-Frontier/FileContentIndex/6f390ecc-ffce-443c-84ec-86acfe0c0534.vsidx
+/.vs/Fleet-Frontier/FileContentIndex/fb2dc516-4392-4c58-9ee7-4dc8316cc4d4.vsidx
+/Fleet-Frontier/.vs/Fleet-Frontier/FileContentIndex/15ad31a5-fe3b-486c-a545-bf59afe3bedb.vsidx
+/Fleet-Frontier/.vs/Fleet-Frontier/FileContentIndex/621700bf-c181-429e-ba61-26105788409b.vsidx
+*.vsidx
+/Fleet-Frontier/.vs/Fleet-Frontier/FileContentIndex/ce2aa384-0ba9-4a7f-87e7-9124558e7449.vsidx
+/Fleet-Frontier/.vs/Fleet-Frontier/FileContentIndex/e33dd8f8-b55c-493e-9cd4-14c3b692930e.vsidx
