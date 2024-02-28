@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("Fleet-Frontier"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e0292bae9b5c35b68543de29ec1fe1a82898e67"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2aed11a7942ffc4ae9e43b0b2eea0ff5a6a26691"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("Fleet-Frontier"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("Fleet-Frontier"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
