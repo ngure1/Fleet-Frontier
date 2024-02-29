@@ -47,6 +47,11 @@ Partial Class Form1
         staffMenu = New ContextMenuStrip(components)
         addStaffButton = New ToolStripMenuItem()
         allStaffButton = New ToolStripMenuItem()
+        HomePageLabel = New Label()
+        WelcomePanel = New Panel()
+        SaccoLabel = New Label()
+        WelcomeLabel = New Label()
+        PictureBox2 = New PictureBox()
         controlBarPanel.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         sideBar.SuspendLayout()
@@ -54,6 +59,9 @@ Partial Class Form1
         logoPanel.SuspendLayout()
         CType(busLogo, ComponentModel.ISupportInitialize).BeginInit()
         staffMenu.SuspendLayout()
+        headerPanel.SuspendLayout()
+        WelcomePanel.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' controlBarPanel
@@ -94,7 +102,7 @@ Partial Class Form1
         Label1.Location = New Point(45, 9)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(151, 25)
+        Label1.Size = New Size(278, 49)
         Label1.TabIndex = 0
         Label1.Text = "Fleet Frontier"
         ' 
@@ -259,7 +267,7 @@ Partial Class Form1
         vehicleMenu.Items.AddRange(New ToolStripItem() {AddVehicleToolStripMenuItem, FleetCatalogueToolStripMenuItem})
         vehicleMenu.Name = "vehicleMenu"
         vehicleMenu.ShowImageMargin = False
-        vehicleMenu.Size = New Size(129, 68)
+        vehicleMenu.Size = New Size(219, 128)
         ' 
         ' AddVehicleToolStripMenuItem
         ' 
@@ -268,7 +276,7 @@ Partial Class Form1
         AddVehicleToolStripMenuItem.Font = New Font("Gabriola", 9F)
         AddVehicleToolStripMenuItem.ForeColor = Color.White
         AddVehicleToolStripMenuItem.Name = "AddVehicleToolStripMenuItem"
-        AddVehicleToolStripMenuItem.Size = New Size(128, 32)
+        AddVehicleToolStripMenuItem.Size = New Size(218, 62)
         AddVehicleToolStripMenuItem.Text = "Add Vehicle"
         ' 
         ' FleetCatalogueToolStripMenuItem
@@ -278,7 +286,7 @@ Partial Class Form1
         FleetCatalogueToolStripMenuItem.Font = New Font("Gabriola", 9F)
         FleetCatalogueToolStripMenuItem.ForeColor = Color.White
         FleetCatalogueToolStripMenuItem.Name = "FleetCatalogueToolStripMenuItem"
-        FleetCatalogueToolStripMenuItem.Size = New Size(128, 32)
+        FleetCatalogueToolStripMenuItem.Size = New Size(218, 62)
         FleetCatalogueToolStripMenuItem.Text = "Fleet Catalogue"
         ' 
         ' homeButton
@@ -321,7 +329,7 @@ Partial Class Form1
         logoLabel.Location = New Point(13, 87)
         logoLabel.Margin = New Padding(2, 0, 2, 0)
         logoLabel.Name = "logoLabel"
-        logoLabel.Size = New Size(196, 26)
+        logoLabel.Size = New Size(376, 52)
         logoLabel.TabIndex = 1
         logoLabel.Text = "FLEET FRONTIER"
         ' 
@@ -350,6 +358,7 @@ Partial Class Form1
         ' headerPanel
         ' 
         headerPanel.BackColor = Color.Silver
+        headerPanel.Controls.Add(HomePageLabel)
         headerPanel.Dock = DockStyle.Top
         headerPanel.Location = New Point(223, 40)
         headerPanel.Margin = New Padding(2, 3, 2, 3)
@@ -386,12 +395,65 @@ Partial Class Form1
         allStaffButton.Size = New Size(99, 32)
         allStaffButton.Text = "All Staff"
         ' 
+        ' HomePageLabel
+        ' 
+        HomePageLabel.AutoSize = True
+        HomePageLabel.Font = New Font("Garamond", 11.1F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        HomePageLabel.Location = New Point(5, 18)
+        HomePageLabel.Name = "HomePageLabel"
+        HomePageLabel.Size = New Size(204, 42)
+        HomePageLabel.TabIndex = 0
+        HomePageLabel.Text = "Home Page"
+        ' 
+        ' WelcomePanel
+        ' 
+        WelcomePanel.BackColor = Color.LightGray
+        WelcomePanel.Controls.Add(SaccoLabel)
+        WelcomePanel.Controls.Add(WelcomeLabel)
+        WelcomePanel.Controls.Add(PictureBox2)
+        WelcomePanel.Location = New Point(228, 110)
+        WelcomePanel.Name = "WelcomePanel"
+        WelcomePanel.Size = New Size(938, 370)
+        WelcomePanel.TabIndex = 3
+        ' 
+        ' SaccoLabel
+        ' 
+        SaccoLabel.AutoSize = True
+        SaccoLabel.Font = New Font("Gabriola", 9.900001F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        SaccoLabel.Location = New Point(3, 49)
+        SaccoLabel.Name = "SaccoLabel"
+        SaccoLabel.Size = New Size(249, 63)
+        SaccoLabel.TabIndex = 1
+        SaccoLabel.Text = "Fleet-Frontier Sacco"
+        ' 
+        ' WelcomeLabel
+        ' 
+        WelcomeLabel.AutoSize = True
+        WelcomeLabel.Font = New Font("Gabriola", 9.900001F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        WelcomeLabel.Location = New Point(3, 0)
+        WelcomeLabel.Name = "WelcomeLabel"
+        WelcomeLabel.Size = New Size(205, 63)
+        WelcomeLabel.TabIndex = 0
+        WelcomeLabel.Text = "Welcome Back!!"
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = My.Resources.Resources.fleet_frontier_pic
+        PictureBox2.Location = New Point(0, 115)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(938, 255)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 2
+        PictureBox2.TabStop = False
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 19F)
+        AutoScaleDimensions = New SizeF(16.0F, 37.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1073, 538)
         ControlBox = False
+        Controls.Add(WelcomePanel)
         Controls.Add(headerPanel)
         Controls.Add(footerPanel)
         Controls.Add(sideBar)
@@ -410,6 +472,11 @@ Partial Class Form1
         logoPanel.PerformLayout()
         CType(busLogo, ComponentModel.ISupportInitialize).EndInit()
         staffMenu.ResumeLayout(False)
+        headerPanel.ResumeLayout(False)
+        headerPanel.PerformLayout()
+        WelcomePanel.ResumeLayout(False)
+        WelcomePanel.PerformLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -436,5 +503,10 @@ Partial Class Form1
     Friend WithEvents staffMenu As ContextMenuStrip
     Friend WithEvents addStaffButton As ToolStripMenuItem
     Friend WithEvents allStaffButton As ToolStripMenuItem
+    Friend WithEvents HomePageLabel As Label
+    Friend WithEvents WelcomePanel As Panel
+    Friend WithEvents WelcomeLabel As Label
+    Friend WithEvents SaccoLabel As Label
+    Friend WithEvents PictureBox2 As PictureBox
 
 End Class

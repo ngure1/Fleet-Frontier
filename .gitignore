@@ -1,3 +1,6 @@
+################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
 # Created by git for backups. To disable backups in Git:
 # $ git config --global mergetool.keepBackup false
 *.orig
@@ -139,10 +142,14 @@ ipch/
 $tf/
 
 # Guidance Automation Toolkit
+OB
+OBOB# Guidance Automation Toolkit
 *.gpState
 
+OB
 # ReSharper is a .NET coding add-in
 _ReSharper*/
+OBOB_ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 
@@ -151,10 +158,12 @@ _TeamCity*
 
 # DotCover is a Code Coverage Tool
 *.dotCover
+OB*.dotCover
 
 # AxoCover is a Code Coverage Tool
 .axoCover/*
 !.axoCover/settings.json
+OB!.axoCover/settings.json
 
 # Coverlet is a free, cross platform Code Coverage Tool
 coverage*.json
@@ -165,6 +174,7 @@ coverage*.info
 *.coverage
 *.coveragexml
 
+OB
 # NCrunch
 _NCrunch_*
 .*crunch*.local.xml
@@ -199,15 +209,27 @@ publish/
 # Note: Comment the next line if you want to checkin your web deploy settings,
 # but database connection strings (with potential passwords) will be unencrypted
 *.pubxml
+OBOBOBOBOB# Publish Web Output
+OBOBOB*.[Pp]ublish.xml
+OBOBOB*.azurePubxml
+OBOBOB# Note: Comment the next line if you want to checkin your web deploy settings,
+OBOB# but database connection strings (with potential passwords) will be unencrypted
+OBOBOBOB*.pubxml
 *.publishproj
 
 # Microsoft Azure Web App publish settings. Comment the next line if you want to
 # checkin your Azure Web App publish settings, but sensitive information contained
 # in these scripts will be unencrypted
+OB
+OB# Microsoft Azure Web App publish settings. Comment the next line if you want to
+OB# checkin your Azure Web App publish settings, but sensitive information contained
+OBOB# in these scripts will be unencrypted
 PublishScripts/
 
+OB
 # NuGet Packages
 *.nupkg
+OB*.nupkg
 # NuGet Symbol Packages
 *.snupkg
 # The packages folder can be ignored because of Package Restore
@@ -220,6 +242,11 @@ PublishScripts/
 *.nuget.props
 *.nuget.targets
 
+OB#!**/[Pp]ackages/repositories.config
+OB# NuGet v3's project.json files produces more ignorable files
+OB*.nuget.props
+OB*.nuget.targets
+OBOB
 # Nuget personal access tokens and Credentials
 nuget.config
 
@@ -228,10 +255,13 @@ csx/
 *.build.csdef
 
 # Microsoft Azure Emulator
+OB# Microsoft Azure Emulator
 ecf/
 rcf/
+OBrcf/
 
 # Windows Store app package directories and files
+OBOB# Windows Store app package directories and files
 AppPackages/
 BundleArtifacts/
 Package.StoreAssociation.xml
@@ -239,6 +269,7 @@ _pkginfo.txt
 *.appx
 *.appxbundle
 *.appxupload
+OB*.appxupload
 
 # Visual Studio cache files
 # files ending in .cache can be ignored
@@ -249,34 +280,57 @@ _pkginfo.txt
 # Others
 ClientBin/
 ~$*
+OBOBOBOBOBOBOBOB# Others
+OBOBOBClientBin/
+OBOBOBOBOBOBOBOBOBOBOBOB~$*
 *~
 *.dbmdl
 *.dbproj.schemaview
 *.jfm
 *.pfx
 *.publishsettings
+OBOBOB*.dbmdl
+OBOBOBOBOBOBOBOBOB*.dbproj.schemaview
+OBOBOB*.jfm
+OBOB*.pfx
+OBOBOBOBOBOB*.publishsettings
 orleans.codegen.cs
 
 # Including strong name files can present a security risk
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
 #*.snk
 
+OBOB
+OBOB# Including strong name files can present a security risk
+OB# (https://github.com/github/gitignore/pull/2483#issue-259490424)
+OBOB#*.snk
+OBOBOBOB
 # Since there are multiple workflows, uncomment next line to ignore bower_components
 # (https://github.com/github/gitignore/pull/1529#issuecomment-104372622)
 #bower_components/
+OBOBOBOB#bower_components/
 
 # RIA/Silverlight projects
 Generated_Code/
+OBOBOB# RIA/Silverlight projects
+OBOBGenerated_Code/
 
 # Backup & report files from converting an old project file
 # to a newer Visual Studio version. Backup files are not needed,
+OBOB# Backup & report files from converting an old project file
+OBOB# to a newer Visual Studio version. Backup files are not needed,
 # because we have git ;-)
 _UpgradeReport_Files/
+OBOB_UpgradeReport_Files/
 Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
 ServiceFabricBackup/
 *.rptproj.bak
+OBOBUpgradeLog*.XML
+OBUpgradeLog*.htm
+OBServiceFabricBackup/
+OB*.rptproj.bak
 
 # SQL Server files
 *.mdf
@@ -402,3 +456,11 @@ FodyWeavers.xsd
 *.sln.iml
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Git,VisualStudio
+/Fleet-Frontier/.vs/Fleet-Frontier/FileContentIndex/13439c77-e979-49a6-903f-c15be22855a7.vsidx
+/.vs/Fleet-Frontier/FileContentIndex/6f390ecc-ffce-443c-84ec-86acfe0c0534.vsidx
+/.vs/Fleet-Frontier/FileContentIndex/fb2dc516-4392-4c58-9ee7-4dc8316cc4d4.vsidx
+/Fleet-Frontier/.vs/Fleet-Frontier/FileContentIndex/15ad31a5-fe3b-486c-a545-bf59afe3bedb.vsidx
+/Fleet-Frontier/.vs/Fleet-Frontier/FileContentIndex/621700bf-c181-429e-ba61-26105788409b.vsidx
+*.vsidx
+/Fleet-Frontier/.vs/Fleet-Frontier/FileContentIndex/ce2aa384-0ba9-4a7f-87e7-9124558e7449.vsidx
+/Fleet-Frontier/.vs/Fleet-Frontier/FileContentIndex/e33dd8f8-b55c-493e-9cd4-14c3b692930e.vsidx
