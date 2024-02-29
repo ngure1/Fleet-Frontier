@@ -1553,7 +1553,7 @@
   <data name="logoutButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAALdJREFUOE+9lD8OAUEYRxe9P4kLOIQbKISOs4hEohWNTuMeEglxKhoKvG/o7M/O
+        DAAACwwBP0AiyAAAALdJREFUOE+9lD8OAUEYRxe9P4kLOIQbKISOs4hEohWNTuMeEglxKhoKvG/o7M/O
         x6yXvOx+xb7MZmcnK5sO7vAQ6RbbKBniFZcRrvCOXZRY8Py8LaSBFuyHSeAJttCCvTAJPMEqrtHCEk/Q
         qL+uEk+whiechEngXeEIbVfMwpSDCtqDG+Eeb3jEN/4WVIzxq1fOo5SPknTbVHCBH6OeYPJfr4kWHIRJ
         YMELTiOcY+HxlfyA/ZEsewBeMEwNLfzr4QAAAABJRU5ErkJggg==
@@ -3021,4 +3021,7 @@
         wPh//+//AxwQvu7ngu/4AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="staffMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>195, 15</value>
+  </metadata>
 </root>
