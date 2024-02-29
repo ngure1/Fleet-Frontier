@@ -44,10 +44,10 @@ Partial Class Form1
         busLogo = New PictureBox()
         footerPanel = New Panel()
         headerPanel = New Panel()
+        HomePageLabel = New Label()
         staffMenu = New ContextMenuStrip(components)
         addStaffButton = New ToolStripMenuItem()
         allStaffButton = New ToolStripMenuItem()
-        HomePageLabel = New Label()
         WelcomePanel = New Panel()
         SaccoLabel = New Label()
         WelcomeLabel = New Label()
@@ -58,8 +58,8 @@ Partial Class Form1
         vehicleMenu.SuspendLayout()
         logoPanel.SuspendLayout()
         CType(busLogo, ComponentModel.ISupportInitialize).BeginInit()
-        staffMenu.SuspendLayout()
         headerPanel.SuspendLayout()
+        staffMenu.SuspendLayout()
         WelcomePanel.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -77,7 +77,7 @@ Partial Class Form1
         controlBarPanel.Location = New Point(0, 0)
         controlBarPanel.Margin = New Padding(2, 3, 2, 3)
         controlBarPanel.Name = "controlBarPanel"
-        controlBarPanel.Size = New Size(1073, 40)
+        controlBarPanel.Size = New Size(1119, 40)
         controlBarPanel.TabIndex = 0
         ' 
         ' minimizeButton
@@ -87,7 +87,7 @@ Partial Class Form1
         minimizeButton.FlatStyle = FlatStyle.Flat
         minimizeButton.Font = New Font("Leelawadee UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         minimizeButton.ForeColor = Color.Black
-        minimizeButton.Location = New Point(1015, 0)
+        minimizeButton.Location = New Point(1061, 0)
         minimizeButton.Name = "minimizeButton"
         minimizeButton.Size = New Size(29, 40)
         minimizeButton.TabIndex = 4
@@ -102,7 +102,7 @@ Partial Class Form1
         Label1.Location = New Point(45, 9)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(278, 49)
+        Label1.Size = New Size(151, 25)
         Label1.TabIndex = 0
         Label1.Text = "Fleet Frontier"
         ' 
@@ -113,7 +113,7 @@ Partial Class Form1
         exitButton.FlatStyle = FlatStyle.Flat
         exitButton.Font = New Font("Leelawadee UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         exitButton.ForeColor = Color.Black
-        exitButton.Location = New Point(1044, 0)
+        exitButton.Location = New Point(1090, 0)
         exitButton.Name = "exitButton"
         exitButton.Size = New Size(29, 40)
         exitButton.TabIndex = 1
@@ -145,7 +145,7 @@ Partial Class Form1
         sideBar.Location = New Point(0, 40)
         sideBar.Margin = New Padding(2, 3, 2, 3)
         sideBar.Name = "sideBar"
-        sideBar.Size = New Size(223, 498)
+        sideBar.Size = New Size(223, 490)
         sideBar.TabIndex = 0
         ' 
         ' tripButton
@@ -181,7 +181,7 @@ Partial Class Form1
         logoutButton.ForeColor = Color.White
         logoutButton.Image = CType(resources.GetObject("logoutButton.Image"), Image)
         logoutButton.ImageAlign = ContentAlignment.MiddleLeft
-        logoutButton.Location = New Point(0, 463)
+        logoutButton.Location = New Point(0, 455)
         logoutButton.Margin = New Padding(2, 3, 2, 3)
         logoutButton.Name = "logoutButton"
         logoutButton.Padding = New Padding(6, 0, 0, 0)
@@ -267,7 +267,7 @@ Partial Class Form1
         vehicleMenu.Items.AddRange(New ToolStripItem() {AddVehicleToolStripMenuItem, FleetCatalogueToolStripMenuItem})
         vehicleMenu.Name = "vehicleMenu"
         vehicleMenu.ShowImageMargin = False
-        vehicleMenu.Size = New Size(219, 128)
+        vehicleMenu.Size = New Size(129, 68)
         ' 
         ' AddVehicleToolStripMenuItem
         ' 
@@ -276,7 +276,7 @@ Partial Class Form1
         AddVehicleToolStripMenuItem.Font = New Font("Gabriola", 9F)
         AddVehicleToolStripMenuItem.ForeColor = Color.White
         AddVehicleToolStripMenuItem.Name = "AddVehicleToolStripMenuItem"
-        AddVehicleToolStripMenuItem.Size = New Size(218, 62)
+        AddVehicleToolStripMenuItem.Size = New Size(128, 32)
         AddVehicleToolStripMenuItem.Text = "Add Vehicle"
         ' 
         ' FleetCatalogueToolStripMenuItem
@@ -286,7 +286,7 @@ Partial Class Form1
         FleetCatalogueToolStripMenuItem.Font = New Font("Gabriola", 9F)
         FleetCatalogueToolStripMenuItem.ForeColor = Color.White
         FleetCatalogueToolStripMenuItem.Name = "FleetCatalogueToolStripMenuItem"
-        FleetCatalogueToolStripMenuItem.Size = New Size(218, 62)
+        FleetCatalogueToolStripMenuItem.Size = New Size(128, 32)
         FleetCatalogueToolStripMenuItem.Text = "Fleet Catalogue"
         ' 
         ' homeButton
@@ -329,7 +329,7 @@ Partial Class Form1
         logoLabel.Location = New Point(13, 87)
         logoLabel.Margin = New Padding(2, 0, 2, 0)
         logoLabel.Name = "logoLabel"
-        logoLabel.Size = New Size(376, 52)
+        logoLabel.Size = New Size(196, 26)
         logoLabel.TabIndex = 1
         logoLabel.Text = "FLEET FRONTIER"
         ' 
@@ -349,10 +349,10 @@ Partial Class Form1
         ' 
         footerPanel.BackColor = Color.DarkGray
         footerPanel.Dock = DockStyle.Bottom
-        footerPanel.Location = New Point(223, 503)
+        footerPanel.Location = New Point(223, 495)
         footerPanel.Margin = New Padding(2, 3, 2, 3)
         footerPanel.Name = "footerPanel"
-        footerPanel.Size = New Size(850, 35)
+        footerPanel.Size = New Size(896, 35)
         footerPanel.TabIndex = 1
         ' 
         ' headerPanel
@@ -363,8 +363,18 @@ Partial Class Form1
         headerPanel.Location = New Point(223, 40)
         headerPanel.Margin = New Padding(2, 3, 2, 3)
         headerPanel.Name = "headerPanel"
-        headerPanel.Size = New Size(850, 60)
+        headerPanel.Size = New Size(896, 60)
         headerPanel.TabIndex = 2
+        ' 
+        ' HomePageLabel
+        ' 
+        HomePageLabel.AutoSize = True
+        HomePageLabel.Font = New Font("Microsoft Sans Serif", 11.1F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        HomePageLabel.Location = New Point(5, 18)
+        HomePageLabel.Name = "HomePageLabel"
+        HomePageLabel.Size = New Size(120, 24)
+        HomePageLabel.TabIndex = 0
+        HomePageLabel.Text = "Home Page"
         ' 
         ' staffMenu
         ' 
@@ -395,16 +405,6 @@ Partial Class Form1
         allStaffButton.Size = New Size(99, 32)
         allStaffButton.Text = "All Staff"
         ' 
-        ' HomePageLabel
-        ' 
-        HomePageLabel.AutoSize = True
-        HomePageLabel.Font = New Font("Garamond", 11.1F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        HomePageLabel.Location = New Point(5, 18)
-        HomePageLabel.Name = "HomePageLabel"
-        HomePageLabel.Size = New Size(204, 42)
-        HomePageLabel.TabIndex = 0
-        HomePageLabel.Text = "Home Page"
-        ' 
         ' WelcomePanel
         ' 
         WelcomePanel.BackColor = Color.LightGray
@@ -422,7 +422,7 @@ Partial Class Form1
         SaccoLabel.Font = New Font("Gabriola", 9.900001F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         SaccoLabel.Location = New Point(3, 49)
         SaccoLabel.Name = "SaccoLabel"
-        SaccoLabel.Size = New Size(249, 63)
+        SaccoLabel.Size = New Size(135, 31)
         SaccoLabel.TabIndex = 1
         SaccoLabel.Text = "Fleet-Frontier Sacco"
         ' 
@@ -432,7 +432,7 @@ Partial Class Form1
         WelcomeLabel.Font = New Font("Gabriola", 9.900001F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         WelcomeLabel.Location = New Point(3, 0)
         WelcomeLabel.Name = "WelcomeLabel"
-        WelcomeLabel.Size = New Size(205, 63)
+        WelcomeLabel.Size = New Size(110, 31)
         WelcomeLabel.TabIndex = 0
         WelcomeLabel.Text = "Welcome Back!!"
         ' 
@@ -449,9 +449,8 @@ Partial Class Form1
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 19F)
-        AutoScaleDimensions = New SizeF(16.0F, 37.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1073, 538)
+        ClientSize = New Size(1119, 530)
         ControlBox = False
         Controls.Add(WelcomePanel)
         Controls.Add(headerPanel)
@@ -461,7 +460,9 @@ Partial Class Form1
         Font = New Font("Impact", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         FormBorderStyle = FormBorderStyle.FixedSingle
         Margin = New Padding(2, 3, 2, 3)
+        MinimizeBox = False
         Name = "Form1"
+        ShowIcon = False
         StartPosition = FormStartPosition.CenterScreen
         controlBarPanel.ResumeLayout(False)
         controlBarPanel.PerformLayout()
@@ -471,9 +472,9 @@ Partial Class Form1
         logoPanel.ResumeLayout(False)
         logoPanel.PerformLayout()
         CType(busLogo, ComponentModel.ISupportInitialize).EndInit()
-        staffMenu.ResumeLayout(False)
         headerPanel.ResumeLayout(False)
         headerPanel.PerformLayout()
+        staffMenu.ResumeLayout(False)
         WelcomePanel.ResumeLayout(False)
         WelcomePanel.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
