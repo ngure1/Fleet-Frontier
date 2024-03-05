@@ -376,7 +376,7 @@ Partial Class Form1
         addStaffButton.Font = New Font("Gabriola", 9F)
         addStaffButton.ForeColor = Color.White
         addStaffButton.Name = "addStaffButton"
-        addStaffButton.Size = New Size(99, 32)
+        addStaffButton.Size = New Size(185, 32)
         addStaffButton.Text = "Add Staff"
         ' 
         ' allStaffButton
@@ -386,7 +386,7 @@ Partial Class Form1
         allStaffButton.Font = New Font("Gabriola", 9F)
         allStaffButton.ForeColor = Color.White
         allStaffButton.Name = "allStaffButton"
-        allStaffButton.Size = New Size(99, 32)
+        allStaffButton.Size = New Size(185, 32)
         allStaffButton.Text = "All Staff"
         ' 
         ' middlePanel
