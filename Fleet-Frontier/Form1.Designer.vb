@@ -44,28 +44,37 @@ Partial Class Form1
         busLogo = New PictureBox()
         footerPanel = New Panel()
         headerPanel = New Panel()
+        HomePageLabel = New Label()
         staffMenu = New ContextMenuStrip(components)
         addStaffButton = New ToolStripMenuItem()
         allStaffButton = New ToolStripMenuItem()
         middlePanel = New Panel()
+        Panel1 = New Panel()
+        WelcomeLabel = New Label()
+        PictureBox1 = New PictureBox()
+        HomePageUserControl1 = New HomePageUserControl()
         controlBarPanel.SuspendLayout()
         CType(controlBarIcon, ComponentModel.ISupportInitialize).BeginInit()
         sideBar.SuspendLayout()
         vehicleMenu.SuspendLayout()
         logoPanel.SuspendLayout()
         CType(busLogo, ComponentModel.ISupportInitialize).BeginInit()
+        headerPanel.SuspendLayout()
         staffMenu.SuspendLayout()
+        middlePanel.SuspendLayout()
+        Panel1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' controlBarPanel
         ' 
-        controlBarPanel.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        controlBarPanel.BackColor = Color.FromArgb(64, 64, 64)
         controlBarPanel.Controls.Add(minimizeButton)
         controlBarPanel.Controls.Add(controlBarLabel)
         controlBarPanel.Controls.Add(exitButton)
         controlBarPanel.Controls.Add(controlBarIcon)
         controlBarPanel.Dock = DockStyle.Top
-        controlBarPanel.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        controlBarPanel.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, 0)
         controlBarPanel.ForeColor = Color.White
         controlBarPanel.Location = New Point(0, 0)
         controlBarPanel.Margin = New Padding(2, 3, 2, 3)
@@ -78,7 +87,7 @@ Partial Class Form1
         minimizeButton.Dock = DockStyle.Right
         minimizeButton.FlatAppearance.BorderSize = 0
         minimizeButton.FlatStyle = FlatStyle.Flat
-        minimizeButton.Font = New Font("Leelawadee UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        minimizeButton.Font = New Font("Leelawadee UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, 0)
         minimizeButton.ForeColor = Color.Black
         minimizeButton.Location = New Point(1130, 0)
         minimizeButton.Name = "minimizeButton"
@@ -90,12 +99,12 @@ Partial Class Form1
         ' controlBarLabel
         ' 
         controlBarLabel.AutoSize = True
-        controlBarLabel.Font = New Font("MV Boli", 11F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        controlBarLabel.ForeColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        controlBarLabel.Font = New Font("MV Boli", 11.0F, FontStyle.Bold, GraphicsUnit.Point, 0)
+        controlBarLabel.ForeColor = Color.FromArgb(255, 128, 0)
         controlBarLabel.Location = New Point(45, 4)
         controlBarLabel.Margin = New Padding(2, 0, 2, 0)
         controlBarLabel.Name = "controlBarLabel"
-        controlBarLabel.Size = New Size(151, 25)
+        controlBarLabel.Size = New Size(278, 49)
         controlBarLabel.TabIndex = 0
         controlBarLabel.Text = "Fleet Frontier"
         ' 
@@ -104,7 +113,7 @@ Partial Class Form1
         exitButton.Dock = DockStyle.Right
         exitButton.FlatAppearance.BorderSize = 0
         exitButton.FlatStyle = FlatStyle.Flat
-        exitButton.Font = New Font("Leelawadee UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        exitButton.Font = New Font("Leelawadee UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, 0)
         exitButton.ForeColor = Color.Black
         exitButton.Location = New Point(1159, 0)
         exitButton.Name = "exitButton"
@@ -115,7 +124,7 @@ Partial Class Form1
         ' 
         ' controlBarIcon
         ' 
-        controlBarIcon.BackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        controlBarIcon.BackColor = Color.FromArgb(255, 128, 0)
         controlBarIcon.Dock = DockStyle.Left
         controlBarIcon.Image = CType(resources.GetObject("controlBarIcon.Image"), Image)
         controlBarIcon.Location = New Point(0, 0)
@@ -146,10 +155,10 @@ Partial Class Form1
         ' 
         tripButton.Dock = DockStyle.Top
         tripButton.FlatAppearance.BorderSize = 0
-        tripButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
-        tripButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        tripButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 0)
+        tripButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0)
         tripButton.FlatStyle = FlatStyle.Flat
-        tripButton.Font = New Font("Gabriola", 9F)
+        tripButton.Font = New Font("Gabriola", 9.0F)
         tripButton.ForeColor = Color.White
         tripButton.Image = CType(resources.GetObject("tripButton.Image"), Image)
         tripButton.ImageAlign = ContentAlignment.MiddleLeft
@@ -168,10 +177,10 @@ Partial Class Form1
         ' 
         logoutButton.Dock = DockStyle.Bottom
         logoutButton.FlatAppearance.BorderSize = 0
-        logoutButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
-        logoutButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        logoutButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 0)
+        logoutButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0)
         logoutButton.FlatStyle = FlatStyle.Flat
-        logoutButton.Font = New Font("Gabriola", 9F)
+        logoutButton.Font = New Font("Gabriola", 9.0F)
         logoutButton.ForeColor = Color.White
         logoutButton.Image = CType(resources.GetObject("logoutButton.Image"), Image)
         logoutButton.ImageAlign = ContentAlignment.MiddleLeft
@@ -190,10 +199,10 @@ Partial Class Form1
         ' 
         rentButton.Dock = DockStyle.Top
         rentButton.FlatAppearance.BorderSize = 0
-        rentButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
-        rentButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        rentButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 0)
+        rentButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0)
         rentButton.FlatStyle = FlatStyle.Flat
-        rentButton.Font = New Font("Gabriola", 9F)
+        rentButton.Font = New Font("Gabriola", 9.0F)
         rentButton.ForeColor = Color.White
         rentButton.Image = CType(resources.GetObject("rentButton.Image"), Image)
         rentButton.ImageAlign = ContentAlignment.MiddleLeft
@@ -212,10 +221,10 @@ Partial Class Form1
         ' 
         staffButton.Dock = DockStyle.Top
         staffButton.FlatAppearance.BorderSize = 0
-        staffButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
-        staffButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        staffButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 0)
+        staffButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0)
         staffButton.FlatStyle = FlatStyle.Flat
-        staffButton.Font = New Font("Gabriola", 9F)
+        staffButton.Font = New Font("Gabriola", 9.0F)
         staffButton.ForeColor = Color.White
         staffButton.Image = CType(resources.GetObject("staffButton.Image"), Image)
         staffButton.ImageAlign = ContentAlignment.MiddleLeft
@@ -236,10 +245,10 @@ Partial Class Form1
         vehicleButton.ContextMenuStrip = vehicleMenu
         vehicleButton.Dock = DockStyle.Top
         vehicleButton.FlatAppearance.BorderSize = 0
-        vehicleButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        vehicleButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 0)
         vehicleButton.FlatAppearance.MouseOverBackColor = Color.DarkOrange
         vehicleButton.FlatStyle = FlatStyle.Flat
-        vehicleButton.Font = New Font("Gabriola", 9F)
+        vehicleButton.Font = New Font("Gabriola", 9.0F)
         vehicleButton.ForeColor = Color.White
         vehicleButton.Image = CType(resources.GetObject("vehicleButton.Image"), Image)
         vehicleButton.ImageAlign = ContentAlignment.MiddleLeft
@@ -261,36 +270,36 @@ Partial Class Form1
         vehicleMenu.Items.AddRange(New ToolStripItem() {AddVehicleToolStripMenuItem, FleetCatalogueToolStripMenuItem})
         vehicleMenu.Name = "vehicleMenu"
         vehicleMenu.ShowImageMargin = False
-        vehicleMenu.Size = New Size(129, 68)
+        vehicleMenu.Size = New Size(219, 128)
         ' 
         ' AddVehicleToolStripMenuItem
         ' 
         AddVehicleToolStripMenuItem.BackColor = Color.Gray
         AddVehicleToolStripMenuItem.CheckOnClick = True
-        AddVehicleToolStripMenuItem.Font = New Font("Gabriola", 9F)
+        AddVehicleToolStripMenuItem.Font = New Font("Gabriola", 9.0F)
         AddVehicleToolStripMenuItem.ForeColor = Color.White
         AddVehicleToolStripMenuItem.Name = "AddVehicleToolStripMenuItem"
-        AddVehicleToolStripMenuItem.Size = New Size(128, 32)
+        AddVehicleToolStripMenuItem.Size = New Size(218, 62)
         AddVehicleToolStripMenuItem.Text = "Add Vehicle"
         ' 
         ' FleetCatalogueToolStripMenuItem
         ' 
         FleetCatalogueToolStripMenuItem.BackColor = Color.Gray
         FleetCatalogueToolStripMenuItem.CheckOnClick = True
-        FleetCatalogueToolStripMenuItem.Font = New Font("Gabriola", 9F)
+        FleetCatalogueToolStripMenuItem.Font = New Font("Gabriola", 9.0F)
         FleetCatalogueToolStripMenuItem.ForeColor = Color.White
         FleetCatalogueToolStripMenuItem.Name = "FleetCatalogueToolStripMenuItem"
-        FleetCatalogueToolStripMenuItem.Size = New Size(128, 32)
+        FleetCatalogueToolStripMenuItem.Size = New Size(218, 62)
         FleetCatalogueToolStripMenuItem.Text = "Fleet Catalogue"
         ' 
         ' homeButton
         ' 
         homeButton.Dock = DockStyle.Top
         homeButton.FlatAppearance.BorderSize = 0
-        homeButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
-        homeButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        homeButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 0)
+        homeButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 0)
         homeButton.FlatStyle = FlatStyle.Flat
-        homeButton.Font = New Font("Gabriola", 9F)
+        homeButton.Font = New Font("Gabriola", 9.0F)
         homeButton.ForeColor = Color.White
         homeButton.Image = CType(resources.GetObject("homeButton.Image"), Image)
         homeButton.ImageAlign = ContentAlignment.MiddleLeft
@@ -319,12 +328,12 @@ Partial Class Form1
         ' logoLabel
         ' 
         logoLabel.AutoSize = True
-        logoLabel.Font = New Font("MV Boli", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        logoLabel.Font = New Font("MV Boli", 12.0F, FontStyle.Bold, GraphicsUnit.Point, 0)
         logoLabel.ForeColor = Color.DarkOrange
         logoLabel.Location = New Point(13, 87)
         logoLabel.Margin = New Padding(2, 0, 2, 0)
         logoLabel.Name = "logoLabel"
-        logoLabel.Size = New Size(196, 26)
+        logoLabel.Size = New Size(376, 52)
         logoLabel.TabIndex = 1
         logoLabel.Text = "FLEET FRONTIER"
         ' 
@@ -353,12 +362,24 @@ Partial Class Form1
         ' headerPanel
         ' 
         headerPanel.BackColor = Color.Silver
+        headerPanel.Controls.Add(HomePageLabel)
         headerPanel.Dock = DockStyle.Top
         headerPanel.Location = New Point(223, 34)
         headerPanel.Margin = New Padding(2, 3, 2, 3)
         headerPanel.Name = "headerPanel"
         headerPanel.Size = New Size(965, 53)
         headerPanel.TabIndex = 2
+        ' 
+        ' HomePageLabel
+        ' 
+        HomePageLabel.AutoSize = True
+        HomePageLabel.Dock = DockStyle.Top
+        HomePageLabel.Font = New Font("Gabriola", 9.900001F, FontStyle.Bold, GraphicsUnit.Point, 0)
+        HomePageLabel.Location = New Point(0, 0)
+        HomePageLabel.Name = "HomePageLabel"
+        HomePageLabel.Size = New Size(152, 63)
+        HomePageLabel.TabIndex = 0
+        HomePageLabel.Text = "Home Page"
         ' 
         ' staffMenu
         ' 
@@ -367,39 +388,88 @@ Partial Class Form1
         staffMenu.Items.AddRange(New ToolStripItem() {addStaffButton, allStaffButton})
         staffMenu.Name = "vehicleMenu"
         staffMenu.ShowImageMargin = False
-        staffMenu.Size = New Size(100, 68)
+        staffMenu.Size = New Size(166, 128)
         ' 
         ' addStaffButton
         ' 
         addStaffButton.BackColor = Color.Gray
         addStaffButton.CheckOnClick = True
-        addStaffButton.Font = New Font("Gabriola", 9F)
+        addStaffButton.Font = New Font("Gabriola", 9.0F)
         addStaffButton.ForeColor = Color.White
         addStaffButton.Name = "addStaffButton"
+
+       
+
         addStaffButton.Size = New Size(185, 32)
+
         addStaffButton.Text = "Add Staff"
         ' 
         ' allStaffButton
         ' 
         allStaffButton.BackColor = Color.Gray
         allStaffButton.CheckOnClick = True
-        allStaffButton.Font = New Font("Gabriola", 9F)
+        allStaffButton.Font = New Font("Gabriola", 9.0F)
         allStaffButton.ForeColor = Color.White
         allStaffButton.Name = "allStaffButton"
+
         allStaffButton.Size = New Size(185, 32)
+
         allStaffButton.Text = "All Staff"
         ' 
         ' middlePanel
         ' 
+        middlePanel.Controls.Add(Panel1)
+        middlePanel.Controls.Add(HomePageUserControl1)
         middlePanel.Dock = DockStyle.Fill
         middlePanel.Location = New Point(223, 87)
         middlePanel.Name = "middlePanel"
         middlePanel.Size = New Size(965, 590)
         middlePanel.TabIndex = 3
         ' 
+        ' Panel1
+        ' 
+        Panel1.Controls.Add(WelcomeLabel)
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Dock = DockStyle.Fill
+        Panel1.Location = New Point(0, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(965, 590)
+        Panel1.TabIndex = 1
+        ' 
+        ' WelcomeLabel
+        ' 
+        WelcomeLabel.AutoSize = True
+        WelcomeLabel.BackColor = Color.Transparent
+        WelcomeLabel.Dock = DockStyle.Fill
+        WelcomeLabel.Font = New Font("Gabriola", 9.900001F, FontStyle.Bold, GraphicsUnit.Point, 0)
+        WelcomeLabel.Location = New Point(0, 0)
+        WelcomeLabel.Name = "WelcomeLabel"
+        WelcomeLabel.Size = New Size(249, 189)
+        WelcomeLabel.TabIndex = 0
+        WelcomeLabel.Text = "Welcome Back!!" + vbCrLf + "Fleet-Frontier Sacco" + vbCrLf + vbCrLf
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Dock = DockStyle.Fill
+        PictureBox1.Image = My.Resources.Resources.fleet_frontier_pic
+        PictureBox1.Location = New Point(0, 0)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(965, 590)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 2
+        PictureBox1.TabStop = False
+        ' 
+        ' HomePageUserControl1
+        ' 
+        HomePageUserControl1.Dock = DockStyle.Fill
+        HomePageUserControl1.Location = New Point(0, 0)
+        HomePageUserControl1.Name = "HomePageUserControl1"
+        HomePageUserControl1.Size = New Size(965, 590)
+        HomePageUserControl1.TabIndex = 0
+        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(8F, 19F)
+        AutoScaleDimensions = New SizeF(16.0F, 37.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1188, 712)
         ControlBox = False
@@ -408,7 +478,7 @@ Partial Class Form1
         Controls.Add(footerPanel)
         Controls.Add(sideBar)
         Controls.Add(controlBarPanel)
-        Font = New Font("Impact", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Font = New Font("Impact", 9.0F, FontStyle.Bold, GraphicsUnit.Point, 0)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(2, 3, 2, 3)
         MinimizeBox = False
@@ -424,7 +494,13 @@ Partial Class Form1
         logoPanel.ResumeLayout(False)
         logoPanel.PerformLayout()
         CType(busLogo, ComponentModel.ISupportInitialize).EndInit()
+        headerPanel.ResumeLayout(False)
+        headerPanel.PerformLayout()
         staffMenu.ResumeLayout(False)
+        middlePanel.ResumeLayout(False)
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -452,5 +528,10 @@ Partial Class Form1
     Friend WithEvents addStaffButton As ToolStripMenuItem
     Friend WithEvents allStaffButton As ToolStripMenuItem
     Friend WithEvents middlePanel As Panel
+    Friend WithEvents HomePageLabel As Label
+    Friend WithEvents HomePageUserControl1 As HomePageUserControl
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents WelcomeLabel As Label
+    Friend WithEvents PictureBox1 As PictureBox
 
 End Class
