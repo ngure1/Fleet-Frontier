@@ -18,4 +18,6 @@ Public Class Form1
     Private Sub staffButton_Click(sender As Object, e As EventArgs) Handles staffButton.Click
         staffMenu.Show(staffButton, 0, staffButton.Height)
     End Sub
+
+
 End Class
