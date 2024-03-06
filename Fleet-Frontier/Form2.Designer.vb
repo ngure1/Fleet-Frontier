@@ -67,7 +67,7 @@ Partial Class LoginForm
         TitleLabel.ForeColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         TitleLabel.Location = New Point(50, 7)
         TitleLabel.Name = "TitleLabel"
-        TitleLabel.Size = New Size(129, 21)
+        TitleLabel.Size = New Size(160, 26)
         TitleLabel.TabIndex = 4
         TitleLabel.Text = "Fleet Frontier"
         ' 
@@ -135,7 +135,7 @@ Partial Class LoginForm
         ' 
         UsernameTextBox.Location = New Point(59, 6)
         UsernameTextBox.Name = "UsernameTextBox"
-        UsernameTextBox.Size = New Size(230, 27)
+        UsernameTextBox.Size = New Size(230, 32)
         UsernameTextBox.TabIndex = 1
         ' 
         ' UsernamePictureBox
@@ -155,7 +155,7 @@ Partial Class LoginForm
         LoginLabel.Font = New Font("Gabriola", 15F, FontStyle.Bold)
         LoginLabel.Location = New Point(152, 240)
         LoginLabel.Name = "LoginLabel"
-        LoginLabel.Size = New Size(122, 37)
+        LoginLabel.Size = New Size(151, 46)
         LoginLabel.TabIndex = 3
         LoginLabel.Text = "Welcome Back!"
         ' 
@@ -172,7 +172,7 @@ Partial Class LoginForm
         ' 
         TextBox1.Location = New Point(59, 6)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(230, 27)
+        TextBox1.Size = New Size(230, 32)
         TextBox1.TabIndex = 1
         ' 
         ' PictureBox3
@@ -205,7 +205,7 @@ Partial Class LoginForm
         ' 
         ' LoginForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 17F)
+        AutoScaleDimensions = New SizeF(9F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.DimGray
         ClientSize = New Size(453, 579)
