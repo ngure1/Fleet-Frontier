@@ -19,7 +19,7 @@
         Dim newForm As New Form1()
 
         newForm.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub UsernameTextBox_GotFocus(sender As Object, e As EventArgs) Handles UsernameTextBox.GotFocus
