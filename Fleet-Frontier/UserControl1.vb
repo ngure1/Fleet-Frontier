@@ -1,6 +1,7 @@
 ﻿Public Class VehiclesUserControl
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+        Dim AddVehicleForm As New AddVehicle
+        AddVehicleForm.Show()
     End Sub
 
     Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
