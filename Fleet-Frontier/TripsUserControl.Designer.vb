@@ -24,10 +24,10 @@ Partial Class TripsUserControl
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TripsUserControl))
         TripsHeaderPanel = New Panel()
-        TripsBodyPanel = New Panel()
-        TripsLabel = New Label()
         AddTripsButton = New Button()
         TripsSearchBar = New TextBox()
+        TripsLabel = New Label()
+        TripsBodyPanel = New Panel()
         TripsHeaderPanel.SuspendLayout()
         SuspendLayout()
         ' 
@@ -42,28 +42,6 @@ Partial Class TripsUserControl
         TripsHeaderPanel.Name = "TripsHeaderPanel"
         TripsHeaderPanel.Size = New Size(984, 70)
         TripsHeaderPanel.TabIndex = 0
-        ' 
-        ' TripsBodyPanel
-        ' 
-        TripsBodyPanel.BackColor = Color.Silver
-        TripsBodyPanel.Dock = DockStyle.Fill
-        TripsBodyPanel.Location = New Point(20, 90)
-        TripsBodyPanel.Name = "TripsBodyPanel"
-        TripsBodyPanel.Size = New Size(984, 551)
-        TripsBodyPanel.TabIndex = 1
-        ' 
-        ' TripsLabel
-        ' 
-        TripsLabel.AutoSize = True
-        TripsLabel.Font = New Font("MV Boli", 15F, FontStyle.Bold)
-        TripsLabel.Image = CType(resources.GetObject("TripsLabel.Image"), Image)
-        TripsLabel.ImageAlign = ContentAlignment.MiddleLeft
-        TripsLabel.Location = New Point(16, 19)
-        TripsLabel.Name = "TripsLabel"
-        TripsLabel.Size = New Size(102, 32)
-        TripsLabel.TabIndex = 2
-        TripsLabel.Text = "  Trips"
-        TripsLabel.TextAlign = ContentAlignment.MiddleRight
         ' 
         ' AddTripsButton
         ' 
@@ -91,6 +69,28 @@ Partial Class TripsUserControl
         TripsSearchBar.PlaceholderText = "Search"
         TripsSearchBar.Size = New Size(184, 27)
         TripsSearchBar.TabIndex = 5
+        ' 
+        ' TripsLabel
+        ' 
+        TripsLabel.AutoSize = True
+        TripsLabel.Font = New Font("MV Boli", 15F, FontStyle.Bold)
+        TripsLabel.Image = CType(resources.GetObject("TripsLabel.Image"), Image)
+        TripsLabel.ImageAlign = ContentAlignment.MiddleLeft
+        TripsLabel.Location = New Point(16, 19)
+        TripsLabel.Name = "TripsLabel"
+        TripsLabel.Size = New Size(102, 32)
+        TripsLabel.TabIndex = 2
+        TripsLabel.Text = "  Trips"
+        TripsLabel.TextAlign = ContentAlignment.MiddleRight
+        ' 
+        ' TripsBodyPanel
+        ' 
+        TripsBodyPanel.BackColor = Color.Silver
+        TripsBodyPanel.Dock = DockStyle.Fill
+        TripsBodyPanel.Location = New Point(20, 90)
+        TripsBodyPanel.Name = "TripsBodyPanel"
+        TripsBodyPanel.Size = New Size(984, 551)
+        TripsBodyPanel.TabIndex = 1
         ' 
         ' TripsUserControl
         ' 
