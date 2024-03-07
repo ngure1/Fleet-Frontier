@@ -26,10 +26,11 @@ Partial Class HomePageUserControl
         ' 
         ' HomePageUserControl
         ' 
-        AutoScaleDimensions = New SizeF(17F, 41F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        Margin = New Padding(1, 1, 1, 1)
         Name = "HomePageUserControl"
-        Size = New Size(1232, 830)
+        Size = New Size(734, 428)
         ResumeLayout(False)
     End Sub
 
