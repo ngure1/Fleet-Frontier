@@ -6,6 +6,7 @@ CREATE TABLE vehicle(
     numberPlate  VARCHAR(20) NOT NULL,
     `fuel_cost/km` DECIMAL NOT NULL,
     is_available BOOLEAN NOT NULL,
+    created_at DATE,
 
     PRIMARY KEY(vehicle_id)
 );
@@ -51,5 +52,5 @@ CREATE TABLE trip_employee(
 
     PRIMARY KEY(trip_employee_id),
     FOREIGN KEY(trip_id) REFERENCES trip(trip_id),
-     FOREIGN KEY(employee_id) REFERENCES employee(employee_id)  
+    FOREIGN KEY(employee_id) REFERENCES employee(employee_id)  
 );
