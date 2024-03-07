@@ -58,7 +58,7 @@ Partial Class AddVehicle
         exitButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         exitButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         exitButton.FlatStyle = FlatStyle.Flat
-        exitButton.Font = New Font("Leelawadee UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        exitButton.Font = New Font("Leelawadee UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         exitButton.ForeColor = Color.Black
         exitButton.Location = New Point(426, 0)
         exitButton.Name = "exitButton"
@@ -70,7 +70,7 @@ Partial Class AddVehicle
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Gabriola", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(3, 7)
         Label1.Name = "Label1"
         Label1.Size = New Size(99, 37)
@@ -104,7 +104,7 @@ Partial Class AddVehicle
         Button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         Button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         Button2.FlatStyle = FlatStyle.Flat
-        Button2.Font = New Font("Gabriola", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button2.Font = New Font("Gabriola", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = Color.Black
         Button2.Location = New Point(247, 444)
         Button2.Name = "Button2"
@@ -120,7 +120,7 @@ Partial Class AddVehicle
         Button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         Button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Gabriola", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button1.Font = New Font("Gabriola", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = Color.Red
         Button1.Location = New Point(84, 444)
         Button1.Name = "Button1"
@@ -199,7 +199,7 @@ Partial Class AddVehicle
         ' 
         ' AddVehicle
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(455, 597)
         ControlBox = False
