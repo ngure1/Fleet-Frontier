@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Create_Trip
+Partial Class CreateTripForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -59,18 +59,18 @@ Partial Class Create_Trip
         Panel2.Controls.Add(DriverLabel)
         Panel2.Controls.Add(VehicleLabel)
         Panel2.Dock = DockStyle.Fill
-        Panel2.Location = New Point(20, 110)
+        Panel2.Location = New Point(0, 90)
         Panel2.Margin = New Padding(6)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(927, 1038)
-        Panel2.TabIndex = 3
+        Panel2.Size = New Size(1227, 1014)
+        Panel2.TabIndex = 5
         ' 
         ' ToComboBox
         ' 
         ToComboBox.FormattingEnabled = True
         ToComboBox.Location = New Point(496, 102)
         ToComboBox.Name = "ToComboBox"
-        ToComboBox.Size = New Size(353, 49)
+        ToComboBox.Size = New Size(382, 49)
         ToComboBox.TabIndex = 17
         ' 
         ' ToLabel
@@ -88,7 +88,7 @@ Partial Class Create_Trip
         ComboBox1.FormattingEnabled = True
         ComboBox1.Location = New Point(32, 102)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(314, 49)
+        ComboBox1.Size = New Size(333, 49)
         ComboBox1.TabIndex = 15
         ' 
         ' FromLabel
@@ -132,7 +132,7 @@ Partial Class Create_Trip
         StartTripButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         StartTripButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         StartTripButton.FlatStyle = FlatStyle.Flat
-        StartTripButton.Font = New Font("Gabriola", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        StartTripButton.Font = New Font("Gabriola", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         StartTripButton.ForeColor = Color.Black
         StartTripButton.Location = New Point(525, 910)
         StartTripButton.Margin = New Padding(6)
@@ -149,7 +149,7 @@ Partial Class Create_Trip
         CancelTripButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         CancelTripButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         CancelTripButton.FlatStyle = FlatStyle.Flat
-        CancelTripButton.Font = New Font("Gabriola", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        CancelTripButton.Font = New Font("Gabriola", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         CancelTripButton.ForeColor = Color.Red
         CancelTripButton.Location = New Point(178, 910)
         CancelTripButton.Margin = New Padding(6)
@@ -199,9 +199,9 @@ Partial Class Create_Trip
         exitButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         exitButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         exitButton.FlatStyle = FlatStyle.Flat
-        exitButton.Font = New Font("Leelawadee UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        exitButton.Font = New Font("Leelawadee UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         exitButton.ForeColor = Color.Black
-        exitButton.Location = New Point(865, 0)
+        exitButton.Location = New Point(1165, 0)
         exitButton.Margin = New Padding(6)
         exitButton.Name = "exitButton"
         exitButton.Size = New Size(62, 90)
@@ -212,7 +212,7 @@ Partial Class Create_Trip
         ' CreateTrip
         ' 
         CreateTrip.AutoSize = True
-        CreateTrip.Font = New Font("Gabriola", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        CreateTrip.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         CreateTrip.Location = New Point(6, 14)
         CreateTrip.Margin = New Padding(6, 0, 6, 0)
         CreateTrip.Name = "CreateTrip"
@@ -227,24 +227,22 @@ Partial Class Create_Trip
         Panel1.Controls.Add(exitButton)
         Panel1.Controls.Add(CreateTrip)
         Panel1.Dock = DockStyle.Top
-        Panel1.Location = New Point(20, 20)
+        Panel1.Location = New Point(0, 0)
         Panel1.Margin = New Padding(6)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(927, 90)
-        Panel1.TabIndex = 2
+        Panel1.Size = New Size(1227, 90)
+        Panel1.TabIndex = 4
         ' 
-        ' Create_Trip
+        ' CreateTripForm
         ' 
-        AutoScaleDimensions = New SizeF(17.0F, 41.0F)
+        AutoScaleDimensions = New SizeF(17F, 41F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(967, 1168)
-        ControlBox = False
+        ClientSize = New Size(1227, 1104)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
-        Name = "Create_Trip"
-        Padding = New Padding(20)
-        Text = "Create_Trip"
+        Name = "CreateTripForm"
+        Text = "CreateTripForm"
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         Panel1.ResumeLayout(False)
@@ -253,6 +251,13 @@ Partial Class Create_Trip
     End Sub
 
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents ToComboBox As ComboBox
+    Friend WithEvents ToLabel As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents FromLabel As Label
+    Friend WithEvents ConductorComboBox As ComboBox
+    Friend WithEvents DriverComboBox As ComboBox
+    Friend WithEvents VehicleComboBox As ComboBox
     Friend WithEvents StartTripButton As Button
     Friend WithEvents CancelTripButton As Button
     Friend WithEvents ConductorTextbox As Label
@@ -261,13 +266,4 @@ Partial Class Create_Trip
     Friend WithEvents exitButton As Button
     Friend WithEvents CreateTrip As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents ConductorComboBox As ComboBox
-    Friend WithEvents DriverComboBox As ComboBox
-    Friend WithEvents VehicleComboBox As ComboBox
-    Friend WithEvents FromLabel As Label
-    Friend WithEvents ToComboBox As ComboBox
-    Friend WithEvents ToLabel As Label
-    Friend WithEvents ComboBox1 As ComboBox
-
-
 End Class
