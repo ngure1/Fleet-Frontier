@@ -22,16 +22,29 @@ Partial Class HomePageUserControl
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Button1 = New Button()
         SuspendLayout()
+        ' 
+        ' Button1
+        ' 
+        Button1.Location = New Point(630, 43)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(126, 56)
+        Button1.TabIndex = 0
+        Button1.Text = "Button1"
+        Button1.UseVisualStyleBackColor = True
         ' 
         ' HomePageUserControl
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        Margin = New Padding(1, 1, 1, 1)
+        Controls.Add(Button1)
+        Margin = New Padding(1)
         Name = "HomePageUserControl"
-        Size = New Size(734, 428)
+        Size = New Size(818, 492)
         ResumeLayout(False)
     End Sub
+
+    Friend WithEvents Button1 As Button
 
 End Class

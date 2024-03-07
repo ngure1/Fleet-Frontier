@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class MainForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         controlBarPanel = New Panel()
         minimizeButton = New Button()
         controlBarLabel = New Label()
@@ -43,6 +43,7 @@ Partial Class Form1
         headerPanel = New Panel()
         middlePanel = New Panel()
         Panel1 = New Panel()
+        HomePageUserControl1 = New HomePageUserControl()
         VehiclesUserControl1 = New VehiclesUserControl()
         WelcomeLabel = New Label()
         controlBarPanel.SuspendLayout()
@@ -345,6 +346,7 @@ Partial Class Form1
         ' 
         ' Panel1
         ' 
+        Panel1.Controls.Add(HomePageUserControl1)
         Panel1.Controls.Add(VehiclesUserControl1)
         Panel1.Controls.Add(sideBar)
         Panel1.Controls.Add(WelcomeLabel)
@@ -353,6 +355,15 @@ Partial Class Form1
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1241, 661)
         Panel1.TabIndex = 1
+        ' 
+        ' HomePageUserControl1
+        ' 
+        HomePageUserControl1.Dock = DockStyle.Fill
+        HomePageUserControl1.Location = New Point(217, 0)
+        HomePageUserControl1.Margin = New Padding(1)
+        HomePageUserControl1.Name = "HomePageUserControl1"
+        HomePageUserControl1.Size = New Size(1024, 661)
+        HomePageUserControl1.TabIndex = 2
         ' 
         ' VehiclesUserControl1
         ' 
@@ -374,7 +385,7 @@ Partial Class Form1
         WelcomeLabel.Size = New Size(0, 31)
         WelcomeLabel.TabIndex = 0
         ' 
-        ' Form1
+        ' MainForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 19F)
         AutoScaleMode = AutoScaleMode.Font
@@ -388,7 +399,8 @@ Partial Class Form1
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(2, 3, 2, 3)
         MinimizeBox = False
-        Name = "Form1"
+        MinimumSize = New Size(712, 561)
+        Name = "MainForm"
         ShowIcon = False
         StartPosition = FormStartPosition.CenterScreen
         controlBarPanel.ResumeLayout(False)
@@ -427,5 +439,6 @@ Partial Class Form1
     Friend WithEvents VehicleButton As Button
     Friend WithEvents StaffButton As Button
     Friend WithEvents VehiclesUserControl1 As VehiclesUserControl
+    Friend WithEvents HomePageUserControl1 As HomePageUserControl
 
 End Class

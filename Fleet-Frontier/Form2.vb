@@ -16,7 +16,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim newForm As New Form1()
+        Dim newForm As New MainForm()
 
         newForm.Show()
         Me.Hide()
