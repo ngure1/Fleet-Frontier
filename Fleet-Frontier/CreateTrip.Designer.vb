@@ -22,6 +22,7 @@ Partial Class CreateTrip
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CreateTrip))
         Panel2 = New Panel()
         ToComboBox = New ComboBox()
         ToLabel = New Label()
@@ -38,8 +39,10 @@ Partial Class CreateTrip
         exitButton = New Button()
         Label1 = New Label()
         Panel1 = New Panel()
+        PictureBox1 = New PictureBox()
         Panel2.SuspendLayout()
         Panel1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel2
@@ -58,71 +61,76 @@ Partial Class CreateTrip
         Panel2.Controls.Add(ConductorTextbox)
         Panel2.Controls.Add(DriverLabel)
         Panel2.Controls.Add(VehicleLabel)
-        Panel2.Dock = DockStyle.Fill
-        Panel2.Location = New Point(0, 90)
-        Panel2.Margin = New Padding(6)
+        Panel2.Location = New Point(12, 50)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(932, 1110)
+        Panel2.Size = New Size(449, 553)
         Panel2.TabIndex = 7
         ' 
         ' ToComboBox
         ' 
         ToComboBox.FormattingEnabled = True
-        ToComboBox.Location = New Point(496, 102)
+        ToComboBox.Location = New Point(244, 79)
+        ToComboBox.Margin = New Padding(1)
         ToComboBox.Name = "ToComboBox"
-        ToComboBox.Size = New Size(382, 49)
+        ToComboBox.Size = New Size(182, 28)
         ToComboBox.TabIndex = 17
         ' 
         ' ToLabel
         ' 
         ToLabel.AutoSize = True
         ToLabel.Font = New Font("Gabriola", 10.2F, FontStyle.Bold)
-        ToLabel.Location = New Point(496, 45)
+        ToLabel.Location = New Point(247, 45)
+        ToLabel.Margin = New Padding(1, 0, 1, 0)
         ToLabel.Name = "ToLabel"
-        ToLabel.Size = New Size(53, 63)
+        ToLabel.Size = New Size(28, 31)
         ToLabel.TabIndex = 16
         ToLabel.Text = "To"
         ' 
         ' ComboBox1
         ' 
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(32, 102)
+        ComboBox1.Location = New Point(26, 79)
+        ComboBox1.Margin = New Padding(1)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(333, 49)
+        ComboBox1.Size = New Size(182, 28)
         ComboBox1.TabIndex = 15
         ' 
         ' FromLabel
         ' 
         FromLabel.AutoSize = True
         FromLabel.Font = New Font("Gabriola", 10.2F, FontStyle.Bold)
-        FromLabel.Location = New Point(32, 45)
+        FromLabel.Location = New Point(29, 47)
+        FromLabel.Margin = New Padding(1, 0, 1, 0)
         FromLabel.Name = "FromLabel"
-        FromLabel.Size = New Size(87, 63)
+        FromLabel.Size = New Size(47, 31)
         FromLabel.TabIndex = 14
         FromLabel.Text = "From"
         ' 
         ' ConductorComboBox
         ' 
         ConductorComboBox.FormattingEnabled = True
-        ConductorComboBox.Location = New Point(32, 644)
+        ConductorComboBox.Location = New Point(26, 351)
+        ConductorComboBox.Margin = New Padding(1)
         ConductorComboBox.Name = "ConductorComboBox"
-        ConductorComboBox.Size = New Size(846, 49)
+        ConductorComboBox.Size = New Size(400, 28)
         ConductorComboBox.TabIndex = 13
         ' 
         ' DriverComboBox
         ' 
         DriverComboBox.FormattingEnabled = True
-        DriverComboBox.Location = New Point(32, 459)
+        DriverComboBox.Location = New Point(26, 253)
+        DriverComboBox.Margin = New Padding(1)
         DriverComboBox.Name = "DriverComboBox"
-        DriverComboBox.Size = New Size(846, 49)
+        DriverComboBox.Size = New Size(400, 28)
         DriverComboBox.TabIndex = 12
         ' 
         ' VehicleComboBox
         ' 
         VehicleComboBox.FormattingEnabled = True
-        VehicleComboBox.Location = New Point(32, 272)
+        VehicleComboBox.Location = New Point(26, 152)
+        VehicleComboBox.Margin = New Padding(1)
         VehicleComboBox.Name = "VehicleComboBox"
-        VehicleComboBox.Size = New Size(846, 49)
+        VehicleComboBox.Size = New Size(400, 28)
         VehicleComboBox.TabIndex = 11
         ' 
         ' StartTripButton
@@ -134,10 +142,9 @@ Partial Class CreateTrip
         StartTripButton.FlatStyle = FlatStyle.Flat
         StartTripButton.Font = New Font("Gabriola", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         StartTripButton.ForeColor = Color.Black
-        StartTripButton.Location = New Point(525, 910)
-        StartTripButton.Margin = New Padding(6)
+        StartTripButton.Location = New Point(247, 444)
         StartTripButton.Name = "StartTripButton"
-        StartTripButton.Size = New Size(208, 72)
+        StartTripButton.Size = New Size(98, 35)
         StartTripButton.TabIndex = 10
         StartTripButton.Text = "Start"
         StartTripButton.UseVisualStyleBackColor = False
@@ -151,10 +158,9 @@ Partial Class CreateTrip
         CancelTripButton.FlatStyle = FlatStyle.Flat
         CancelTripButton.Font = New Font("Gabriola", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         CancelTripButton.ForeColor = Color.Red
-        CancelTripButton.Location = New Point(178, 910)
-        CancelTripButton.Margin = New Padding(6)
+        CancelTripButton.Location = New Point(84, 444)
         CancelTripButton.Name = "CancelTripButton"
-        CancelTripButton.Size = New Size(208, 72)
+        CancelTripButton.Size = New Size(98, 35)
         CancelTripButton.TabIndex = 9
         CancelTripButton.Text = "Cancel"
         CancelTripButton.UseVisualStyleBackColor = False
@@ -163,10 +169,9 @@ Partial Class CreateTrip
         ' 
         ConductorTextbox.AutoSize = True
         ConductorTextbox.Font = New Font("Gabriola", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        ConductorTextbox.Location = New Point(32, 578)
-        ConductorTextbox.Margin = New Padding(6, 0, 6, 0)
+        ConductorTextbox.Location = New Point(26, 319)
         ConductorTextbox.Name = "ConductorTextbox"
-        ConductorTextbox.Size = New Size(147, 63)
+        ConductorTextbox.Size = New Size(78, 31)
         ConductorTextbox.TabIndex = 5
         ConductorTextbox.Text = "Conductor"
         ' 
@@ -174,10 +179,9 @@ Partial Class CreateTrip
         ' 
         DriverLabel.AutoSize = True
         DriverLabel.Font = New Font("Gabriola", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        DriverLabel.Location = New Point(32, 394)
-        DriverLabel.Margin = New Padding(6, 0, 6, 0)
+        DriverLabel.Location = New Point(26, 219)
         DriverLabel.Name = "DriverLabel"
-        DriverLabel.Size = New Size(99, 63)
+        DriverLabel.Size = New Size(53, 31)
         DriverLabel.TabIndex = 3
         DriverLabel.Text = "Driver"
         ' 
@@ -185,10 +189,9 @@ Partial Class CreateTrip
         ' 
         VehicleLabel.AutoSize = True
         VehicleLabel.Font = New Font("Gabriola", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        VehicleLabel.Location = New Point(32, 213)
-        VehicleLabel.Margin = New Padding(6, 0, 6, 0)
+        VehicleLabel.Location = New Point(26, 120)
         VehicleLabel.Name = "VehicleLabel"
-        VehicleLabel.Size = New Size(106, 63)
+        VehicleLabel.Size = New Size(56, 31)
         VehicleLabel.TabIndex = 1
         VehicleLabel.Text = "Vehicle"
         ' 
@@ -201,10 +204,9 @@ Partial Class CreateTrip
         exitButton.FlatStyle = FlatStyle.Flat
         exitButton.Font = New Font("Leelawadee UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         exitButton.ForeColor = Color.Black
-        exitButton.Location = New Point(870, 0)
-        exitButton.Margin = New Padding(6)
+        exitButton.Location = New Point(444, 0)
         exitButton.Name = "exitButton"
-        exitButton.Size = New Size(62, 90)
+        exitButton.Size = New Size(29, 44)
         exitButton.TabIndex = 5
         exitButton.Text = "X"
         exitButton.UseVisualStyleBackColor = True
@@ -213,10 +215,9 @@ Partial Class CreateTrip
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(6, 14)
-        Label1.Margin = New Padding(6, 0, 6, 0)
+        Label1.Location = New Point(53, 4)
         Label1.Name = "Label1"
-        Label1.Size = New Size(179, 74)
+        Label1.Size = New Size(96, 37)
         Label1.TabIndex = 0
         Label1.Text = "Create Trip"
         Label1.TextAlign = ContentAlignment.TopCenter
@@ -224,29 +225,42 @@ Partial Class CreateTrip
         ' Panel1
         ' 
         Panel1.BackColor = Color.Gray
+        Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(exitButton)
         Panel1.Controls.Add(Label1)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
-        Panel1.Margin = New Padding(6)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(932, 90)
+        Panel1.Size = New Size(473, 44)
         Panel1.TabIndex = 6
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Dock = DockStyle.Left
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(0, 0)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(44, 44)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 6
+        PictureBox1.TabStop = False
         ' 
         ' CreateTrip
         ' 
-        AutoScaleDimensions = New SizeF(17F, 41F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(932, 1200)
+        ClientSize = New Size(473, 615)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(1)
         Name = "CreateTrip"
         Text = "CreateTrip"
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -266,4 +280,5 @@ Partial Class CreateTrip
     Friend WithEvents exitButton As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
