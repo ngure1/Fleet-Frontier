@@ -22,10 +22,10 @@ Partial Class AddStaffForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Panel1 = New Panel()
+        AddStaffPanel1 = New Panel()
         AddStaffCloseButton = New Button()
         AddStaffLabel = New Label()
-        Panel2 = New Panel()
+        AddStaffPanel2 = New Panel()
         AddStaffTypeComboBox = New ComboBox()
         AddStaffDateTimePicker = New DateTimePicker()
         AddStaffDateLabel = New Label()
@@ -38,21 +38,21 @@ Partial Class AddStaffForm
         AddStaffTypeLabel = New Label()
         AddStaffPhoneLabel = New Label()
         AddStaffNameLabel = New Label()
-        Panel1.SuspendLayout()
-        Panel2.SuspendLayout()
+        AddStaffPanel1.SuspendLayout()
+        AddStaffPanel2.SuspendLayout()
         SuspendLayout()
         ' 
-        ' Panel1
+        ' AddStaffPanel1
         ' 
-        Panel1.BackColor = Color.Gray
-        Panel1.BorderStyle = BorderStyle.FixedSingle
-        Panel1.Controls.Add(AddStaffCloseButton)
-        Panel1.Controls.Add(AddStaffLabel)
-        Panel1.Dock = DockStyle.Top
-        Panel1.Location = New Point(20, 20)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(564, 42)
-        Panel1.TabIndex = 10
+        AddStaffPanel1.BackColor = Color.Gray
+        AddStaffPanel1.BorderStyle = BorderStyle.FixedSingle
+        AddStaffPanel1.Controls.Add(AddStaffCloseButton)
+        AddStaffPanel1.Controls.Add(AddStaffLabel)
+        AddStaffPanel1.Dock = DockStyle.Top
+        AddStaffPanel1.Location = New Point(20, 20)
+        AddStaffPanel1.Name = "AddStaffPanel1"
+        AddStaffPanel1.Size = New Size(564, 42)
+        AddStaffPanel1.TabIndex = 10
         ' 
         ' AddStaffCloseButton
         ' 
@@ -82,28 +82,28 @@ Partial Class AddStaffForm
         AddStaffLabel.TabIndex = 0
         AddStaffLabel.Text = "Add Staff"
         ' 
-        ' Panel2
+        ' AddStaffPanel2
         ' 
-        Panel2.BackColor = Color.Silver
-        Panel2.BorderStyle = BorderStyle.FixedSingle
-        Panel2.Controls.Add(AddStaffTypeComboBox)
-        Panel2.Controls.Add(AddStaffDateTimePicker)
-        Panel2.Controls.Add(AddStaffDateLabel)
-        Panel2.Controls.Add(AddStaffCancelButton)
-        Panel2.Controls.Add(AddStaffButton)
-        Panel2.Controls.Add(AddStaffAvailabilityTextBox)
-        Panel2.Controls.Add(AddStaffPhoneTextBox)
-        Panel2.Controls.Add(AddStaffNameTextBox)
-        Panel2.Controls.Add(AddStaffAvailabilityLabel)
-        Panel2.Controls.Add(AddStaffTypeLabel)
-        Panel2.Controls.Add(AddStaffPhoneLabel)
-        Panel2.Controls.Add(AddStaffNameLabel)
-        Panel2.Dock = DockStyle.Fill
-        Panel2.Location = New Point(20, 62)
-        Panel2.Name = "Panel2"
-        Panel2.Padding = New Padding(10)
-        Panel2.Size = New Size(564, 425)
-        Panel2.TabIndex = 11
+        AddStaffPanel2.BackColor = Color.Silver
+        AddStaffPanel2.BorderStyle = BorderStyle.FixedSingle
+        AddStaffPanel2.Controls.Add(AddStaffTypeComboBox)
+        AddStaffPanel2.Controls.Add(AddStaffDateTimePicker)
+        AddStaffPanel2.Controls.Add(AddStaffDateLabel)
+        AddStaffPanel2.Controls.Add(AddStaffCancelButton)
+        AddStaffPanel2.Controls.Add(AddStaffButton)
+        AddStaffPanel2.Controls.Add(AddStaffAvailabilityTextBox)
+        AddStaffPanel2.Controls.Add(AddStaffPhoneTextBox)
+        AddStaffPanel2.Controls.Add(AddStaffNameTextBox)
+        AddStaffPanel2.Controls.Add(AddStaffAvailabilityLabel)
+        AddStaffPanel2.Controls.Add(AddStaffTypeLabel)
+        AddStaffPanel2.Controls.Add(AddStaffPhoneLabel)
+        AddStaffPanel2.Controls.Add(AddStaffNameLabel)
+        AddStaffPanel2.Dock = DockStyle.Fill
+        AddStaffPanel2.Location = New Point(20, 62)
+        AddStaffPanel2.Name = "AddStaffPanel2"
+        AddStaffPanel2.Padding = New Padding(10)
+        AddStaffPanel2.Size = New Size(564, 425)
+        AddStaffPanel2.TabIndex = 11
         ' 
         ' AddStaffTypeComboBox
         ' 
@@ -116,7 +116,7 @@ Partial Class AddStaffForm
         ' 
         ' AddStaffDateTimePicker
         ' 
-        AddStaffDateTimePicker.Location = New Point(143, 325)
+        AddStaffDateTimePicker.Location = New Point(138, 329)
         AddStaffDateTimePicker.Name = "AddStaffDateTimePicker"
         AddStaffDateTimePicker.Size = New Size(200, 23)
         AddStaffDateTimePicker.TabIndex = 8
@@ -226,20 +226,20 @@ Partial Class AddStaffForm
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(604, 507)
-        Controls.Add(Panel2)
-        Controls.Add(Panel1)
+        Controls.Add(AddStaffPanel2)
+        Controls.Add(AddStaffPanel1)
         Name = "AddStaffForm"
         Padding = New Padding(20)
         Text = "Add Staff"
-        Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
-        Panel2.ResumeLayout(False)
-        Panel2.PerformLayout()
+        AddStaffPanel1.ResumeLayout(False)
+        AddStaffPanel1.PerformLayout()
+        AddStaffPanel2.ResumeLayout(False)
+        AddStaffPanel2.PerformLayout()
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents AddStaffPanel1 As Panel
+    Friend WithEvents AddStaffPanel2 As Panel
     Friend WithEvents AddStaffTypeComboBox As ComboBox
     Friend WithEvents AddStaffDateTimePicker As DateTimePicker
     Friend WithEvents AddStaffDateLabel As Label
