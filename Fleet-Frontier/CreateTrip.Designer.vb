@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CreateTripForm
+Partial Class CreateTrip
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -36,7 +36,7 @@ Partial Class CreateTripForm
         DriverLabel = New Label()
         VehicleLabel = New Label()
         exitButton = New Button()
-        CreateTrip = New Label()
+        Label1 = New Label()
         Panel1 = New Panel()
         Panel2.SuspendLayout()
         Panel1.SuspendLayout()
@@ -62,8 +62,8 @@ Partial Class CreateTripForm
         Panel2.Location = New Point(0, 90)
         Panel2.Margin = New Padding(6)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(1227, 1014)
-        Panel2.TabIndex = 5
+        Panel2.Size = New Size(932, 1110)
+        Panel2.TabIndex = 7
         ' 
         ' ToComboBox
         ' 
@@ -201,7 +201,7 @@ Partial Class CreateTripForm
         exitButton.FlatStyle = FlatStyle.Flat
         exitButton.Font = New Font("Leelawadee UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         exitButton.ForeColor = Color.Black
-        exitButton.Location = New Point(1165, 0)
+        exitButton.Location = New Point(870, 0)
         exitButton.Margin = New Padding(6)
         exitButton.Name = "exitButton"
         exitButton.Size = New Size(62, 90)
@@ -209,40 +209,40 @@ Partial Class CreateTripForm
         exitButton.Text = "X"
         exitButton.UseVisualStyleBackColor = True
         ' 
-        ' CreateTrip
+        ' Label1
         ' 
-        CreateTrip.AutoSize = True
-        CreateTrip.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        CreateTrip.Location = New Point(6, 14)
-        CreateTrip.Margin = New Padding(6, 0, 6, 0)
-        CreateTrip.Name = "CreateTrip"
-        CreateTrip.Size = New Size(179, 74)
-        CreateTrip.TabIndex = 0
-        CreateTrip.Text = "Create Trip"
-        CreateTrip.TextAlign = ContentAlignment.TopCenter
+        Label1.AutoSize = True
+        Label1.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(6, 14)
+        Label1.Margin = New Padding(6, 0, 6, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(179, 74)
+        Label1.TabIndex = 0
+        Label1.Text = "Create Trip"
+        Label1.TextAlign = ContentAlignment.TopCenter
         ' 
         ' Panel1
         ' 
         Panel1.BackColor = Color.Gray
         Panel1.Controls.Add(exitButton)
-        Panel1.Controls.Add(CreateTrip)
+        Panel1.Controls.Add(Label1)
         Panel1.Dock = DockStyle.Top
         Panel1.Location = New Point(0, 0)
         Panel1.Margin = New Padding(6)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1227, 90)
-        Panel1.TabIndex = 4
+        Panel1.Size = New Size(932, 90)
+        Panel1.TabIndex = 6
         ' 
-        ' CreateTripForm
+        ' CreateTrip
         ' 
         AutoScaleDimensions = New SizeF(17F, 41F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1227, 1104)
+        ClientSize = New Size(932, 1200)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
-        Name = "CreateTripForm"
-        Text = "CreateTripForm"
+        Name = "CreateTrip"
+        Text = "CreateTrip"
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         Panel1.ResumeLayout(False)
@@ -264,6 +264,6 @@ Partial Class CreateTripForm
     Friend WithEvents DriverLabel As Label
     Friend WithEvents VehicleLabel As Label
     Friend WithEvents exitButton As Button
-    Friend WithEvents CreateTrip As Label
+    Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
 End Class
