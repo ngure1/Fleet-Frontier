@@ -31,11 +31,11 @@ Partial Class AddVehicle
         DateTimePicker1 = New DateTimePicker()
         Label5 = New Label()
         Label4 = New Label()
-        TextBox3 = New TextBox()
+        AvailabilityTextBox = New TextBox()
         Label3 = New Label()
-        TextBox2 = New TextBox()
+        FuelTextBox = New TextBox()
         Label2 = New Label()
-        TextBox1 = New TextBox()
+        NumberPlateTextBox = New TextBox()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         SuspendLayout()
@@ -58,7 +58,7 @@ Partial Class AddVehicle
         exitButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         exitButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         exitButton.FlatStyle = FlatStyle.Flat
-        exitButton.Font = New Font("Leelawadee UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        exitButton.Font = New Font("Leelawadee UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         exitButton.ForeColor = Color.Black
         exitButton.Location = New Point(426, 0)
         exitButton.Name = "exitButton"
@@ -70,7 +70,7 @@ Partial Class AddVehicle
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Gabriola", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(3, 7)
         Label1.Name = "Label1"
         Label1.Size = New Size(99, 37)
@@ -87,11 +87,11 @@ Partial Class AddVehicle
         Panel2.Controls.Add(DateTimePicker1)
         Panel2.Controls.Add(Label5)
         Panel2.Controls.Add(Label4)
-        Panel2.Controls.Add(TextBox3)
+        Panel2.Controls.Add(AvailabilityTextBox)
         Panel2.Controls.Add(Label3)
-        Panel2.Controls.Add(TextBox2)
+        Panel2.Controls.Add(FuelTextBox)
         Panel2.Controls.Add(Label2)
-        Panel2.Controls.Add(TextBox1)
+        Panel2.Controls.Add(NumberPlateTextBox)
         Panel2.Location = New Point(12, 59)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(431, 526)
@@ -104,7 +104,7 @@ Partial Class AddVehicle
         Button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         Button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         Button2.FlatStyle = FlatStyle.Flat
-        Button2.Font = New Font("Gabriola", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button2.Font = New Font("Gabriola", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = Color.Black
         Button2.Location = New Point(247, 444)
         Button2.Name = "Button2"
@@ -120,7 +120,7 @@ Partial Class AddVehicle
         Button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         Button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Gabriola", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button1.Font = New Font("Gabriola", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = Color.Red
         Button1.Location = New Point(84, 444)
         Button1.Name = "Button1"
@@ -156,12 +156,12 @@ Partial Class AddVehicle
         Label4.TabIndex = 5
         Label4.Text = "Availability"
         ' 
-        ' TextBox3
+        ' AvailabilityTextBox
         ' 
-        TextBox3.Location = New Point(15, 316)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(400, 27)
-        TextBox3.TabIndex = 4
+        AvailabilityTextBox.Location = New Point(15, 316)
+        AvailabilityTextBox.Name = "AvailabilityTextBox"
+        AvailabilityTextBox.Size = New Size(400, 27)
+        AvailabilityTextBox.TabIndex = 4
         ' 
         ' Label3
         ' 
@@ -173,12 +173,12 @@ Partial Class AddVehicle
         Label3.TabIndex = 3
         Label3.Text = "Fuel consumption/km"
         ' 
-        ' TextBox2
+        ' FuelTextBox
         ' 
-        TextBox2.Location = New Point(15, 226)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(400, 27)
-        TextBox2.TabIndex = 2
+        FuelTextBox.Location = New Point(15, 226)
+        FuelTextBox.Name = "FuelTextBox"
+        FuelTextBox.Size = New Size(400, 27)
+        FuelTextBox.TabIndex = 2
         ' 
         ' Label2
         ' 
@@ -190,16 +190,16 @@ Partial Class AddVehicle
         Label2.TabIndex = 1
         Label2.Text = "Number Plate"
         ' 
-        ' TextBox1
+        ' NumberPlateTextBox
         ' 
-        TextBox1.Location = New Point(15, 138)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(400, 27)
-        TextBox1.TabIndex = 0
+        NumberPlateTextBox.Location = New Point(15, 138)
+        NumberPlateTextBox.Name = "NumberPlateTextBox"
+        NumberPlateTextBox.Size = New Size(400, 27)
+        NumberPlateTextBox.TabIndex = 0
         ' 
         ' AddVehicle
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(455, 597)
         ControlBox = False
@@ -217,12 +217,12 @@ Partial Class AddVehicle
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents exitButton As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents NumberPlateTextBox As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents AvailabilityTextBox As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents FuelTextBox As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents DateTimePicker1 As DateTimePicker
