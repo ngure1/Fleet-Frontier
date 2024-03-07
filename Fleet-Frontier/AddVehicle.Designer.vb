@@ -76,6 +76,7 @@ Partial Class AddVehicle
         Label1.AutoSize = True
         Label1.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(47, 4)
+
         Label1.Name = "Label1"
         Label1.Size = New Size(99, 37)
         Label1.TabIndex = 0
@@ -109,6 +110,7 @@ Partial Class AddVehicle
         Button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Gabriola", 9F, FontStyle.Bold)
+
         Button2.ForeColor = Color.Black
         Button2.Location = New Point(247, 444)
         Button2.Name = "Button2"
@@ -125,6 +127,7 @@ Partial Class AddVehicle
         Button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Gabriola", 9F, FontStyle.Bold)
+
         Button1.ForeColor = Color.Red
         Button1.Location = New Point(84, 444)
         Button1.Name = "Button1"
