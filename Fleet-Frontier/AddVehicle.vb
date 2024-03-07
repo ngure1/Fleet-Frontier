@@ -14,12 +14,16 @@ Public Class AddVehicle
 
         Try
             conn.Open()
-            Dim insertQuery As String = "INSERT INTO vehicle (numberPlate, `fuel_cost/km`, is_available, created_at) VALUES (@plate, @fuel, @availability,@time)"
+            Dim insertQuery As String = "INSERT INTO vehicle (numberPlate, `fuel_cost/km`, is_available, created_at) VALUES (@plate, @fuel, @availability, @time)"
             command = New MySqlCommand(insertQuery, conn)
             command.Parameters.AddWithValue("@plate", NumberPlateTextBox.Text)
             command.Parameters.AddWithValue("@fuel", FuelTextBox.Text)
             command.Parameters.AddWithValue("@availability", AvailabilityTextBox.Text)
-            command.Parameters.AddWithValue("@time", DateTimePicker1.Text)
+
+            ' Convert DateTimePicker value to MySQL date format
+            Dim formattedDate As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
+            command.Parameters.AddWithValue("@time", formattedDate)
+
             command.ExecuteNonQuery()
             MessageBox.Show("Vehicle Created Successfully!!!")
         Catch ex As MySqlException
@@ -30,5 +34,4 @@ Public Class AddVehicle
             conn.Close()
         End Try
     End Sub
-
 End Class
