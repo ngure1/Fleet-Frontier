@@ -22,236 +22,263 @@ Partial Class AddStaffForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        AddStaffPanel1 = New Panel()
-        AddStaffCloseButton = New Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddStaffForm))
+        ControlBoxPanel = New Panel()
+        ControlBoxIcon = New PictureBox()
+        CloseButton = New Button()
         AddStaffLabel = New Label()
-        AddStaffPanel2 = New Panel()
-        AddStaffTypeComboBox = New ComboBox()
-        AddStaffDateTimePicker = New DateTimePicker()
-        AddStaffDateLabel = New Label()
-        AddStaffCancelButton = New Button()
-        AddStaffButton = New Button()
-        AddStaffAvailabilityTextBox = New TextBox()
-        AddStaffPhoneTextBox = New TextBox()
-        AddStaffNameTextBox = New TextBox()
-        AddStaffAvailabilityLabel = New Label()
-        AddStaffTypeLabel = New Label()
-        AddStaffPhoneLabel = New Label()
-        AddStaffNameLabel = New Label()
-        AddStaffPanel1.SuspendLayout()
-        AddStaffPanel2.SuspendLayout()
+        BodyPanel = New Panel()
+        TypeComboBox = New ComboBox()
+        StaffDateTimePicker = New DateTimePicker()
+        DateLabel = New Label()
+        CancelButton = New Button()
+        AddStaffConfirmButton = New Button()
+        AvailabilityTextBox = New TextBox()
+        PhoneNumberTextBox = New TextBox()
+        NameTextBox = New TextBox()
+        AvailabilityLabel = New Label()
+        TypeLabel = New Label()
+        PhoneNumberLabel = New Label()
+        NameLabel = New Label()
+        ControlBoxPanel.SuspendLayout()
+        CType(ControlBoxIcon, ComponentModel.ISupportInitialize).BeginInit()
+        BodyPanel.SuspendLayout()
         SuspendLayout()
         ' 
-        ' AddStaffPanel1
+        ' ControlBoxPanel
         ' 
-        AddStaffPanel1.BackColor = Color.Gray
-        AddStaffPanel1.BorderStyle = BorderStyle.FixedSingle
-        AddStaffPanel1.Controls.Add(AddStaffCloseButton)
-        AddStaffPanel1.Controls.Add(AddStaffLabel)
-        AddStaffPanel1.Dock = DockStyle.Top
-        AddStaffPanel1.Location = New Point(20, 20)
-        AddStaffPanel1.Name = "AddStaffPanel1"
-        AddStaffPanel1.Size = New Size(564, 42)
-        AddStaffPanel1.TabIndex = 10
+        ControlBoxPanel.BackColor = Color.Gray
+        ControlBoxPanel.BorderStyle = BorderStyle.FixedSingle
+        ControlBoxPanel.Controls.Add(ControlBoxIcon)
+        ControlBoxPanel.Controls.Add(CloseButton)
+        ControlBoxPanel.Controls.Add(AddStaffLabel)
+        ControlBoxPanel.Dock = DockStyle.Top
+        ControlBoxPanel.Location = New Point(0, 0)
+        ControlBoxPanel.Margin = New Padding(3, 4, 3, 4)
+        ControlBoxPanel.Name = "ControlBoxPanel"
+        ControlBoxPanel.Size = New Size(516, 55)
+        ControlBoxPanel.TabIndex = 10
         ' 
-        ' AddStaffCloseButton
+        ' ControlBoxIcon
         ' 
-        AddStaffCloseButton.BackColor = Color.Gray
-        AddStaffCloseButton.Dock = DockStyle.Right
-        AddStaffCloseButton.FlatAppearance.BorderSize = 0
-        AddStaffCloseButton.FlatAppearance.MouseOverBackColor = Color.Silver
-        AddStaffCloseButton.FlatStyle = FlatStyle.Flat
-        AddStaffCloseButton.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        AddStaffCloseButton.Location = New Point(487, 0)
-        AddStaffCloseButton.Name = "AddStaffCloseButton"
-        AddStaffCloseButton.Size = New Size(75, 40)
-        AddStaffCloseButton.TabIndex = 1
-        AddStaffCloseButton.Text = "X"
-        AddStaffCloseButton.UseVisualStyleBackColor = False
+        ControlBoxIcon.Dock = DockStyle.Left
+        ControlBoxIcon.Image = CType(resources.GetObject("ControlBoxIcon.Image"), Image)
+        ControlBoxIcon.Location = New Point(0, 0)
+        ControlBoxIcon.Name = "ControlBoxIcon"
+        ControlBoxIcon.Size = New Size(53, 53)
+        ControlBoxIcon.SizeMode = PictureBoxSizeMode.StretchImage
+        ControlBoxIcon.TabIndex = 2
+        ControlBoxIcon.TabStop = False
+        ' 
+        ' CloseButton
+        ' 
+        CloseButton.BackColor = Color.Gray
+        CloseButton.Dock = DockStyle.Right
+        CloseButton.FlatAppearance.BorderSize = 0
+        CloseButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        CloseButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
+        CloseButton.FlatStyle = FlatStyle.Flat
+        CloseButton.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        CloseButton.Location = New Point(474, 0)
+        CloseButton.Margin = New Padding(3, 4, 3, 4)
+        CloseButton.Name = "CloseButton"
+        CloseButton.Size = New Size(40, 53)
+        CloseButton.TabIndex = 1
+        CloseButton.Text = "X"
+        CloseButton.UseVisualStyleBackColor = False
         ' 
         ' AddStaffLabel
         ' 
         AddStaffLabel.AutoSize = True
         AddStaffLabel.BackColor = Color.Gray
-        AddStaffLabel.Dock = DockStyle.Left
         AddStaffLabel.Font = New Font("Gabriola", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        AddStaffLabel.Location = New Point(0, 0)
+        AddStaffLabel.Location = New Point(46, -1)
         AddStaffLabel.Name = "AddStaffLabel"
-        AddStaffLabel.Padding = New Padding(10)
-        AddStaffLabel.Size = New Size(83, 48)
+        AddStaffLabel.Padding = New Padding(11, 13, 11, 13)
+        AddStaffLabel.Size = New Size(100, 61)
         AddStaffLabel.TabIndex = 0
         AddStaffLabel.Text = "Add Staff"
         ' 
-        ' AddStaffPanel2
+        ' BodyPanel
         ' 
-        AddStaffPanel2.BackColor = Color.Silver
-        AddStaffPanel2.BorderStyle = BorderStyle.FixedSingle
-        AddStaffPanel2.Controls.Add(AddStaffTypeComboBox)
-        AddStaffPanel2.Controls.Add(AddStaffDateTimePicker)
-        AddStaffPanel2.Controls.Add(AddStaffDateLabel)
-        AddStaffPanel2.Controls.Add(AddStaffCancelButton)
-        AddStaffPanel2.Controls.Add(AddStaffButton)
-        AddStaffPanel2.Controls.Add(AddStaffAvailabilityTextBox)
-        AddStaffPanel2.Controls.Add(AddStaffPhoneTextBox)
-        AddStaffPanel2.Controls.Add(AddStaffNameTextBox)
-        AddStaffPanel2.Controls.Add(AddStaffAvailabilityLabel)
-        AddStaffPanel2.Controls.Add(AddStaffTypeLabel)
-        AddStaffPanel2.Controls.Add(AddStaffPhoneLabel)
-        AddStaffPanel2.Controls.Add(AddStaffNameLabel)
-        AddStaffPanel2.Dock = DockStyle.Fill
-        AddStaffPanel2.Location = New Point(20, 62)
-        AddStaffPanel2.Name = "AddStaffPanel2"
-        AddStaffPanel2.Padding = New Padding(10)
-        AddStaffPanel2.Size = New Size(564, 425)
-        AddStaffPanel2.TabIndex = 11
+        BodyPanel.BackColor = Color.Silver
+        BodyPanel.BorderStyle = BorderStyle.FixedSingle
+        BodyPanel.Controls.Add(TypeComboBox)
+        BodyPanel.Controls.Add(StaffDateTimePicker)
+        BodyPanel.Controls.Add(DateLabel)
+        BodyPanel.Controls.Add(CancelButton)
+        BodyPanel.Controls.Add(AddStaffConfirmButton)
+        BodyPanel.Controls.Add(AvailabilityTextBox)
+        BodyPanel.Controls.Add(PhoneNumberTextBox)
+        BodyPanel.Controls.Add(NameTextBox)
+        BodyPanel.Controls.Add(AvailabilityLabel)
+        BodyPanel.Controls.Add(TypeLabel)
+        BodyPanel.Controls.Add(PhoneNumberLabel)
+        BodyPanel.Controls.Add(NameLabel)
+        BodyPanel.Location = New Point(12, 66)
+        BodyPanel.Margin = New Padding(3, 4, 3, 4)
+        BodyPanel.Name = "BodyPanel"
+        BodyPanel.Padding = New Padding(11, 13, 11, 13)
+        BodyPanel.Size = New Size(492, 607)
+        BodyPanel.TabIndex = 11
         ' 
-        ' AddStaffTypeComboBox
+        ' TypeComboBox
         ' 
-        AddStaffTypeComboBox.FormattingEnabled = True
-        AddStaffTypeComboBox.Items.AddRange(New Object() {"Driver", "Conductor"})
-        AddStaffTypeComboBox.Location = New Point(15, 204)
-        AddStaffTypeComboBox.Name = "AddStaffTypeComboBox"
-        AddStaffTypeComboBox.Size = New Size(382, 23)
-        AddStaffTypeComboBox.TabIndex = 9
+        TypeComboBox.FormattingEnabled = True
+        TypeComboBox.Items.AddRange(New Object() {"Driver", "Conductor"})
+        TypeComboBox.Location = New Point(17, 272)
+        TypeComboBox.Margin = New Padding(3, 4, 3, 4)
+        TypeComboBox.Name = "TypeComboBox"
+        TypeComboBox.Size = New Size(436, 28)
+        TypeComboBox.TabIndex = 9
         ' 
-        ' AddStaffDateTimePicker
+        ' StaffDateTimePicker
         ' 
-        AddStaffDateTimePicker.Location = New Point(138, 329)
-        AddStaffDateTimePicker.Name = "AddStaffDateTimePicker"
-        AddStaffDateTimePicker.Size = New Size(200, 23)
-        AddStaffDateTimePicker.TabIndex = 8
+        StaffDateTimePicker.Location = New Point(125, 439)
+        StaffDateTimePicker.Margin = New Padding(3, 4, 3, 4)
+        StaffDateTimePicker.Name = "StaffDateTimePicker"
+        StaffDateTimePicker.Size = New Size(246, 27)
+        StaffDateTimePicker.TabIndex = 8
         ' 
-        ' AddStaffDateLabel
+        ' DateLabel
         ' 
-        AddStaffDateLabel.AutoSize = True
-        AddStaffDateLabel.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        AddStaffDateLabel.Location = New Point(91, 329)
-        AddStaffDateLabel.Name = "AddStaffDateLabel"
-        AddStaffDateLabel.Size = New Size(41, 29)
-        AddStaffDateLabel.TabIndex = 3
-        AddStaffDateLabel.Text = "Date"
+        DateLabel.AutoSize = True
+        DateLabel.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        DateLabel.Location = New Point(69, 429)
+        DateLabel.Name = "DateLabel"
+        DateLabel.Size = New Size(50, 37)
+        DateLabel.TabIndex = 3
+        DateLabel.Text = "Date"
         ' 
-        ' AddStaffCancelButton
+        ' CancelButton
         ' 
-        AddStaffCancelButton.BackColor = Color.Gray
-        AddStaffCancelButton.FlatAppearance.BorderSize = 0
-        AddStaffCancelButton.FlatAppearance.MouseOverBackColor = Color.Silver
-        AddStaffCancelButton.FlatStyle = FlatStyle.Flat
-        AddStaffCancelButton.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        AddStaffCancelButton.ForeColor = Color.Red
-        AddStaffCancelButton.Location = New Point(102, 375)
-        AddStaffCancelButton.Name = "AddStaffCancelButton"
-        AddStaffCancelButton.Size = New Size(85, 38)
-        AddStaffCancelButton.TabIndex = 5
-        AddStaffCancelButton.Text = "Cancel"
-        AddStaffCancelButton.UseVisualStyleBackColor = False
+        CancelButton.BackColor = Color.Gray
+        CancelButton.FlatAppearance.BorderSize = 0
+        CancelButton.FlatAppearance.MouseOverBackColor = Color.Silver
+        CancelButton.FlatStyle = FlatStyle.Flat
+        CancelButton.Font = New Font("Gabriola", 9F, FontStyle.Bold)
+        CancelButton.ForeColor = Color.Red
+        CancelButton.Location = New Point(87, 500)
+        CancelButton.Margin = New Padding(3, 4, 3, 4)
+        CancelButton.Name = "CancelButton"
+        CancelButton.Size = New Size(98, 35)
+        CancelButton.TabIndex = 5
+        CancelButton.Text = "Cancel"
+        CancelButton.UseVisualStyleBackColor = False
         ' 
-        ' AddStaffButton
+        ' AddStaffConfirmButton
         ' 
-        AddStaffButton.BackColor = Color.Gray
-        AddStaffButton.FlatAppearance.BorderSize = 0
-        AddStaffButton.FlatAppearance.MouseOverBackColor = Color.Silver
-        AddStaffButton.FlatStyle = FlatStyle.Flat
-        AddStaffButton.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        AddStaffButton.Location = New Point(299, 375)
-        AddStaffButton.Name = "AddStaffButton"
-        AddStaffButton.Size = New Size(83, 38)
-        AddStaffButton.TabIndex = 6
-        AddStaffButton.Text = "Add"
-        AddStaffButton.UseVisualStyleBackColor = False
+        AddStaffConfirmButton.BackColor = Color.Gray
+        AddStaffConfirmButton.FlatAppearance.BorderSize = 0
+        AddStaffConfirmButton.FlatAppearance.MouseOverBackColor = Color.Silver
+        AddStaffConfirmButton.FlatStyle = FlatStyle.Flat
+        AddStaffConfirmButton.Font = New Font("Gabriola", 9F, FontStyle.Bold)
+        AddStaffConfirmButton.Location = New Point(273, 500)
+        AddStaffConfirmButton.Margin = New Padding(3, 4, 3, 4)
+        AddStaffConfirmButton.Name = "AddStaffConfirmButton"
+        AddStaffConfirmButton.Size = New Size(98, 35)
+        AddStaffConfirmButton.TabIndex = 6
+        AddStaffConfirmButton.Text = "Add"
+        AddStaffConfirmButton.UseVisualStyleBackColor = False
         ' 
-        ' AddStaffAvailabilityTextBox
+        ' AvailabilityTextBox
         ' 
-        AddStaffAvailabilityTextBox.Location = New Point(15, 282)
-        AddStaffAvailabilityTextBox.Name = "AddStaffAvailabilityTextBox"
-        AddStaffAvailabilityTextBox.Size = New Size(386, 23)
-        AddStaffAvailabilityTextBox.TabIndex = 7
+        AvailabilityTextBox.Location = New Point(17, 376)
+        AvailabilityTextBox.Margin = New Padding(3, 4, 3, 4)
+        AvailabilityTextBox.Name = "AvailabilityTextBox"
+        AvailabilityTextBox.Size = New Size(441, 27)
+        AvailabilityTextBox.TabIndex = 7
         ' 
-        ' AddStaffPhoneTextBox
+        ' PhoneNumberTextBox
         ' 
-        AddStaffPhoneTextBox.Location = New Point(13, 127)
-        AddStaffPhoneTextBox.Name = "AddStaffPhoneTextBox"
-        AddStaffPhoneTextBox.Size = New Size(384, 23)
-        AddStaffPhoneTextBox.TabIndex = 5
+        PhoneNumberTextBox.Location = New Point(15, 169)
+        PhoneNumberTextBox.Margin = New Padding(3, 4, 3, 4)
+        PhoneNumberTextBox.Name = "PhoneNumberTextBox"
+        PhoneNumberTextBox.Size = New Size(438, 27)
+        PhoneNumberTextBox.TabIndex = 5
         ' 
-        ' AddStaffNameTextBox
+        ' NameTextBox
         ' 
-        AddStaffNameTextBox.Location = New Point(13, 53)
-        AddStaffNameTextBox.Name = "AddStaffNameTextBox"
-        AddStaffNameTextBox.Size = New Size(384, 23)
-        AddStaffNameTextBox.TabIndex = 4
+        NameTextBox.Location = New Point(15, 71)
+        NameTextBox.Margin = New Padding(3, 4, 3, 4)
+        NameTextBox.Name = "NameTextBox"
+        NameTextBox.Size = New Size(438, 27)
+        NameTextBox.TabIndex = 4
         ' 
-        ' AddStaffAvailabilityLabel
+        ' AvailabilityLabel
         ' 
-        AddStaffAvailabilityLabel.AutoSize = True
-        AddStaffAvailabilityLabel.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        AddStaffAvailabilityLabel.Location = New Point(46, 250)
-        AddStaffAvailabilityLabel.Name = "AddStaffAvailabilityLabel"
-        AddStaffAvailabilityLabel.Size = New Size(80, 29)
-        AddStaffAvailabilityLabel.TabIndex = 3
-        AddStaffAvailabilityLabel.Text = "Availability"
+        AvailabilityLabel.AutoSize = True
+        AvailabilityLabel.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        AvailabilityLabel.Location = New Point(20, 338)
+        AvailabilityLabel.Name = "AvailabilityLabel"
+        AvailabilityLabel.Size = New Size(99, 37)
+        AvailabilityLabel.TabIndex = 3
+        AvailabilityLabel.Text = "Availability"
         ' 
-        ' AddStaffTypeLabel
+        ' TypeLabel
         ' 
-        AddStaffTypeLabel.AutoSize = True
-        AddStaffTypeLabel.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        AddStaffTypeLabel.Location = New Point(46, 172)
-        AddStaffTypeLabel.Name = "AddStaffTypeLabel"
-        AddStaffTypeLabel.Size = New Size(39, 29)
-        AddStaffTypeLabel.TabIndex = 2
-        AddStaffTypeLabel.Text = "Type"
+        TypeLabel.AutoSize = True
+        TypeLabel.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        TypeLabel.Location = New Point(17, 231)
+        TypeLabel.Name = "TypeLabel"
+        TypeLabel.Size = New Size(49, 37)
+        TypeLabel.TabIndex = 2
+        TypeLabel.Text = "Type"
         ' 
-        ' AddStaffPhoneLabel
+        ' PhoneNumberLabel
         ' 
-        AddStaffPhoneLabel.AutoSize = True
-        AddStaffPhoneLabel.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        AddStaffPhoneLabel.Location = New Point(46, 95)
-        AddStaffPhoneLabel.Name = "AddStaffPhoneLabel"
-        AddStaffPhoneLabel.Size = New Size(100, 29)
-        AddStaffPhoneLabel.TabIndex = 1
-        AddStaffPhoneLabel.Text = "Phone number"
+        PhoneNumberLabel.AutoSize = True
+        PhoneNumberLabel.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        PhoneNumberLabel.Location = New Point(14, 128)
+        PhoneNumberLabel.Name = "PhoneNumberLabel"
+        PhoneNumberLabel.Size = New Size(119, 37)
+        PhoneNumberLabel.TabIndex = 1
+        PhoneNumberLabel.Text = "Phone number"
         ' 
-        ' AddStaffNameLabel
+        ' NameLabel
         ' 
-        AddStaffNameLabel.AutoSize = True
-        AddStaffNameLabel.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        AddStaffNameLabel.Location = New Point(46, 21)
-        AddStaffNameLabel.Name = "AddStaffNameLabel"
-        AddStaffNameLabel.Size = New Size(46, 29)
-        AddStaffNameLabel.TabIndex = 0
-        AddStaffNameLabel.Text = "Name"
+        NameLabel.AutoSize = True
+        NameLabel.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        NameLabel.Location = New Point(14, 30)
+        NameLabel.Name = "NameLabel"
+        NameLabel.Size = New Size(57, 37)
+        NameLabel.TabIndex = 0
+        NameLabel.Text = "Name"
         ' 
         ' AddStaffForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(604, 507)
-        Controls.Add(AddStaffPanel2)
-        Controls.Add(AddStaffPanel1)
+        ClientSize = New Size(516, 676)
+        ControlBox = False
+        Controls.Add(BodyPanel)
+        Controls.Add(ControlBoxPanel)
+        FormBorderStyle = FormBorderStyle.FixedSingle
+        Margin = New Padding(3, 4, 3, 4)
         Name = "AddStaffForm"
-        Padding = New Padding(20)
-        Text = "Add Staff"
-        AddStaffPanel1.ResumeLayout(False)
-        AddStaffPanel1.PerformLayout()
-        AddStaffPanel2.ResumeLayout(False)
-        AddStaffPanel2.PerformLayout()
+        ControlBoxPanel.ResumeLayout(False)
+        ControlBoxPanel.PerformLayout()
+        CType(ControlBoxIcon, ComponentModel.ISupportInitialize).EndInit()
+        BodyPanel.ResumeLayout(False)
+        BodyPanel.PerformLayout()
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents AddStaffPanel1 As Panel
-    Friend WithEvents AddStaffPanel2 As Panel
-    Friend WithEvents AddStaffTypeComboBox As ComboBox
-    Friend WithEvents AddStaffDateTimePicker As DateTimePicker
-    Friend WithEvents AddStaffDateLabel As Label
-    Friend WithEvents AddStaffCancelButton As Button
-    Friend WithEvents AddStaffButton As Button
-    Friend WithEvents AddStaffAvailabilityTextBox As TextBox
-    Friend WithEvents AddStaffPhoneTextBox As TextBox
-    Friend WithEvents AddStaffNameTextBox As TextBox
-    Friend WithEvents AddStaffAvailabilityLabel As Label
-    Friend WithEvents AddStaffTypeLabel As Label
-    Friend WithEvents AddStaffPhoneLabel As Label
-    Friend WithEvents AddStaffNameLabel As Label
+    Friend WithEvents ControlBoxPanel As Panel
+    Friend WithEvents BodyPanel As Panel
+    Friend WithEvents TypeComboBox As ComboBox
+    Friend WithEvents StaffDateTimePicker As DateTimePicker
+    Friend WithEvents DateLabel As Label
+    Friend WithEvents CancelButton As Button
+    Friend WithEvents AddStaffConfirmButton As Button
+    Friend WithEvents AvailabilityTextBox As TextBox
+    Friend WithEvents PhoneNumberTextBox As TextBox
+    Friend WithEvents NameTextBox As TextBox
+    Friend WithEvents AvailabilityLabel As Label
+    Friend WithEvents TypeLabel As Label
+    Friend WithEvents PhoneNumberLabel As Label
+    Friend WithEvents NameLabel As Label
     Friend WithEvents AddStaffLabel As Label
-    Friend WithEvents AddStaffCloseButton As Button
+    Friend WithEvents CloseButton As Button
+    Friend WithEvents ControlBoxIcon As PictureBox
 End Class

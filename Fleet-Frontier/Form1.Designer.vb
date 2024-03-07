@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class MainForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         controlBarPanel = New Panel()
         minimizeButton = New Button()
         controlBarLabel = New Label()
@@ -39,11 +39,11 @@ Partial Class Form1
         busLogo = New PictureBox()
         logoLabel = New Label()
         logoutButton = New Button()
-        footerPanel = New Panel()
-        headerPanel = New Panel()
         middlePanel = New Panel()
         Panel1 = New Panel()
+        BodyPanel = New Panel()
         VehiclesUserControl1 = New VehiclesUserControl()
+        StaffUserControl1 = New StaffUserControl()
         WelcomeLabel = New Label()
         controlBarPanel.SuspendLayout()
         CType(controlBarIcon, ComponentModel.ISupportInitialize).BeginInit()
@@ -53,6 +53,7 @@ Partial Class Form1
         CType(busLogo, ComponentModel.ISupportInitialize).BeginInit()
         middlePanel.SuspendLayout()
         Panel1.SuspendLayout()
+        BodyPanel.SuspendLayout()
         SuspendLayout()
         ' 
         ' controlBarPanel
@@ -316,24 +317,6 @@ Partial Class Form1
         logoutButton.TextImageRelation = TextImageRelation.ImageBeforeText
         logoutButton.UseVisualStyleBackColor = True
         ' 
-        ' footerPanel
-        ' 
-        footerPanel.BackColor = Color.DarkGray
-        footerPanel.Location = New Point(223, 660)
-        footerPanel.Margin = New Padding(2, 3, 2, 3)
-        footerPanel.Name = "footerPanel"
-        footerPanel.Size = New Size(1018, 35)
-        footerPanel.TabIndex = 1
-        ' 
-        ' headerPanel
-        ' 
-        headerPanel.BackColor = Color.Silver
-        headerPanel.Location = New Point(223, 34)
-        headerPanel.Margin = New Padding(2, 3, 2, 3)
-        headerPanel.Name = "headerPanel"
-        headerPanel.Size = New Size(1018, 53)
-        headerPanel.TabIndex = 2
-        ' 
         ' middlePanel
         ' 
         middlePanel.Controls.Add(Panel1)
@@ -345,7 +328,7 @@ Partial Class Form1
         ' 
         ' Panel1
         ' 
-        Panel1.Controls.Add(VehiclesUserControl1)
+        Panel1.Controls.Add(BodyPanel)
         Panel1.Controls.Add(sideBar)
         Panel1.Controls.Add(WelcomeLabel)
         Panel1.Dock = DockStyle.Fill
@@ -354,14 +337,34 @@ Partial Class Form1
         Panel1.Size = New Size(1241, 661)
         Panel1.TabIndex = 1
         ' 
+        ' BodyPanel
+        ' 
+        BodyPanel.BackColor = Color.White
+        BodyPanel.Controls.Add(VehiclesUserControl1)
+        BodyPanel.Controls.Add(StaffUserControl1)
+        BodyPanel.Dock = DockStyle.Fill
+        BodyPanel.Location = New Point(217, 0)
+        BodyPanel.Name = "BodyPanel"
+        BodyPanel.Size = New Size(1024, 661)
+        BodyPanel.TabIndex = 1
+        ' 
         ' VehiclesUserControl1
         ' 
         VehiclesUserControl1.Dock = DockStyle.Fill
-        VehiclesUserControl1.Location = New Point(217, 0)
+        VehiclesUserControl1.Location = New Point(0, 0)
         VehiclesUserControl1.Name = "VehiclesUserControl1"
         VehiclesUserControl1.Padding = New Padding(20)
         VehiclesUserControl1.Size = New Size(1024, 661)
         VehiclesUserControl1.TabIndex = 1
+        ' 
+        ' StaffUserControl1
+        ' 
+        StaffUserControl1.Dock = DockStyle.Fill
+        StaffUserControl1.Location = New Point(0, 0)
+        StaffUserControl1.Name = "StaffUserControl1"
+        StaffUserControl1.Padding = New Padding(20)
+        StaffUserControl1.Size = New Size(1024, 661)
+        StaffUserControl1.TabIndex = 0
         ' 
         ' WelcomeLabel
         ' 
@@ -374,21 +377,20 @@ Partial Class Form1
         WelcomeLabel.Size = New Size(0, 31)
         WelcomeLabel.TabIndex = 0
         ' 
-        ' Form1
+        ' MainForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 19F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1241, 695)
         ControlBox = False
         Controls.Add(middlePanel)
-        Controls.Add(headerPanel)
-        Controls.Add(footerPanel)
         Controls.Add(controlBarPanel)
         Font = New Font("Impact", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(2, 3, 2, 3)
         MinimizeBox = False
-        Name = "Form1"
+        MinimumSize = New Size(712, 561)
+        Name = "MainForm"
         ShowIcon = False
         StartPosition = FormStartPosition.CenterScreen
         controlBarPanel.ResumeLayout(False)
@@ -402,13 +404,12 @@ Partial Class Form1
         middlePanel.ResumeLayout(False)
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        BodyPanel.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents controlBarPanel As Panel
     Friend WithEvents sideBar As Panel
-    Friend WithEvents footerPanel As Panel
-    Friend WithEvents headerPanel As Panel
     Friend WithEvents controlBarLabel As Label
     Friend WithEvents exitButton As Button
     Friend WithEvents controlBarIcon As PictureBox
@@ -426,6 +427,8 @@ Partial Class Form1
     Friend WithEvents rentButton As Button
     Friend WithEvents VehicleButton As Button
     Friend WithEvents StaffButton As Button
+    Friend WithEvents BodyPanel As Panel
+    Friend WithEvents StaffUserControl1 As StaffUserControl
     Friend WithEvents VehiclesUserControl1 As VehiclesUserControl
 
 End Class

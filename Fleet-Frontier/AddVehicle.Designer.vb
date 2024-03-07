@@ -22,6 +22,7 @@ Partial Class AddVehicle
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddVehicle))
         Panel1 = New Panel()
         exitButton = New Button()
         Label1 = New Label()
@@ -36,13 +37,16 @@ Partial Class AddVehicle
         FuelTextBox = New TextBox()
         Label2 = New Label()
         NumberPlateTextBox = New TextBox()
+        PictureBox1 = New PictureBox()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
         Panel1.BackColor = Color.Gray
+        Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(exitButton)
         Panel1.Controls.Add(Label1)
         Panel1.Dock = DockStyle.Top
@@ -71,7 +75,8 @@ Partial Class AddVehicle
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(3, 7)
+        Label1.Location = New Point(47, 4)
+
         Label1.Name = "Label1"
         Label1.Size = New Size(99, 37)
         Label1.TabIndex = 0
@@ -104,7 +109,8 @@ Partial Class AddVehicle
         Button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         Button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         Button2.FlatStyle = FlatStyle.Flat
-        Button2.Font = New Font("Gabriola", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button2.Font = New Font("Gabriola", 9F, FontStyle.Bold)
+
         Button2.ForeColor = Color.Black
         Button2.Location = New Point(247, 444)
         Button2.Name = "Button2"
@@ -120,7 +126,8 @@ Partial Class AddVehicle
         Button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         Button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
         Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Gabriola", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button1.Font = New Font("Gabriola", 9F, FontStyle.Bold)
+
         Button1.ForeColor = Color.Red
         Button1.Location = New Point(84, 444)
         Button1.Name = "Button1"
@@ -197,6 +204,17 @@ Partial Class AddVehicle
         NumberPlateTextBox.Size = New Size(400, 27)
         NumberPlateTextBox.TabIndex = 0
         ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Dock = DockStyle.Left
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(0, 0)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(44, 44)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 6
+        PictureBox1.TabStop = False
+        ' 
         ' AddVehicle
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -205,11 +223,13 @@ Partial Class AddVehicle
         ControlBox = False
         Controls.Add(Panel2)
         Controls.Add(Panel1)
+        FormBorderStyle = FormBorderStyle.FixedSingle
         Name = "AddVehicle"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -227,4 +247,5 @@ Partial Class AddVehicle
     Friend WithEvents Button1 As Button
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Button2 As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
