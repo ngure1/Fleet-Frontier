@@ -26,7 +26,8 @@ CREATE TABLE hire(
 CREATE TABLE trip(
     trip_id INT AUTO_INCREMENT,
     vehicle_id INT,
-    route_name VARCHAR(50) NOT NULL,
+    trip_from VARCHAR(50) NOT NULL,
+    trip_to VARCHAR(50) NOT NULL,
     trip_No INT NOT NULL,
     trip_start_time TIME NOT NULL,
     has_arrived BOOLEAN NOT NULL,
@@ -38,9 +39,11 @@ CREATE TABLE trip(
 
 CREATE TABLE employee(
     employee_id INT AUTO_INCREMENT,
-    Employee_type VARCHAR(50) NOT NULL,
-    Employee_phone_number VARCHAR(10) NOT NULL,
-    Is_available BOOLEAN NOT NULL,
+    employee_name VARCHAR(50) NOT NULL,
+    employee_type VARCHAR(50) NOT NULL,
+    employee_phone_number VARCHAR(10) NOT NULL,
+    is_available BOOLEAN NOT NULL,
+    date_of_entry DATE,
 
     PRIMARY KEY(employee_id)
 );
