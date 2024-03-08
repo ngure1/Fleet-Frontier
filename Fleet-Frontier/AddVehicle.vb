@@ -5,7 +5,7 @@ Public Class AddVehicle
     Dim command As MySqlCommand
 
     Private Sub exitButton_Click(sender As Object, e As EventArgs) Handles exitButton.Click
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -37,5 +37,11 @@ Public Class AddVehicle
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
+    End Sub
+
+    Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
+        NumberPlateTextBox.Text = ""
+        FuelTextBox.Text = ""
+        AvailabilityTextBox.Text = ""
     End Sub
 End Class
