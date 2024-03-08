@@ -5,7 +5,7 @@ Public Class AddStaffForm
     Dim command As MySqlCommand
 
     Private Sub AddStaffCloseButton_Click(sender As Object, e As EventArgs) Handles CloseButton.Click
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub AddStaffConfirmButton_Click(sender As Object, e As EventArgs) Handles AddStaffConfirmButton.Click
@@ -34,5 +34,13 @@ Public Class AddStaffForm
         Finally
             conn.Close()
         End Try
+    End Sub
+
+    Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
+        NameTextBox.Text = ""
+        PhoneNumberTextBox.Text = ""
+        TypeComboBox.SelectedIndex = -1
+        TypeComboBox.Text = ""
+        AvailabilityTextBox.Text = ""
     End Sub
 End Class

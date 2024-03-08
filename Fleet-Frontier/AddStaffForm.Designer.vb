@@ -40,6 +40,7 @@ Partial Class AddStaffForm
         TypeLabel = New Label()
         PhoneNumberLabel = New Label()
         NameLabel = New Label()
+        ClearButton = New Button()
         ControlBoxPanel.SuspendLayout()
         CType(ControlBoxIcon, ComponentModel.ISupportInitialize).BeginInit()
         BodyPanel.SuspendLayout()
@@ -93,7 +94,7 @@ Partial Class AddStaffForm
         AddStaffLabel.Font = New Font("Gabriola", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         AddStaffLabel.Location = New Point(40, -1)
         AddStaffLabel.Name = "AddStaffLabel"
-        AddStaffLabel.Padding = New Padding(10, 10, 10, 10)
+        AddStaffLabel.Padding = New Padding(10)
         AddStaffLabel.Size = New Size(83, 48)
         AddStaffLabel.TabIndex = 0
         AddStaffLabel.Text = "Add Staff"
@@ -102,6 +103,7 @@ Partial Class AddStaffForm
         ' 
         BodyPanel.BackColor = Color.Silver
         BodyPanel.BorderStyle = BorderStyle.FixedSingle
+        BodyPanel.Controls.Add(ClearButton)
         BodyPanel.Controls.Add(TypeComboBox)
         BodyPanel.Controls.Add(StaffDateTimePicker)
         BodyPanel.Controls.Add(DateLabel)
@@ -116,7 +118,7 @@ Partial Class AddStaffForm
         BodyPanel.Controls.Add(NameLabel)
         BodyPanel.Location = New Point(10, 50)
         BodyPanel.Name = "BodyPanel"
-        BodyPanel.Padding = New Padding(10, 10, 10, 10)
+        BodyPanel.Padding = New Padding(10)
         BodyPanel.Size = New Size(431, 456)
         BodyPanel.TabIndex = 11
         ' 
@@ -124,7 +126,7 @@ Partial Class AddStaffForm
         ' 
         TypeComboBox.FormattingEnabled = True
         TypeComboBox.Items.AddRange(New Object() {"Driver", "Conductor"})
-        TypeComboBox.Location = New Point(15, 204)
+        TypeComboBox.Location = New Point(12, 205)
         TypeComboBox.Name = "TypeComboBox"
         TypeComboBox.Size = New Size(382, 23)
         TypeComboBox.TabIndex = 9
@@ -154,7 +156,7 @@ Partial Class AddStaffForm
         CancelButton.FlatStyle = FlatStyle.Flat
         CancelButton.Font = New Font("Gabriola", 9F, FontStyle.Bold)
         CancelButton.ForeColor = Color.Red
-        CancelButton.Location = New Point(76, 375)
+        CancelButton.Location = New Point(157, 375)
         CancelButton.Name = "CancelButton"
         CancelButton.Size = New Size(86, 26)
         CancelButton.TabIndex = 5
@@ -168,7 +170,7 @@ Partial Class AddStaffForm
         AddStaffConfirmButton.FlatAppearance.MouseOverBackColor = Color.Silver
         AddStaffConfirmButton.FlatStyle = FlatStyle.Flat
         AddStaffConfirmButton.Font = New Font("Gabriola", 9F, FontStyle.Bold)
-        AddStaffConfirmButton.Location = New Point(239, 375)
+        AddStaffConfirmButton.Location = New Point(311, 375)
         AddStaffConfirmButton.Name = "AddStaffConfirmButton"
         AddStaffConfirmButton.Size = New Size(86, 26)
         AddStaffConfirmButton.TabIndex = 6
@@ -177,7 +179,7 @@ Partial Class AddStaffForm
         ' 
         ' AvailabilityTextBox
         ' 
-        AvailabilityTextBox.Location = New Point(15, 282)
+        AvailabilityTextBox.Location = New Point(12, 286)
         AvailabilityTextBox.Name = "AvailabilityTextBox"
         AvailabilityTextBox.Size = New Size(386, 23)
         AvailabilityTextBox.TabIndex = 7
@@ -236,6 +238,21 @@ Partial Class AddStaffForm
         NameLabel.TabIndex = 0
         NameLabel.Text = "Name"
         ' 
+        ' ClearButton
+        ' 
+        ClearButton.BackColor = Color.Gray
+        ClearButton.FlatAppearance.BorderSize = 0
+        ClearButton.FlatAppearance.MouseOverBackColor = Color.Silver
+        ClearButton.FlatStyle = FlatStyle.Flat
+        ClearButton.Font = New Font("Gabriola", 9F, FontStyle.Bold)
+        ClearButton.ForeColor = Color.Blue
+        ClearButton.Location = New Point(12, 375)
+        ClearButton.Name = "ClearButton"
+        ClearButton.Size = New Size(86, 26)
+        ClearButton.TabIndex = 10
+        ClearButton.Text = "Clear"
+        ClearButton.UseVisualStyleBackColor = False
+        ' 
         ' AddStaffForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -271,4 +288,5 @@ Partial Class AddStaffForm
     Friend WithEvents AddStaffLabel As Label
     Friend WithEvents CloseButton As Button
     Friend WithEvents ControlBoxIcon As PictureBox
+    Friend WithEvents ClearButton As Button
 End Class
