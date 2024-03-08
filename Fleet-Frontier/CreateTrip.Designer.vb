@@ -24,9 +24,9 @@ Partial Class CreateTrip
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CreateTrip))
         Panel2 = New Panel()
-        ToComboBox = New ComboBox()
+        TripToComboBox = New ComboBox()
         ToLabel = New Label()
-        ComboBox1 = New ComboBox()
+        TripFromComboBox = New ComboBox()
         FromLabel = New Label()
         ConductorComboBox = New ComboBox()
         DriverComboBox = New ComboBox()
@@ -49,9 +49,9 @@ Partial Class CreateTrip
         ' 
         Panel2.BackColor = Color.Silver
         Panel2.BorderStyle = BorderStyle.FixedSingle
-        Panel2.Controls.Add(ToComboBox)
+        Panel2.Controls.Add(TripToComboBox)
         Panel2.Controls.Add(ToLabel)
-        Panel2.Controls.Add(ComboBox1)
+        Panel2.Controls.Add(TripFromComboBox)
         Panel2.Controls.Add(FromLabel)
         Panel2.Controls.Add(ConductorComboBox)
         Panel2.Controls.Add(DriverComboBox)
@@ -66,14 +66,14 @@ Partial Class CreateTrip
         Panel2.Size = New Size(449, 553)
         Panel2.TabIndex = 7
         ' 
-        ' ToComboBox
+        ' TripToComboBox
         ' 
-        ToComboBox.FormattingEnabled = True
-        ToComboBox.Location = New Point(244, 79)
-        ToComboBox.Margin = New Padding(1)
-        ToComboBox.Name = "ToComboBox"
-        ToComboBox.Size = New Size(182, 28)
-        ToComboBox.TabIndex = 17
+        TripToComboBox.FormattingEnabled = True
+        TripToComboBox.Location = New Point(244, 79)
+        TripToComboBox.Margin = New Padding(1)
+        TripToComboBox.Name = "TripToComboBox"
+        TripToComboBox.Size = New Size(182, 28)
+        TripToComboBox.TabIndex = 17
         ' 
         ' ToLabel
         ' 
@@ -86,14 +86,14 @@ Partial Class CreateTrip
         ToLabel.TabIndex = 16
         ToLabel.Text = "To"
         ' 
-        ' ComboBox1
+        ' TripFromComboBox
         ' 
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(26, 79)
-        ComboBox1.Margin = New Padding(1)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(182, 28)
-        ComboBox1.TabIndex = 15
+        TripFromComboBox.FormattingEnabled = True
+        TripFromComboBox.Location = New Point(26, 79)
+        TripFromComboBox.Margin = New Padding(1)
+        TripFromComboBox.Name = "TripFromComboBox"
+        TripFromComboBox.Size = New Size(182, 28)
+        TripFromComboBox.TabIndex = 15
         ' 
         ' FromLabel
         ' 
@@ -265,9 +265,9 @@ Partial Class CreateTrip
     End Sub
 
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents ToComboBox As ComboBox
+    Friend WithEvents TripToComboBox As ComboBox
     Friend WithEvents ToLabel As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents TripFromComboBox As ComboBox
     Friend WithEvents FromLabel As Label
     Friend WithEvents ConductorComboBox As ComboBox
     Friend WithEvents DriverComboBox As ComboBox
