@@ -7,11 +7,22 @@ Public Class CreateTrip
     Dim command As MySqlCommand
     Dim ConnectionString As String = "server=localhost;port=33062;userid=root;password='default123';database=fleet_finder"
     Dim adapter As MySqlDataAdapter
-
+    Public Sub New()
+        ' This call is required by the designer.
+        InitializeComponent()
+    End Sub
     Private Sub exitButton_Click(sender As Object, e As EventArgs) Handles exitButton.Click
         Me.Close()
 
     End Sub
+
+    '' Private _tripsUserControl As TripsUserControl
+
+    'Public Sub New(tripsUserControl As TripsUserControl)
+    '   InitializeComponent()
+    '  _tripsUserControl = tripsUserControl
+    'End Sub
+
     Private Sub PopulateVehicleComboBox()
         ' Fetch data for vehicles
         Dim vehicleQuery As String = "SELECT * FROM vehicle WHERE is_available > 0"
@@ -58,9 +69,11 @@ Public Class CreateTrip
         Next
     End Sub
     Private Sub RefreshComboBoxes()
+        'Clear the existing data in combo boxes
         VehicleComboBox.Items.Clear()
         DriverComboBox.Items.Clear()
         ConductorComboBox.Items.Clear()
+        'Populate the combo boxes again
         PopulateVehicleComboBox()
         PopulateDriverComboBox()
         PopulateConductorComboBox()
@@ -143,6 +156,13 @@ Public Class CreateTrip
 
             'Refreshing combo boxes after udating availability
             RefreshComboBoxes()
+
+            'Refreshing data in the view trip user control
+            'If _tripsUserControl IsNot Nothing Then
+            '_tripsUserControl.RefreshTripPanels()
+            'Else
+            'MessageBox.Show("TripsUserControl instance is null.")
+            'End If
 
             MessageBox.Show("Trip started successfully!")
 
