@@ -43,4 +43,31 @@ Public Class AddStaffForm
         TypeComboBox.Text = ""
         AvailabilityTextBox.Text = ""
     End Sub
+
+    Public Sub New()
+        InitializeComponent()
+        Me.StartPosition = FormStartPosition.CenterScreen
+    End Sub
+
+    Dim draggable As Boolean
+    Dim mouseX As Integer
+    Dim mouseY As Integer
+    Private Sub ControlBoxPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles ControlBoxPanel.MouseDown
+        draggable = True
+        mouseX = Cursor.Position.X - Me.Left
+        mouseY = Cursor.Position.Y - Me.Top
+
+    End Sub
+
+    Private Sub ControlBoxPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles ControlBoxPanel.MouseMove
+        If draggable Then
+            Me.Top = Cursor.Position.Y - Me.mouseY
+            Me.Left = Cursor.Position.X - Me.mouseX
+        End If
+    End Sub
+
+    Private Sub ControlBoxPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles ControlBoxPanel.MouseUp
+        draggable = False
+
+    End Sub
 End Class
