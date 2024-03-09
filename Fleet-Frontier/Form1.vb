@@ -79,4 +79,27 @@ Public Class MainForm
         ' Switch between user controls
         AddUserControlToPanel(CurrentUserControl)
     End Sub
+
+
+    Dim draggable As Boolean
+    Dim mouseX As Integer
+    Dim mouseY As Integer
+    Private Sub ControlBarPanel_MouseDown(sender As Object, e As MouseEventArgs) Handles controlBarPanel.MouseDown
+        draggable = True
+        mouseX = Cursor.Position.X - Me.Left
+        mouseY = Cursor.Position.Y - Me.Top
+
+    End Sub
+
+    Private Sub ControlBarPanel_MouseMove(sender As Object, e As MouseEventArgs) Handles controlBarPanel.MouseMove
+        If draggable Then
+            Me.Top = Cursor.Position.Y - Me.mouseY
+            Me.Left = Cursor.Position.X - Me.mouseX
+        End If
+    End Sub
+
+    Private Sub ControlBarPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles controlBarPanel.MouseUp
+        draggable = False
+
+    End Sub
 End Class
