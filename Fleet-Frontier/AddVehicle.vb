@@ -44,4 +44,37 @@ Public Class AddVehicle
         FuelTextBox.Text = ""
         AvailabilityTextBox.Text = ""
     End Sub
+
+
+    Dim draggable As Boolean
+    Dim mouseX As Integer
+    Dim mouseY As Integer
+    Private Sub Panel1_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel1.MouseDown
+        draggable = True
+        mouseX = Cursor.Position.X - Me.Left
+        mouseY = Cursor.Position.Y - Me.Top
+
+    End Sub
+
+    Private Sub Panel1_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel1.MouseMove
+        If draggable Then
+            Me.Top = Cursor.Position.Y - Me.mouseY
+            Me.Left = Cursor.Position.X - Me.mouseX
+        End If
+    End Sub
+
+    Private Sub Panel1_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel1.MouseUp
+        draggable = False
+
+    End Sub
+    Private Sub AddVehicle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Calculate the position to center AddVehicle form relative to Form1
+        Dim mainFormCenterX As Integer = Owner.Location.X + (Owner.Width - Width) \ 2
+        Dim mainFormCenterY As Integer = Owner.Location.Y + (Owner.Height - Height) \ 2
+
+        ' Set the start position of AddVehicle form
+        StartPosition = FormStartPosition.Manual
+        Location = New Point(mainFormCenterX, mainFormCenterY)
+    End Sub
+
 End Class

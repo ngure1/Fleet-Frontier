@@ -7,9 +7,76 @@ Public Class CreateTrip
     Dim command As MySqlCommand
     Dim ConnectionString As String = "server=localhost;port=33062;userid=root;password='default123';database=fleet_finder"
     Dim adapter As MySqlDataAdapter
-
+    Public Sub New()
+        ' This call is required by the designer.
+        InitializeComponent()
+    End Sub
     Private Sub exitButton_Click(sender As Object, e As EventArgs) Handles exitButton.Click
         Me.Close()
+
+    End Sub
+
+    '' Private _tripsUserControl As TripsUserControl
+
+    'Public Sub New(tripsUserControl As TripsUserControl)
+    '   InitializeComponent()
+    '  _tripsUserControl = tripsUserControl
+    'End Sub
+
+    Private Sub PopulateVehicleComboBox()
+        ' Fetch data for vehicles
+        Dim vehicleQuery As String = "SELECT * FROM vehicle WHERE is_available > 0"
+        adapter = New MySqlDataAdapter(vehicleQuery, connection)
+        Dim vehicleTable As New DataTable()
+        adapter.Fill(vehicleTable)
+
+        ' Populate combo box with vehicle data
+        For Each row As DataRow In vehicleTable.Rows
+            Dim vehicleId As Integer = Convert.ToInt32(row("vehicle_id"))
+            Dim numberPlate As String = row("numberPlate").ToString()
+            Dim displayName As String = vehicleId.ToString() & " - " & numberPlate
+            VehicleComboBox.Items.Add(displayName)
+        Next
+    End Sub
+    Private Sub PopulateDriverComboBox()
+        ' Fetch data for drivers
+        Dim driverQuery As String = "SELECT * FROM employee WHERE employee_type = 'Driver' AND is_available > 0"
+        adapter = New MySqlDataAdapter(driverQuery, connection)
+        Dim driverTable As New DataTable()
+        adapter.Fill(driverTable)
+
+        ' Populate combo box with driver data
+        For Each row As DataRow In driverTable.Rows
+            Dim employeeId As Integer = Convert.ToInt32(row("employee_id"))
+            Dim employeeName As String = row("employee_name").ToString()
+            Dim displayName As String = employeeId.ToString() & " - " & employeeName
+            DriverComboBox.Items.Add(displayName)
+        Next
+    End Sub
+    Private Sub PopulateConductorComboBox()
+        ' Fetch data for conductors
+        Dim conductorQuery As String = "SELECT * FROM employee WHERE employee_type = 'Conductor' AND is_available > 0"
+        adapter = New MySqlDataAdapter(conductorQuery, connection)
+        Dim conductorTable As New DataTable()
+        adapter.Fill(conductorTable)
+
+        ' Populate combo box with conductor data
+        For Each row As DataRow In conductorTable.Rows
+            Dim employeeId As Integer = Convert.ToInt32(row("employee_id"))
+            Dim employeeName As String = row("employee_name").ToString()
+            Dim displayName As String = employeeId.ToString() & " - " & employeeName
+            ConductorComboBox.Items.Add(displayName)
+        Next
+    End Sub
+    Private Sub RefreshComboBoxes()
+        'Clear the existing data in combo boxes
+        VehicleComboBox.Items.Clear()
+        DriverComboBox.Items.Clear()
+        ConductorComboBox.Items.Clear()
+        'Populate the combo boxes again
+        PopulateVehicleComboBox()
+        PopulateDriverComboBox()
+        PopulateConductorComboBox()
 
     End Sub
 
@@ -18,50 +85,9 @@ Public Class CreateTrip
         connection = New MySqlConnection(ConnectionString)
         Try
             connection.Open()
-
-            ' Fetch data for vehicles
-            Dim vehicleQuery As String = "SELECT * FROM vehicle WHERE is_available > 0"
-            adapter = New MySqlDataAdapter(vehicleQuery, connection)
-            Dim vehicleTable As New DataTable()
-            adapter.Fill(vehicleTable)
-
-            ' Populate combo box with vehicle data
-            For Each row As DataRow In vehicleTable.Rows
-                Dim vehicleId As Integer = Convert.ToInt32(row("vehicle_id"))
-                Dim numberPlate As String = row("numberPlate").ToString()
-                Dim displayName As String = vehicleId.ToString() & " - " & numberPlate
-                VehicleComboBox.Items.Add(displayName)
-            Next
-
-            ' Fetch data for drivers
-            Dim driverQuery As String = "SELECT * FROM employee WHERE employee_type = 'Driver' AND is_available > 0"
-            adapter = New MySqlDataAdapter(driverQuery, connection)
-            Dim driverTable As New DataTable()
-            adapter.Fill(driverTable)
-
-            ' Populate combo box with driver data
-            For Each row As DataRow In driverTable.Rows
-                Dim employeeId As Integer = Convert.ToInt32(row("employee_id"))
-                Dim employeeName As String = row("employee_name").ToString()
-                Dim displayName As String = employeeId.ToString() & " - " & employeeName
-                DriverComboBox.Items.Add(displayName)
-            Next
-
-
-            ' Fetch data for conductors
-            Dim conductorQuery As String = "SELECT * FROM employee WHERE employee_type = 'Conductor' AND is_available > 0"
-            adapter = New MySqlDataAdapter(conductorQuery, connection)
-            Dim conductorTable As New DataTable()
-            adapter.Fill(conductorTable)
-
-            ' Populate combo box with conductor data
-            For Each row As DataRow In conductorTable.Rows
-                Dim employeeId As Integer = Convert.ToInt32(row("employee_id"))
-                Dim employeeName As String = row("employee_name").ToString()
-                Dim displayName As String = employeeId.ToString() & " - " & employeeName
-                ConductorComboBox.Items.Add(displayName)
-            Next
-
+            PopulateVehicleComboBox()
+            PopulateDriverComboBox()
+            PopulateConductorComboBox()
 
             ' Data stored in an array for TripFrom
             Dim tripFromData As String() = {"Nairobi", "Thika", "Juja"}
@@ -119,6 +145,25 @@ Public Class CreateTrip
             command.Parameters.AddWithValue("@conductorId", conductorId)
             command.ExecuteNonQuery()
 
+            ' Update vehicle, driver, and conductor availability to False
+            Dim updateAvailabilityQuery As String = "UPDATE vehicle SET is_available = 0 WHERE vehicle_id = @vehicleId;" &
+                                                "UPDATE employee SET is_available = 0 WHERE employee_id IN (@driverId, @conductorId);"
+            command = New MySqlCommand(updateAvailabilityQuery, connection)
+            command.Parameters.AddWithValue("@vehicleId", vehicleId)
+            command.Parameters.AddWithValue("@driverId", driverId)
+            command.Parameters.AddWithValue("@conductorId", conductorId)
+            command.ExecuteNonQuery()
+
+            'Refreshing combo boxes after udating availability
+            RefreshComboBoxes()
+
+            'Refreshing data in the view trip user control
+            'If _tripsUserControl IsNot Nothing Then
+            '_tripsUserControl.RefreshTripPanels()
+            'Else
+            'MessageBox.Show("TripsUserControl instance is null.")
+            'End If
+
             MessageBox.Show("Trip started successfully!")
 
         Catch ex As Exception
@@ -140,4 +185,33 @@ Public Class CreateTrip
         ConductorComboBox.SelectedIndex = -1
         ConductorComboBox.Text = ""
     End Sub
+    Public Sub New()
+        InitializeComponent()
+        Me.StartPosition = FormStartPosition.CenterScreen
+    End Sub
+
+    Dim draggable As Boolean
+    Dim mouseX As Integer
+    Dim mouseY As Integer
+    Private Sub Panel1_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel1.MouseDown
+        draggable = True
+        mouseX = Cursor.Position.X - Me.Left
+        mouseY = Cursor.Position.Y - Me.Top
+
+    End Sub
+
+    Private Sub Panel1_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel1.MouseMove
+        If draggable Then
+            Me.Top = Cursor.Position.Y - Me.mouseY
+            Me.Left = Cursor.Position.X - Me.mouseX
+        End If
+    End Sub
+
+    Private Sub Panel1_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel1.MouseUp
+        draggable = False
+
+    End Sub
+
+
+
 End Class
