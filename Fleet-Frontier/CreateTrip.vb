@@ -105,7 +105,16 @@ Public Class CreateTrip
         Finally
             connection.Close()
         End Try
+
+        ' Calculate the position to center AddVehicle form relative to Form1
+        Dim mainFormCenterX As Integer = Owner.Location.X + (Owner.Width - Width) \ 2
+        Dim mainFormCenterY As Integer = Owner.Location.Y + (Owner.Height - Height) \ 2
+
+        ' Set the start position of AddVehicle form
+        StartPosition = FormStartPosition.Manual
+        Location = New Point(mainFormCenterX, mainFormCenterY)
     End Sub
+
 
     Private Sub StartTripButton_Click(sender As Object, e As EventArgs) Handles StartTripButton.Click
         connection = New MySqlConnection(ConnectionString)
@@ -180,10 +189,6 @@ Public Class CreateTrip
         DriverComboBox.Text = ""
         ConductorComboBox.SelectedIndex = -1
         ConductorComboBox.Text = ""
-    End Sub
-    Public Sub New()
-        InitializeComponent()
-        Me.StartPosition = FormStartPosition.CenterScreen
     End Sub
 
     Dim draggable As Boolean
