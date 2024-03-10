@@ -164,6 +164,6 @@ Public Class TripsUserControl
             Dim mainFormCenterY As Integer = form.Owner.Location.Y + (form.Owner.Height - form.Height) \ 2
             form.Location = New Point(mainFormCenterX, mainFormCenterY)
         End If
-      
+
     End Sub
 End Class
