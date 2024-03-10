@@ -12,9 +12,15 @@ Public Class TripsUserControl
         Else
             ' If not open, create a new instance of the form
             openedCreateTripForm = New CreateTrip()
+            openedCreateTripForm.Owner = FindForm()
+            ' Subscribe to the LocationChanged event of Form1
+            AddHandler openedCreateTripForm.Owner.LocationChanged, AddressOf MainForm_LocationChanged
+            ' Center the CreateTrip form relative to Form1
+            CenterFormRelativeToMainForm(openedCreateTripForm)
             openedCreateTripForm.Show()
         End If
     End Sub
+
 
 
     Private Sub TripsUserControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -143,5 +149,20 @@ Public Class TripsUserControl
         ' Your code to add or update a trip in the MySQL database goes here
         ' After adding or updating, call RefreshTripPanels() to refresh the display
         RefreshTripPanels()
+
+    ' Event handler for the LocationChanged event of Form1
+    Private Sub MainForm_LocationChanged(sender As Object, e As EventArgs)
+        ' Center the CreateTrip form relative to Form1 whenever Form1's location changes
+        CenterFormRelativeToMainForm(openedCreateTripForm)
+    End Sub
+
+    ' Method to center the CreateTrip form relative to Form1
+    Private Sub CenterFormRelativeToMainForm(form As Form)
+        If form IsNot Nothing AndAlso form.Owner IsNot Nothing Then
+            Dim mainFormCenterX As Integer = form.Owner.Location.X + (form.Owner.Width - form.Width) \ 2
+            Dim mainFormCenterY As Integer = form.Owner.Location.Y + (form.Owner.Height - form.Height) \ 2
+            form.Location = New Point(mainFormCenterX, mainFormCenterY)
+        End If
+      
     End Sub
 End Class
