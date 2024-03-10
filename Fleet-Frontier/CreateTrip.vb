@@ -185,33 +185,4 @@ Public Class CreateTrip
         ConductorComboBox.SelectedIndex = -1
         ConductorComboBox.Text = ""
     End Sub
-    Public Sub New()
-        InitializeComponent()
-        Me.StartPosition = FormStartPosition.CenterScreen
-    End Sub
-
-    Dim draggable As Boolean
-    Dim mouseX As Integer
-    Dim mouseY As Integer
-    Private Sub Panel1_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel1.MouseDown
-        draggable = True
-        mouseX = Cursor.Position.X - Me.Left
-        mouseY = Cursor.Position.Y - Me.Top
-
-    End Sub
-
-    Private Sub Panel1_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel1.MouseMove
-        If draggable Then
-            Me.Top = Cursor.Position.Y - Me.mouseY
-            Me.Left = Cursor.Position.X - Me.mouseX
-        End If
-    End Sub
-
-    Private Sub Panel1_MouseUp(sender As Object, e As MouseEventArgs) Handles Panel1.MouseUp
-        draggable = False
-
-    End Sub
-
-
-
 End Class
