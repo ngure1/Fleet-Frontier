@@ -343,6 +343,7 @@ Partial Class MainForm
         BodyPanel.Controls.Add(VehiclesUserControl1)
         BodyPanel.Controls.Add(StaffUserControl1)
         BodyPanel.Dock = DockStyle.Fill
+        BodyPanel.Font = New Font("Gabriola", 11F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         BodyPanel.Location = New Point(217, 0)
         BodyPanel.Name = "BodyPanel"
         BodyPanel.Size = New Size(1024, 661)
@@ -351,9 +352,11 @@ Partial Class MainForm
         ' VehiclesUserControl1
         ' 
         VehiclesUserControl1.Dock = DockStyle.Fill
+        VehiclesUserControl1.Font = New Font("Gabriola", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         VehiclesUserControl1.Location = New Point(0, 0)
+        VehiclesUserControl1.Margin = New Padding(3, 4, 3, 4)
         VehiclesUserControl1.Name = "VehiclesUserControl1"
-        VehiclesUserControl1.Padding = New Padding(20)
+        VehiclesUserControl1.Padding = New Padding(18, 29, 18, 29)
         VehiclesUserControl1.Size = New Size(1024, 661)
         VehiclesUserControl1.TabIndex = 1
         ' 
@@ -361,8 +364,9 @@ Partial Class MainForm
         ' 
         StaffUserControl1.Dock = DockStyle.Fill
         StaffUserControl1.Location = New Point(0, 0)
+        StaffUserControl1.Margin = New Padding(3, 7, 3, 7)
         StaffUserControl1.Name = "StaffUserControl1"
-        StaffUserControl1.Padding = New Padding(20)
+        StaffUserControl1.Padding = New Padding(16, 48, 16, 48)
         StaffUserControl1.Size = New Size(1024, 661)
         StaffUserControl1.TabIndex = 0
         ' 
@@ -389,7 +393,7 @@ Partial Class MainForm
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Margin = New Padding(2, 3, 2, 3)
         MinimizeBox = False
-        MinimumSize = New Size(712, 561)
+        MinimumSize = New Size(800, 561)
         Name = "MainForm"
         ShowIcon = False
         StartPosition = FormStartPosition.CenterScreen
