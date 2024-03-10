@@ -149,6 +149,7 @@ Public Class TripsUserControl
         ' Your code to add or update a trip in the MySQL database goes here
         ' After adding or updating, call RefreshTripPanels() to refresh the display
         RefreshTripPanels()
+    End Sub
 
     ' Event handler for the LocationChanged event of Form1
     Private Sub MainForm_LocationChanged(sender As Object, e As EventArgs)
