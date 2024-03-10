@@ -5,7 +5,7 @@ CREATE TABLE vehicle(
     vehicle_id INT AUTO_INCREMENT NOT NULL,
     numberPlate  VARCHAR(20) NOT NULL,
     `fuel_cost/km` DECIMAL NOT NULL,
-    is_available BOOLEAN NOT NULL,
+    is_available BOOLEAN DEFAULT TRUE NOT NULL,
     created_at DATE,
 
     PRIMARY KEY(vehicle_id)
@@ -15,8 +15,8 @@ CREATE TABLE hire(
     hire_id INT AUTO_INCREMENT,
     vehicle_id INT,
     customer_name VARCHAR(50) NOT NULL,
-    customer_phone_number VARCHAR(9) NOT NULL,
-    is_returned BOOLEAN NOT NULL,
+    customer_phone_number VARCHAR(20) NOT NULL,
+    is_returned BOOLEAN DEFAULT FALSE NOT NULL,
 
     PRIMARY KEY(hire_id),
     FOREIGN KEY(vehicle_id) REFERENCES vehicle(vehicle_id)
@@ -26,10 +26,11 @@ CREATE TABLE hire(
 CREATE TABLE trip(
     trip_id INT AUTO_INCREMENT,
     vehicle_id INT,
-    route_name VARCHAR(50) NOT NULL,
+    trip_from VARCHAR(50) NOT NULL,
+    trip_to VARCHAR(50) NOT NULL,
     trip_No INT NOT NULL,
     trip_start_time TIME NOT NULL,
-    has_arrived BOOLEAN NOT NULL,
+    has_arrived BOOLEAN DEFAULT FALSE NOT NULL,
 
     PRIMARY KEY(trip_id),
     FOREIGN KEY(vehicle_id) REFERENCES vehicle(vehicle_id)
@@ -38,9 +39,11 @@ CREATE TABLE trip(
 
 CREATE TABLE employee(
     employee_id INT AUTO_INCREMENT,
-    Employee_type VARCHAR(50) NOT NULL,
-    Employee_phone_number VARCHAR(10) NOT NULL,
-    Is_available BOOLEAN NOT NULL,
+    employee_name VARCHAR(50) NOT NULL,
+    employee_type VARCHAR(50) NOT NULL,
+    employee_phone_number VARCHAR(20) NOT NULL,
+    is_available BOOLEAN DEFAULT TRUE NOT NULL,
+    date_of_entry DATE,
 
     PRIMARY KEY(employee_id)
 );
