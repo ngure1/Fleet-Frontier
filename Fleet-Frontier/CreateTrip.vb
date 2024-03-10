@@ -7,10 +7,6 @@ Public Class CreateTrip
     Dim command As MySqlCommand
     Dim ConnectionString As String = "server=localhost;port=33062;userid=root;password='default123';database=fleet_finder"
     Dim adapter As MySqlDataAdapter
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-    End Sub
     Private Sub exitButton_Click(sender As Object, e As EventArgs) Handles exitButton.Click
         Me.Close()
 
