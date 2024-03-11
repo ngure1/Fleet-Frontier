@@ -64,7 +64,9 @@ Partial Class AddVehicle
         PictureBox1.Location = New Point(0, 0)
         PictureBox1.Margin = New Padding(3, 2, 3, 2)
         PictureBox1.Name = "PictureBox1"
+
         PictureBox1.Size = New Size(38, 33)
+
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 6
         PictureBox1.TabStop = False
@@ -78,10 +80,12 @@ Partial Class AddVehicle
         exitButton.FlatStyle = FlatStyle.Flat
         exitButton.Font = New Font("Leelawadee UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         exitButton.ForeColor = Color.Black
+
         exitButton.Location = New Point(371, 0)
         exitButton.Margin = New Padding(3, 2, 3, 2)
         exitButton.Name = "exitButton"
         exitButton.Size = New Size(25, 33)
+
         exitButton.TabIndex = 5
         exitButton.Text = "X"
         exitButton.UseVisualStyleBackColor = True
@@ -90,9 +94,11 @@ Partial Class AddVehicle
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+
         Label1.Location = New Point(41, 3)
         Label1.Name = "Label1"
         Label1.Size = New Size(83, 29)
+
         Label1.TabIndex = 0
         Label1.Text = "Add Vehicle"
         Label1.TextAlign = ContentAlignment.TopCenter
@@ -112,10 +118,12 @@ Partial Class AddVehicle
         Panel2.Controls.Add(FuelTextBox)
         Panel2.Controls.Add(Label2)
         Panel2.Controls.Add(NumberPlateTextBox)
+
         Panel2.Location = New Point(10, 44)
         Panel2.Margin = New Padding(3, 2, 3, 2)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(377, 395)
+
         Panel2.TabIndex = 1
         ' 
         ' ClearButton
@@ -126,9 +134,11 @@ Partial Class AddVehicle
         ClearButton.FlatStyle = FlatStyle.Flat
         ClearButton.Font = New Font("Gabriola", 9F, FontStyle.Bold)
         ClearButton.ForeColor = Color.Blue
+
         ClearButton.Location = New Point(13, 333)
         ClearButton.Name = "ClearButton"
         ClearButton.Size = New Size(86, 26)
+
         ClearButton.TabIndex = 11
         ClearButton.Text = "Clear"
         ClearButton.UseVisualStyleBackColor = False
@@ -146,6 +156,7 @@ Partial Class AddVehicle
         Button2.Margin = New Padding(3, 2, 3, 2)
         Button2.Name = "Button2"
         Button2.Size = New Size(86, 26)
+
         Button2.TabIndex = 10
         Button2.Text = "Add"
         Button2.UseVisualStyleBackColor = False
@@ -173,15 +184,18 @@ Partial Class AddVehicle
         DateTimePicker1.Margin = New Padding(3, 2, 3, 2)
         DateTimePicker1.Name = "DateTimePicker1"
         DateTimePicker1.Size = New Size(219, 23)
+
         DateTimePicker1.TabIndex = 8
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Gabriola", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+
         Label5.Location = New Point(41, 278)
         Label5.Name = "Label5"
         Label5.Size = New Size(36, 26)
+
         Label5.TabIndex = 7
         Label5.Text = "Date"
         ' 
@@ -192,6 +206,7 @@ Partial Class AddVehicle
         Label4.Location = New Point(13, 212)
         Label4.Name = "Label4"
         Label4.Size = New Size(75, 26)
+
         Label4.TabIndex = 5
         Label4.Text = "Availability"
         ' 
@@ -201,6 +216,7 @@ Partial Class AddVehicle
         AvailabilityTextBox.Margin = New Padding(3, 2, 3, 2)
         AvailabilityTextBox.Name = "AvailabilityTextBox"
         AvailabilityTextBox.Size = New Size(350, 23)
+
         AvailabilityTextBox.TabIndex = 4
         ' 
         ' Label3
@@ -210,6 +226,7 @@ Partial Class AddVehicle
         Label3.Location = New Point(13, 144)
         Label3.Name = "Label3"
         Label3.Size = New Size(126, 26)
+
         Label3.TabIndex = 3
         Label3.Text = "Fuel consumption/km"
         ' 
@@ -219,6 +236,7 @@ Partial Class AddVehicle
         FuelTextBox.Margin = New Padding(3, 2, 3, 2)
         FuelTextBox.Name = "FuelTextBox"
         FuelTextBox.Size = New Size(350, 23)
+
         FuelTextBox.TabIndex = 2
         ' 
         ' Label2
@@ -228,6 +246,7 @@ Partial Class AddVehicle
         Label2.Location = New Point(13, 78)
         Label2.Name = "Label2"
         Label2.Size = New Size(83, 26)
+
         Label2.TabIndex = 1
         Label2.Text = "Number Plate"
         ' 
@@ -245,6 +264,7 @@ Partial Class AddVehicle
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         ClientSize = New Size(396, 446)
+
         ControlBox = False
         Controls.Add(Panel2)
         Controls.Add(Panel1)
