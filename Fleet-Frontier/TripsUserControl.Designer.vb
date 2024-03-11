@@ -50,7 +50,7 @@ Partial Class TripsUserControl
         AddTripsButton.BackColor = Color.Gray
         AddTripsButton.FlatAppearance.BorderSize = 0
         AddTripsButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
-        AddTripsButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
+        AddTripsButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         AddTripsButton.FlatStyle = FlatStyle.Flat
         AddTripsButton.Font = New Font("Gabriola", 12F, FontStyle.Bold)
         AddTripsButton.Location = New Point(816, 14)
