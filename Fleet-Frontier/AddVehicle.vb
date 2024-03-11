@@ -33,6 +33,14 @@ Public Class AddVehicle
         Finally
             conn.Close()
         End Try
+
+        'Clearing the textboxes after successful adding a new vehicle
+        NumberPlateTextBox.Text = ""
+        FuelTextBox.Text = ""
+        AvailabilityTextBox.Text = ""
+
+        'Returning the cursor to the first textbox
+        NumberPlateTextBox.Focus()
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
@@ -77,4 +85,7 @@ Public Class AddVehicle
         Location = New Point(mainFormCenterX, mainFormCenterY)
     End Sub
 
+    Private Sub CancelVehicleButton_Click(sender As Object, e As EventArgs) Handles CancelVehicleButton.Click
+        Me.Close()
+    End Sub
 End Class
