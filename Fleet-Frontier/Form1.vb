@@ -73,6 +73,8 @@ Public Class MainForm
         AddUserControlToPanel(CurrentUserControl)
     End Sub
 
+
+
     Private Sub rentButton_Click(sender As Object, e As EventArgs) Handles rentButton.Click
         CurrentUserControl = RentingUserControl
 
@@ -101,5 +103,21 @@ Public Class MainForm
     Private Sub ControlBarPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles controlBarPanel.MouseUp
         draggable = False
 
+    End Sub
+
+    Private Sub logoutButton_Click(sender As Object, e As EventArgs) Handles logoutButton.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to log out?", "Log Out Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        ' Check if the user confirms the logout
+        If result = DialogResult.Yes Then
+            ' Close the main form
+            Me.Close()
+
+            ' Create a new instance of the login form
+            Dim loginForm As New LoginForm()
+
+            ' Display the login form
+            loginForm.Show()
+        End If
     End Sub
 End Class

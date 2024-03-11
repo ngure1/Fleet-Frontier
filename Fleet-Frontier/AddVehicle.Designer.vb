@@ -30,7 +30,7 @@ Partial Class AddVehicle
         Panel2 = New Panel()
         ClearButton = New Button()
         Button2 = New Button()
-        Button1 = New Button()
+        CancelVehicleButton = New Button()
         DateTimePicker1 = New DateTimePicker()
         Label5 = New Label()
         Label4 = New Label()
@@ -54,7 +54,7 @@ Partial Class AddVehicle
         Panel1.Location = New Point(0, 0)
         Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(455, 44)
+        Panel1.Size = New Size(396, 33)
         Panel1.TabIndex = 0
         ' 
         ' PictureBox1
@@ -64,7 +64,9 @@ Partial Class AddVehicle
         PictureBox1.Location = New Point(0, 0)
         PictureBox1.Margin = New Padding(3, 2, 3, 2)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(43, 44)
+
+        PictureBox1.Size = New Size(38, 33)
+
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 6
         PictureBox1.TabStop = False
@@ -78,10 +80,12 @@ Partial Class AddVehicle
         exitButton.FlatStyle = FlatStyle.Flat
         exitButton.Font = New Font("Leelawadee UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         exitButton.ForeColor = Color.Black
-        exitButton.Location = New Point(426, 0)
+
+        exitButton.Location = New Point(371, 0)
         exitButton.Margin = New Padding(3, 2, 3, 2)
         exitButton.Name = "exitButton"
-        exitButton.Size = New Size(29, 44)
+        exitButton.Size = New Size(25, 33)
+
         exitButton.TabIndex = 5
         exitButton.Text = "X"
         exitButton.UseVisualStyleBackColor = True
@@ -90,9 +94,11 @@ Partial Class AddVehicle
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Gabriola", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(47, 4)
+
+        Label1.Location = New Point(41, 3)
         Label1.Name = "Label1"
-        Label1.Size = New Size(99, 37)
+        Label1.Size = New Size(83, 29)
+
         Label1.TabIndex = 0
         Label1.Text = "Add Vehicle"
         Label1.TextAlign = ContentAlignment.TopCenter
@@ -103,7 +109,7 @@ Partial Class AddVehicle
         Panel2.BorderStyle = BorderStyle.FixedSingle
         Panel2.Controls.Add(ClearButton)
         Panel2.Controls.Add(Button2)
-        Panel2.Controls.Add(Button1)
+        Panel2.Controls.Add(CancelVehicleButton)
         Panel2.Controls.Add(DateTimePicker1)
         Panel2.Controls.Add(Label5)
         Panel2.Controls.Add(Label4)
@@ -112,10 +118,12 @@ Partial Class AddVehicle
         Panel2.Controls.Add(FuelTextBox)
         Panel2.Controls.Add(Label2)
         Panel2.Controls.Add(NumberPlateTextBox)
-        Panel2.Location = New Point(11, 59)
+
+        Panel2.Location = New Point(10, 44)
         Panel2.Margin = New Padding(3, 2, 3, 2)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(431, 526)
+        Panel2.Size = New Size(377, 395)
+
         Panel2.TabIndex = 1
         ' 
         ' ClearButton
@@ -126,10 +134,11 @@ Partial Class AddVehicle
         ClearButton.FlatStyle = FlatStyle.Flat
         ClearButton.Font = New Font("Gabriola", 9F, FontStyle.Bold)
         ClearButton.ForeColor = Color.Blue
-        ClearButton.Location = New Point(15, 444)
-        ClearButton.Margin = New Padding(3, 4, 3, 4)
+
+        ClearButton.Location = New Point(13, 333)
         ClearButton.Name = "ClearButton"
-        ClearButton.Size = New Size(98, 35)
+        ClearButton.Size = New Size(86, 26)
+
         ClearButton.TabIndex = 11
         ClearButton.Text = "Clear"
         ClearButton.UseVisualStyleBackColor = False
@@ -143,46 +152,50 @@ Partial Class AddVehicle
         Button2.FlatStyle = FlatStyle.Flat
         Button2.Font = New Font("Gabriola", 9F, FontStyle.Bold)
         Button2.ForeColor = Color.Black
-        Button2.Location = New Point(317, 444)
+        Button2.Location = New Point(277, 333)
         Button2.Margin = New Padding(3, 2, 3, 2)
         Button2.Name = "Button2"
-        Button2.Size = New Size(98, 35)
+        Button2.Size = New Size(86, 26)
+
         Button2.TabIndex = 10
         Button2.Text = "Add"
         Button2.UseVisualStyleBackColor = False
         ' 
-        ' Button1
+        ' CancelVehicleButton
         ' 
-        Button1.BackColor = Color.Gray
-        Button1.FlatAppearance.BorderSize = 0
-        Button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
-        Button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Gabriola", 9F, FontStyle.Bold)
-        Button1.ForeColor = Color.Red
-        Button1.Location = New Point(165, 444)
-        Button1.Margin = New Padding(3, 2, 3, 2)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(98, 35)
-        Button1.TabIndex = 9
-        Button1.Text = "Cancel"
-        Button1.UseVisualStyleBackColor = False
+        CancelVehicleButton.BackColor = Color.Gray
+        CancelVehicleButton.FlatAppearance.BorderSize = 0
+        CancelVehicleButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        CancelVehicleButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(192), CByte(128))
+        CancelVehicleButton.FlatStyle = FlatStyle.Flat
+        CancelVehicleButton.Font = New Font("Gabriola", 9F, FontStyle.Bold)
+        CancelVehicleButton.ForeColor = Color.Red
+        CancelVehicleButton.Location = New Point(144, 333)
+        CancelVehicleButton.Margin = New Padding(3, 2, 3, 2)
+        CancelVehicleButton.Name = "CancelVehicleButton"
+        CancelVehicleButton.Size = New Size(86, 26)
+        CancelVehicleButton.TabIndex = 9
+        CancelVehicleButton.Text = "Cancel"
+        CancelVehicleButton.UseVisualStyleBackColor = False
         ' 
         ' DateTimePicker1
         ' 
-        DateTimePicker1.Location = New Point(95, 369)
+        DateTimePicker1.Location = New Point(83, 277)
         DateTimePicker1.Margin = New Padding(3, 2, 3, 2)
         DateTimePicker1.Name = "DateTimePicker1"
-        DateTimePicker1.Size = New Size(250, 27)
+        DateTimePicker1.Size = New Size(219, 23)
+
         DateTimePicker1.TabIndex = 8
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Gabriola", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(47, 371)
+
+        Label5.Location = New Point(41, 278)
         Label5.Name = "Label5"
-        Label5.Size = New Size(42, 31)
+        Label5.Size = New Size(36, 26)
+
         Label5.TabIndex = 7
         Label5.Text = "Date"
         ' 
@@ -190,62 +203,68 @@ Partial Class AddVehicle
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Gabriola", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(15, 282)
+        Label4.Location = New Point(13, 212)
         Label4.Name = "Label4"
-        Label4.Size = New Size(84, 31)
+        Label4.Size = New Size(75, 26)
+
         Label4.TabIndex = 5
         Label4.Text = "Availability"
         ' 
         ' AvailabilityTextBox
         ' 
-        AvailabilityTextBox.Location = New Point(15, 316)
+        AvailabilityTextBox.Location = New Point(13, 237)
         AvailabilityTextBox.Margin = New Padding(3, 2, 3, 2)
         AvailabilityTextBox.Name = "AvailabilityTextBox"
-        AvailabilityTextBox.Size = New Size(399, 27)
+        AvailabilityTextBox.Size = New Size(350, 23)
+
         AvailabilityTextBox.TabIndex = 4
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Gabriola", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(15, 192)
+        Label3.Location = New Point(13, 144)
         Label3.Name = "Label3"
-        Label3.Size = New Size(149, 31)
+        Label3.Size = New Size(126, 26)
+
         Label3.TabIndex = 3
         Label3.Text = "Fuel consumption/km"
         ' 
         ' FuelTextBox
         ' 
-        FuelTextBox.Location = New Point(15, 227)
+        FuelTextBox.Location = New Point(13, 170)
         FuelTextBox.Margin = New Padding(3, 2, 3, 2)
         FuelTextBox.Name = "FuelTextBox"
-        FuelTextBox.Size = New Size(399, 27)
+        FuelTextBox.Size = New Size(350, 23)
+
         FuelTextBox.TabIndex = 2
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Gabriola", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(15, 104)
+        Label2.Location = New Point(13, 78)
         Label2.Name = "Label2"
-        Label2.Size = New Size(98, 31)
+        Label2.Size = New Size(83, 26)
+
         Label2.TabIndex = 1
         Label2.Text = "Number Plate"
         ' 
         ' NumberPlateTextBox
         ' 
-        NumberPlateTextBox.Location = New Point(15, 139)
+        NumberPlateTextBox.Location = New Point(13, 104)
         NumberPlateTextBox.Margin = New Padding(3, 2, 3, 2)
         NumberPlateTextBox.Name = "NumberPlateTextBox"
-        NumberPlateTextBox.Size = New Size(399, 27)
+        NumberPlateTextBox.Size = New Size(350, 23)
         NumberPlateTextBox.TabIndex = 0
         ' 
         ' AddVehicle
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
-        ClientSize = New Size(455, 603)
+        ClientSize = New Size(396, 446)
+
         ControlBox = False
         Controls.Add(Panel2)
         Controls.Add(Panel1)
@@ -271,7 +290,7 @@ Partial Class AddVehicle
     Friend WithEvents Label3 As Label
     Friend WithEvents FuelTextBox As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents CancelVehicleButton As Button
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Button2 As Button
     Friend WithEvents PictureBox1 As PictureBox

@@ -34,6 +34,16 @@ Public Class AddStaffForm
         Finally
             conn.Close()
         End Try
+
+        'Clearing the textboxes after successful adding a new vehicle
+        NameTextBox.Text = ""
+        PhoneNumberTextBox.Text = ""
+        TypeComboBox.SelectedIndex = -1
+        TypeComboBox.Text = ""
+        AvailabilityTextBox.Text = ""
+
+        'Returning the cursor to the first textbox
+        NameTextBox.Focus()
     End Sub
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
@@ -42,6 +52,15 @@ Public Class AddStaffForm
         TypeComboBox.SelectedIndex = -1
         TypeComboBox.Text = ""
         AvailabilityTextBox.Text = ""
+    End Sub
+    Private Sub AddStaffForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Calculate the position to center AddVehicle form relative to Form1
+        Dim mainFormCenterX As Integer = Owner.Location.X + (Owner.Width - Width) \ 2
+        Dim mainFormCenterY As Integer = Owner.Location.Y + (Owner.Height - Height) \ 2
+
+        ' Set the start position of AddVehicle form
+        StartPosition = FormStartPosition.Manual
+        Location = New Point(mainFormCenterX, mainFormCenterY)
     End Sub
 
     Public Sub New()
@@ -69,5 +88,9 @@ Public Class AddStaffForm
     Private Sub ControlBoxPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles ControlBoxPanel.MouseUp
         draggable = False
 
+    End Sub
+
+    Private Sub CancelStaffButton_Click(sender As Object, e As EventArgs) Handles CancelStaffButton.Click
+        Me.Close()
     End Sub
 End Class

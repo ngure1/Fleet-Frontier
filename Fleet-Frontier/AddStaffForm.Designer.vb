@@ -28,10 +28,11 @@ Partial Class AddStaffForm
         CloseButton = New Button()
         AddStaffLabel = New Label()
         BodyPanel = New Panel()
+        ClearButton = New Button()
         TypeComboBox = New ComboBox()
         StaffDateTimePicker = New DateTimePicker()
         DateLabel = New Label()
-        CancelButton = New Button()
+        CancelStaffButton = New Button()
         AddStaffConfirmButton = New Button()
         AvailabilityTextBox = New TextBox()
         PhoneNumberTextBox = New TextBox()
@@ -40,7 +41,6 @@ Partial Class AddStaffForm
         TypeLabel = New Label()
         PhoneNumberLabel = New Label()
         NameLabel = New Label()
-        ClearButton = New Button()
         ControlBoxPanel.SuspendLayout()
         CType(ControlBoxIcon, ComponentModel.ISupportInitialize).BeginInit()
         BodyPanel.SuspendLayout()
@@ -107,7 +107,7 @@ Partial Class AddStaffForm
         BodyPanel.Controls.Add(TypeComboBox)
         BodyPanel.Controls.Add(StaffDateTimePicker)
         BodyPanel.Controls.Add(DateLabel)
-        BodyPanel.Controls.Add(CancelButton)
+        BodyPanel.Controls.Add(CancelStaffButton)
         BodyPanel.Controls.Add(AddStaffConfirmButton)
         BodyPanel.Controls.Add(AvailabilityTextBox)
         BodyPanel.Controls.Add(PhoneNumberTextBox)
@@ -121,6 +121,21 @@ Partial Class AddStaffForm
         BodyPanel.Padding = New Padding(10)
         BodyPanel.Size = New Size(431, 456)
         BodyPanel.TabIndex = 11
+        ' 
+        ' ClearButton
+        ' 
+        ClearButton.BackColor = Color.Gray
+        ClearButton.FlatAppearance.BorderSize = 0
+        ClearButton.FlatAppearance.MouseOverBackColor = Color.Silver
+        ClearButton.FlatStyle = FlatStyle.Flat
+        ClearButton.Font = New Font("Gabriola", 9F, FontStyle.Bold)
+        ClearButton.ForeColor = Color.Blue
+        ClearButton.Location = New Point(12, 375)
+        ClearButton.Name = "ClearButton"
+        ClearButton.Size = New Size(86, 26)
+        ClearButton.TabIndex = 10
+        ClearButton.Text = "Clear"
+        ClearButton.UseVisualStyleBackColor = False
         ' 
         ' TypeComboBox
         ' 
@@ -148,20 +163,20 @@ Partial Class AddStaffForm
         DateLabel.TabIndex = 3
         DateLabel.Text = "Date"
         ' 
-        ' CancelButton
+        ' CancelStaffButton
         ' 
-        CancelButton.BackColor = Color.Gray
-        CancelButton.FlatAppearance.BorderSize = 0
-        CancelButton.FlatAppearance.MouseOverBackColor = Color.Silver
-        CancelButton.FlatStyle = FlatStyle.Flat
-        CancelButton.Font = New Font("Gabriola", 9F, FontStyle.Bold)
-        CancelButton.ForeColor = Color.Red
-        CancelButton.Location = New Point(157, 375)
-        CancelButton.Name = "CancelButton"
-        CancelButton.Size = New Size(86, 26)
-        CancelButton.TabIndex = 5
-        CancelButton.Text = "Cancel"
-        CancelButton.UseVisualStyleBackColor = False
+        CancelStaffButton.BackColor = Color.Gray
+        CancelStaffButton.FlatAppearance.BorderSize = 0
+        CancelStaffButton.FlatAppearance.MouseOverBackColor = Color.Silver
+        CancelStaffButton.FlatStyle = FlatStyle.Flat
+        CancelStaffButton.Font = New Font("Gabriola", 9F, FontStyle.Bold)
+        CancelStaffButton.ForeColor = Color.Red
+        CancelStaffButton.Location = New Point(157, 375)
+        CancelStaffButton.Name = "CancelStaffButton"
+        CancelStaffButton.Size = New Size(86, 26)
+        CancelStaffButton.TabIndex = 5
+        CancelStaffButton.Text = "Cancel"
+        CancelStaffButton.UseVisualStyleBackColor = False
         ' 
         ' AddStaffConfirmButton
         ' 
@@ -238,21 +253,6 @@ Partial Class AddStaffForm
         NameLabel.TabIndex = 0
         NameLabel.Text = "Name"
         ' 
-        ' ClearButton
-        ' 
-        ClearButton.BackColor = Color.Gray
-        ClearButton.FlatAppearance.BorderSize = 0
-        ClearButton.FlatAppearance.MouseOverBackColor = Color.Silver
-        ClearButton.FlatStyle = FlatStyle.Flat
-        ClearButton.Font = New Font("Gabriola", 9F, FontStyle.Bold)
-        ClearButton.ForeColor = Color.Blue
-        ClearButton.Location = New Point(12, 375)
-        ClearButton.Name = "ClearButton"
-        ClearButton.Size = New Size(86, 26)
-        ClearButton.TabIndex = 10
-        ClearButton.Text = "Clear"
-        ClearButton.UseVisualStyleBackColor = False
-        ' 
         ' AddStaffForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -276,7 +276,7 @@ Partial Class AddStaffForm
     Friend WithEvents TypeComboBox As ComboBox
     Friend WithEvents StaffDateTimePicker As DateTimePicker
     Friend WithEvents DateLabel As Label
-    Friend WithEvents CancelButton As Button
+    Friend WithEvents CancelStaffButton As Button
     Friend WithEvents AddStaffConfirmButton As Button
     Friend WithEvents AvailabilityTextBox As TextBox
     Friend WithEvents PhoneNumberTextBox As TextBox
