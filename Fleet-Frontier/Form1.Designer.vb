@@ -43,7 +43,6 @@ Partial Class MainForm
         Panel1 = New Panel()
         BodyPanel = New Panel()
         VehiclesUserControl1 = New VehiclesUserControl()
-        StaffUserControl1 = New StaffUserControl()
         WelcomeLabel = New Label()
         controlBarPanel.SuspendLayout()
         CType(controlBarIcon, ComponentModel.ISupportInitialize).BeginInit()
@@ -341,7 +340,6 @@ Partial Class MainForm
         ' 
         BodyPanel.BackColor = Color.White
         BodyPanel.Controls.Add(VehiclesUserControl1)
-        BodyPanel.Controls.Add(StaffUserControl1)
         BodyPanel.Dock = DockStyle.Fill
         BodyPanel.Font = New Font("Gabriola", 11F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         BodyPanel.Location = New Point(217, 0)
@@ -359,16 +357,6 @@ Partial Class MainForm
         VehiclesUserControl1.Padding = New Padding(18, 29, 18, 29)
         VehiclesUserControl1.Size = New Size(1024, 661)
         VehiclesUserControl1.TabIndex = 1
-        ' 
-        ' StaffUserControl1
-        ' 
-        StaffUserControl1.Dock = DockStyle.Fill
-        StaffUserControl1.Location = New Point(0, 0)
-        StaffUserControl1.Margin = New Padding(3, 7, 3, 7)
-        StaffUserControl1.Name = "StaffUserControl1"
-        StaffUserControl1.Padding = New Padding(16, 48, 16, 48)
-        StaffUserControl1.Size = New Size(1024, 661)
-        StaffUserControl1.TabIndex = 0
         ' 
         ' WelcomeLabel
         ' 
