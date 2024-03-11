@@ -43,6 +43,15 @@ Public Class AddStaffForm
         TypeComboBox.Text = ""
         AvailabilityTextBox.Text = ""
     End Sub
+    Private Sub AddStaffForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Calculate the position to center AddVehicle form relative to Form1
+        Dim mainFormCenterX As Integer = Owner.Location.X + (Owner.Width - Width) \ 2
+        Dim mainFormCenterY As Integer = Owner.Location.Y + (Owner.Height - Height) \ 2
+
+        ' Set the start position of AddVehicle form
+        StartPosition = FormStartPosition.Manual
+        Location = New Point(mainFormCenterX, mainFormCenterY)
+    End Sub
 
     Public Sub New()
         InitializeComponent()
