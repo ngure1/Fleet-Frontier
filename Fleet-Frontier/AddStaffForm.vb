@@ -34,6 +34,16 @@ Public Class AddStaffForm
         Finally
             conn.Close()
         End Try
+
+        'Clearing the textboxes after successful adding a new vehicle
+        NameTextBox.Text = ""
+        PhoneNumberTextBox.Text = ""
+        TypeComboBox.SelectedIndex = -1
+        TypeComboBox.Text = ""
+        AvailabilityTextBox.Text = ""
+
+        'Returning the cursor to the first textbox
+        NameTextBox.Focus()
     End Sub
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
@@ -78,5 +88,9 @@ Public Class AddStaffForm
     Private Sub ControlBoxPanel_MouseUp(sender As Object, e As MouseEventArgs) Handles ControlBoxPanel.MouseUp
         draggable = False
 
+    End Sub
+
+    Private Sub CancelStaffButton_Click(sender As Object, e As EventArgs) Handles CancelStaffButton.Click
+        Me.Close()
     End Sub
 End Class

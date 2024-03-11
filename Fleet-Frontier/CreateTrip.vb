@@ -159,7 +159,7 @@ Public Class CreateTrip
             command.Parameters.AddWithValue("@conductorId", conductorId)
             command.ExecuteNonQuery()
 
-            'Refreshing combo boxes after udating availability
+            'Refreshing combo boxes after updating availability
             RefreshComboBoxes()
 
             'Refreshing data in the view trip user control
@@ -176,6 +176,20 @@ Public Class CreateTrip
         Finally
             connection.Close()
         End Try
+
+        TripFromComboBox.SelectedIndex = -1
+        TripFromComboBox.Text = ""
+        TripToComboBox.SelectedIndex = -1
+        TripToComboBox.Text = ""
+        VehicleComboBox.SelectedIndex = -1
+        VehicleComboBox.Text = ""
+        DriverComboBox.SelectedIndex = -1
+        DriverComboBox.Text = ""
+        ConductorComboBox.SelectedIndex = -1
+        ConductorComboBox.Text = ""
+
+        TripFromComboBox.Focus()
+
     End Sub
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
@@ -203,8 +217,8 @@ Public Class CreateTrip
 
     Private Sub Panel1_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel1.MouseMove
         If draggable Then
-            Me.Top = Cursor.Position.Y - Me.mouseY
-            Me.Left = Cursor.Position.X - Me.mouseX
+            Me.Top = Cursor.Position.Y - mouseY
+            Me.Left = Cursor.Position.X - mouseX
         End If
     End Sub
 
@@ -213,6 +227,7 @@ Public Class CreateTrip
 
     End Sub
 
-
-
+    Private Sub CancelTripButton_Click(sender As Object, e As EventArgs) Handles CancelTripButton.Click
+        Me.Close()
+    End Sub
 End Class
