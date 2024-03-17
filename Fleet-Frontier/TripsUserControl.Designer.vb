@@ -24,6 +24,7 @@ Partial Class TripsUserControl
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TripsUserControl))
         TripsHeaderPanel = New Panel()
+        RefreshButton = New Button()
         AddTripsButton = New Button()
         TripsSearchBar = New TextBox()
         TripsLabel = New Label()
@@ -34,15 +35,26 @@ Partial Class TripsUserControl
         ' TripsHeaderPanel
         ' 
         TripsHeaderPanel.BackColor = Color.Silver
+        TripsHeaderPanel.Controls.Add(RefreshButton)
         TripsHeaderPanel.Controls.Add(AddTripsButton)
         TripsHeaderPanel.Controls.Add(TripsSearchBar)
         TripsHeaderPanel.Controls.Add(TripsLabel)
         TripsHeaderPanel.Dock = DockStyle.Top
-        TripsHeaderPanel.Location = New Point(21, 20)
-        TripsHeaderPanel.Margin = New Padding(3, 2, 3, 2)
+        TripsHeaderPanel.Location = New Point(26, 25)
+        TripsHeaderPanel.Margin = New Padding(4, 2, 4, 2)
         TripsHeaderPanel.Name = "TripsHeaderPanel"
-        TripsHeaderPanel.Size = New Size(982, 70)
+        TripsHeaderPanel.Size = New Size(1228, 88)
         TripsHeaderPanel.TabIndex = 0
+        ' 
+        ' RefreshButton
+        ' 
+        RefreshButton.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        RefreshButton.Location = New Point(545, 18)
+        RefreshButton.Name = "RefreshButton"
+        RefreshButton.Size = New Size(136, 48)
+        RefreshButton.TabIndex = 7
+        RefreshButton.Text = "Refresh"
+        RefreshButton.UseVisualStyleBackColor = True
         ' 
         ' AddTripsButton
         ' 
@@ -53,10 +65,10 @@ Partial Class TripsUserControl
         AddTripsButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         AddTripsButton.FlatStyle = FlatStyle.Flat
         AddTripsButton.Font = New Font("Gabriola", 12F, FontStyle.Bold)
-        AddTripsButton.Location = New Point(816, 14)
-        AddTripsButton.Margin = New Padding(3, 2, 3, 2)
+        AddTripsButton.Location = New Point(1020, 18)
+        AddTripsButton.Margin = New Padding(4, 2, 4, 2)
         AddTripsButton.Name = "AddTripsButton"
-        AddTripsButton.Size = New Size(151, 38)
+        AddTripsButton.Size = New Size(189, 48)
         AddTripsButton.TabIndex = 6
         AddTripsButton.Text = "Start Trip"
         AddTripsButton.UseVisualStyleBackColor = False
@@ -65,11 +77,11 @@ Partial Class TripsUserControl
         ' 
         TripsSearchBar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         TripsSearchBar.BackColor = Color.White
-        TripsSearchBar.Location = New Point(609, 22)
-        TripsSearchBar.Margin = New Padding(3, 2, 3, 2)
+        TripsSearchBar.Location = New Point(761, 28)
+        TripsSearchBar.Margin = New Padding(4, 2, 4, 2)
         TripsSearchBar.Name = "TripsSearchBar"
         TripsSearchBar.PlaceholderText = "Search"
-        TripsSearchBar.Size = New Size(182, 27)
+        TripsSearchBar.Size = New Size(226, 31)
         TripsSearchBar.TabIndex = 5
         ' 
         ' TripsLabel
@@ -78,9 +90,10 @@ Partial Class TripsUserControl
         TripsLabel.Font = New Font("MV Boli", 15F, FontStyle.Bold)
         TripsLabel.Image = CType(resources.GetObject("TripsLabel.Image"), Image)
         TripsLabel.ImageAlign = ContentAlignment.MiddleLeft
-        TripsLabel.Location = New Point(16, 18)
+        TripsLabel.Location = New Point(20, 22)
+        TripsLabel.Margin = New Padding(4, 0, 4, 0)
         TripsLabel.Name = "TripsLabel"
-        TripsLabel.Size = New Size(102, 32)
+        TripsLabel.Size = New Size(123, 40)
         TripsLabel.TabIndex = 2
         TripsLabel.Text = "  Trips"
         TripsLabel.TextAlign = ContentAlignment.MiddleRight
@@ -90,22 +103,22 @@ Partial Class TripsUserControl
         TripsBodyPanel.AutoScroll = True
         TripsBodyPanel.BackColor = Color.Silver
         TripsBodyPanel.Dock = DockStyle.Fill
-        TripsBodyPanel.Location = New Point(21, 90)
-        TripsBodyPanel.Margin = New Padding(3, 2, 3, 2)
+        TripsBodyPanel.Location = New Point(26, 113)
+        TripsBodyPanel.Margin = New Padding(4, 2, 4, 2)
         TripsBodyPanel.Name = "TripsBodyPanel"
-        TripsBodyPanel.Size = New Size(982, 552)
+        TripsBodyPanel.Size = New Size(1228, 690)
         TripsBodyPanel.TabIndex = 1
         ' 
         ' TripsUserControl
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         Controls.Add(TripsBodyPanel)
         Controls.Add(TripsHeaderPanel)
-        Margin = New Padding(3, 2, 3, 2)
+        Margin = New Padding(4, 2, 4, 2)
         Name = "TripsUserControl"
-        Padding = New Padding(21, 20, 21, 20)
-        Size = New Size(1024, 662)
+        Padding = New Padding(26, 25, 26, 25)
+        Size = New Size(1280, 828)
         TripsHeaderPanel.ResumeLayout(False)
         TripsHeaderPanel.PerformLayout()
         ResumeLayout(False)
@@ -116,5 +129,6 @@ Partial Class TripsUserControl
     Friend WithEvents TripsLabel As Label
     Friend WithEvents AddTripsButton As Button
     Friend WithEvents TripsSearchBar As TextBox
+    Friend WithEvents RefreshButton As Button
 
 End Class
