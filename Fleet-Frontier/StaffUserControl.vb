@@ -54,6 +54,12 @@ Public Class StaffUserControl
                             entryDateLabel.Text = "Date of Entry:"
                             entryDateLabel.Location = New Point(10, 70)
 
+                            Dim deleteButton As New Button()
+                            deleteButton.Text = "Delete"
+                            deleteButton.Location = New Point(300, 70)
+                            deleteButton.Tag = reader("employee_id").ToString() ' Store employee ID as Tag
+                            AddHandler deleteButton.Click, AddressOf DeleteButton_Click
+
                             Dim entryDateValueLabel As New Label()
                             entryDateValueLabel.Text = reader("date_of_entry").ToString()
                             entryDateValueLabel.Location = New Point(130, 70) ' Adjust X position accordingly
@@ -67,6 +73,7 @@ Public Class StaffUserControl
                             employeePanel.Controls.Add(phoneNumberLabel)
                             employeePanel.Controls.Add(entryDateLabel)
                             employeePanel.Controls.Add(entryDateValueLabel)
+                            employeePanel.Controls.Add(deleteButton)
 
 
                             ' Calculate the position of the employee panel based on the index
@@ -91,7 +98,44 @@ Public Class StaffUserControl
         ' Make ConductorListPanel scrollable
         ConductorListPanel.AutoScroll = True
     End Sub
+    ' Add this handler to handle the delete button click
+    Private Sub DeleteButton_Click(sender As Object, e As EventArgs)
+        Dim button As Button = DirectCast(sender, Button)
+        Dim employeeId As String = button.Tag.ToString()
 
+        ' Prompt for confirmation
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this staff member?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+
+        If result = DialogResult.OK Then
+            ' Perform deletion from the database
+            Try
+                Using connection As New MySqlConnection(ConnectionString)
+                    connection.Open()
+                    Dim query As String = "DELETE FROM employee WHERE employee_id = @employeeId"
+
+                    Using command As New MySqlCommand(query, connection)
+                        command.Parameters.AddWithValue("@employeeId", employeeId)
+                        Dim rowsAffected As Integer = command.ExecuteNonQuery()
+
+                        If rowsAffected > 0 Then
+                            ' Remove the employee panel from its parent
+                            Dim panel As Panel = CType(button.Parent, Panel)
+                            panel.Parent.Controls.Remove(panel)
+
+                            ' Refresh the staff panels
+                            RefreshStaffPanels()
+
+                            MessageBox.Show("Staff member deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Else
+                            MessageBox.Show("Failed to delete staff member.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                    End Using
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error deleting staff member: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
 
     Private Function GetConductorPanelCount() As Integer
         Return ConductorListPanel.Controls.OfType(Of Panel)().Count()
@@ -99,6 +143,7 @@ Public Class StaffUserControl
 
     Private Sub ClearEmployeePanels()
         DriversListPanel.Controls.Clear()
+        ConductorListPanel.Controls.Clear() ' Clear ConductorListPanel as well
     End Sub
 
     Public Sub RefreshStaffPanels()
@@ -116,5 +161,9 @@ Public Class StaffUserControl
             Dim staffUserControlCenterY As Integer = form.Owner.Location.Y + (form.Owner.Height - form.Height) \ 2
             form.Location = New Point(staffUserControlCenterX, staffUserControlCenterY)
         End If
+    End Sub
+
+    Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
+        RefreshStaffPanels()
     End Sub
 End Class

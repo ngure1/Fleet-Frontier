@@ -106,8 +106,10 @@ Public Class TripsUserControl
 
                         Dim deleteButton As New Button()
                         deleteButton.Text = "Delete"
-                        deleteButton.Location = New Point(300, 40)
-                        ' Add click event handler for delete button
+                        deleteButton.Location = New Point(300, 160)
+                        deleteButton.Tag = reader("trip_id").ToString() ' Store trip ID as Tag
+                        AddHandler deleteButton.Click, AddressOf DeleteButton_Click
+
 
                         tripPanel.Controls.Add(fromLabel)
                         tripPanel.Controls.Add(toLabel)
@@ -149,6 +151,44 @@ Public Class TripsUserControl
         ' Your code to add or update a trip in the MySQL database goes here
         ' After adding or updating, call RefreshTripPanels() to refresh the display
         RefreshTripPanels()
+    End Sub
+    ' Add this handler to handle the delete button click
+    Private Sub DeleteButton_Click(sender As Object, e As EventArgs)
+        Dim button As Button = DirectCast(sender, Button)
+        Dim tripId As String = button.Tag.ToString()
+
+        ' Prompt for confirmation
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this trip?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+
+        If result = DialogResult.OK Then
+            ' Perform deletion from the database
+            Try
+                Using connection As New MySqlConnection(ConnectionString)
+                    connection.Open()
+                    Dim query As String = "DELETE FROM trip WHERE trip_id = @tripId"
+
+                    Using command As New MySqlCommand(query, connection)
+                        command.Parameters.AddWithValue("@tripId", tripId)
+                        Dim rowsAffected As Integer = command.ExecuteNonQuery()
+
+                        If rowsAffected > 0 Then
+                            ' Remove the trip panel from its parent
+                            Dim panel As Panel = CType(button.Parent, Panel)
+                            panel.Parent.Controls.Remove(panel)
+
+                            ' Refresh the trip panels
+                            RefreshTripPanels()
+
+                            MessageBox.Show("Trip deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Else
+                            MessageBox.Show("Failed to delete trip.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End If
+                    End Using
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error deleting trip: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
     End Sub
 
     ' Event handler for the LocationChanged event of Form1
