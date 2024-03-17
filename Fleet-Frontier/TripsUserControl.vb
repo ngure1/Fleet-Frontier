@@ -166,4 +166,8 @@ Public Class TripsUserControl
         End If
 
     End Sub
+
+    Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
+        RefreshTripPanels()
+    End Sub
 End Class
