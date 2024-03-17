@@ -14,12 +14,11 @@ Public Class AddStaffForm
 
         Try
             conn.Open()
-            Dim insertQuery As String = "INSERT INTO employee(employee_name, employee_phone_number, employee_type, Is_available, date_of_entry) VALUES (@name, @phoneNumber, @type, @is_available, @date)"
+            Dim insertQuery As String = "INSERT INTO employee(employee_name, employee_phone_number, employee_type,date_of_entry) VALUES (@name, @phoneNumber, @type,@date)"
             command = New MySqlCommand(insertQuery, conn)
             command.Parameters.AddWithValue("@name", NameTextBox.Text)
             command.Parameters.AddWithValue("@phoneNumber", PhoneNumberTextBox.Text)
             command.Parameters.AddWithValue("@type", TypeComboBox.Text)
-            command.Parameters.AddWithValue("@is_available", AvailabilityTextBox.Text)
 
             Dim formattedDate As String = StaffDateTimePicker.Value.ToString("yyyy-MM-dd")
             command.Parameters.AddWithValue("@date", formattedDate)
@@ -40,7 +39,6 @@ Public Class AddStaffForm
         PhoneNumberTextBox.Text = ""
         TypeComboBox.SelectedIndex = -1
         TypeComboBox.Text = ""
-        AvailabilityTextBox.Text = ""
 
         'Returning the cursor to the first textbox
         NameTextBox.Focus()
@@ -51,7 +49,6 @@ Public Class AddStaffForm
         PhoneNumberTextBox.Text = ""
         TypeComboBox.SelectedIndex = -1
         TypeComboBox.Text = ""
-        AvailabilityTextBox.Text = ""
     End Sub
     Private Sub AddStaffForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Calculate the position to center AddVehicle form relative to Form1

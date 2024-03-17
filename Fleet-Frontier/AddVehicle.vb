@@ -14,11 +14,11 @@ Public Class AddVehicle
 
         Try
             conn.Open()
-            Dim insertQuery As String = "INSERT INTO vehicle (numberPlate, `fuel_cost/km`, is_available, created_at) VALUES (@plate, @fuel, @availability, @time)"
+            Dim insertQuery As String = "INSERT INTO vehicle (numberPlate, `fuel_cost/km`,created_at) VALUES (@plate, @fuel,@time)"
             command = New MySqlCommand(insertQuery, conn)
             command.Parameters.AddWithValue("@plate", NumberPlateTextBox.Text)
             command.Parameters.AddWithValue("@fuel", FuelTextBox.Text)
-            command.Parameters.AddWithValue("@availability", AvailabilityTextBox.Text)
+
 
             ' Convert DateTimePicker value to MySQL date format
             Dim formattedDate As String = DateTimePicker1.Value.ToString("yyyy-MM-dd")
@@ -37,7 +37,7 @@ Public Class AddVehicle
         'Clearing the textboxes after successful adding a new vehicle
         NumberPlateTextBox.Text = ""
         FuelTextBox.Text = ""
-        AvailabilityTextBox.Text = ""
+
 
         'Returning the cursor to the first textbox
         NumberPlateTextBox.Focus()
@@ -50,7 +50,7 @@ Public Class AddVehicle
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
         NumberPlateTextBox.Text = ""
         FuelTextBox.Text = ""
-        AvailabilityTextBox.Text = ""
+
     End Sub
 
 
