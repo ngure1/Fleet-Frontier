@@ -33,6 +33,7 @@ Partial Class StaffUserControl
         DriversListPanel = New Panel()
         ConductorTabPage = New TabPage()
         ConductorListPanel = New Panel()
+        RefreshButton = New Button()
         StaffHeaderPanel.SuspendLayout()
         StaffBodyPanel.SuspendLayout()
         StaffTabControl.SuspendLayout()
@@ -43,13 +44,15 @@ Partial Class StaffUserControl
         ' StaffHeaderPanel
         ' 
         StaffHeaderPanel.BackColor = Color.Silver
+        StaffHeaderPanel.Controls.Add(RefreshButton)
         StaffHeaderPanel.Controls.Add(AddStaffButton)
         StaffHeaderPanel.Controls.Add(StaffSearchBar)
         StaffHeaderPanel.Controls.Add(StaffLabel)
         StaffHeaderPanel.Dock = DockStyle.Top
-        StaffHeaderPanel.Location = New Point(21, 20)
+        StaffHeaderPanel.Location = New Point(26, 25)
+        StaffHeaderPanel.Margin = New Padding(4, 4, 4, 4)
         StaffHeaderPanel.Name = "StaffHeaderPanel"
-        StaffHeaderPanel.Size = New Size(982, 67)
+        StaffHeaderPanel.Size = New Size(1228, 84)
         StaffHeaderPanel.TabIndex = 0
         ' 
         ' AddStaffButton
@@ -61,9 +64,10 @@ Partial Class StaffUserControl
         AddStaffButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         AddStaffButton.FlatStyle = FlatStyle.Flat
         AddStaffButton.Font = New Font("Gabriola", 12F, FontStyle.Bold)
-        AddStaffButton.Location = New Point(818, 15)
+        AddStaffButton.Location = New Point(1022, 19)
+        AddStaffButton.Margin = New Padding(4, 4, 4, 4)
         AddStaffButton.Name = "AddStaffButton"
-        AddStaffButton.Size = New Size(151, 39)
+        AddStaffButton.Size = New Size(189, 49)
         AddStaffButton.TabIndex = 4
         AddStaffButton.Text = "Add staff"
         AddStaffButton.UseVisualStyleBackColor = False
@@ -72,11 +76,12 @@ Partial Class StaffUserControl
         ' 
         StaffSearchBar.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         StaffSearchBar.BackColor = Color.White
-        StaffSearchBar.Location = New Point(613, 21)
-        StaffSearchBar.MinimumSize = New Size(130, 27)
+        StaffSearchBar.Location = New Point(766, 26)
+        StaffSearchBar.Margin = New Padding(4, 4, 4, 4)
+        StaffSearchBar.MinimumSize = New Size(162, 27)
         StaffSearchBar.Name = "StaffSearchBar"
         StaffSearchBar.PlaceholderText = "Search"
-        StaffSearchBar.Size = New Size(182, 27)
+        StaffSearchBar.Size = New Size(226, 31)
         StaffSearchBar.TabIndex = 3
         ' 
         ' StaffLabel
@@ -86,9 +91,10 @@ Partial Class StaffUserControl
         StaffLabel.Font = New Font("MV Boli", 15F, FontStyle.Bold)
         StaffLabel.Image = CType(resources.GetObject("StaffLabel.Image"), Image)
         StaffLabel.ImageAlign = ContentAlignment.MiddleLeft
-        StaffLabel.Location = New Point(14, 21)
+        StaffLabel.Location = New Point(18, 26)
+        StaffLabel.Margin = New Padding(4, 0, 4, 0)
         StaffLabel.Name = "StaffLabel"
-        StaffLabel.Size = New Size(105, 32)
+        StaffLabel.Size = New Size(127, 40)
         StaffLabel.TabIndex = 2
         StaffLabel.Text = "  Staff"
         StaffLabel.TextAlign = ContentAlignment.MiddleRight
@@ -98,9 +104,10 @@ Partial Class StaffUserControl
         StaffBodyPanel.BackColor = Color.Silver
         StaffBodyPanel.Controls.Add(StaffTabControl)
         StaffBodyPanel.Dock = DockStyle.Fill
-        StaffBodyPanel.Location = New Point(21, 87)
+        StaffBodyPanel.Location = New Point(26, 109)
+        StaffBodyPanel.Margin = New Padding(4, 4, 4, 4)
         StaffBodyPanel.Name = "StaffBodyPanel"
-        StaffBodyPanel.Size = New Size(982, 554)
+        StaffBodyPanel.Size = New Size(1228, 692)
         StaffBodyPanel.TabIndex = 1
         ' 
         ' StaffTabControl
@@ -111,11 +118,12 @@ Partial Class StaffUserControl
         StaffTabControl.Dock = DockStyle.Fill
         StaffTabControl.Font = New Font("Gabriola", 10F, FontStyle.Bold)
         StaffTabControl.Location = New Point(0, 0)
+        StaffTabControl.Margin = New Padding(4, 4, 4, 4)
         StaffTabControl.Multiline = True
         StaffTabControl.Name = "StaffTabControl"
         StaffTabControl.Padding = New Point(4, 3)
         StaffTabControl.SelectedIndex = 0
-        StaffTabControl.Size = New Size(982, 554)
+        StaffTabControl.Size = New Size(1228, 692)
         StaffTabControl.TabIndex = 0
         ' 
         ' DriverTabPage
@@ -123,10 +131,11 @@ Partial Class StaffUserControl
         DriverTabPage.BackColor = Color.Silver
         DriverTabPage.Controls.Add(DriversListPanel)
         DriverTabPage.Font = New Font("Gabriola", 9F)
-        DriverTabPage.Location = New Point(4, 43)
+        DriverTabPage.Location = New Point(4, 49)
+        DriverTabPage.Margin = New Padding(4, 4, 4, 4)
         DriverTabPage.Name = "DriverTabPage"
-        DriverTabPage.Padding = New Padding(5)
-        DriverTabPage.Size = New Size(974, 507)
+        DriverTabPage.Padding = New Padding(6, 6, 6, 6)
+        DriverTabPage.Size = New Size(1220, 639)
         DriverTabPage.TabIndex = 0
         DriverTabPage.Text = "Drivers"
         ' 
@@ -135,21 +144,22 @@ Partial Class StaffUserControl
         DriversListPanel.AutoScroll = True
         DriversListPanel.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
         DriversListPanel.Dock = DockStyle.Fill
-        DriversListPanel.Location = New Point(5, 5)
+        DriversListPanel.Location = New Point(6, 6)
         DriversListPanel.Margin = New Padding(0)
         DriversListPanel.Name = "DriversListPanel"
-        DriversListPanel.Padding = New Padding(21, 20, 21, 20)
-        DriversListPanel.Size = New Size(964, 497)
+        DriversListPanel.Padding = New Padding(26, 25, 26, 25)
+        DriversListPanel.Size = New Size(1208, 627)
         DriversListPanel.TabIndex = 5
         ' 
         ' ConductorTabPage
         ' 
         ConductorTabPage.BackColor = Color.Silver
         ConductorTabPage.Controls.Add(ConductorListPanel)
-        ConductorTabPage.Location = New Point(4, 43)
+        ConductorTabPage.Location = New Point(4, 49)
+        ConductorTabPage.Margin = New Padding(4, 4, 4, 4)
         ConductorTabPage.Name = "ConductorTabPage"
-        ConductorTabPage.Padding = New Padding(3)
-        ConductorTabPage.Size = New Size(974, 507)
+        ConductorTabPage.Padding = New Padding(4, 4, 4, 4)
+        ConductorTabPage.Size = New Size(1220, 639)
         ConductorTabPage.TabIndex = 1
         ConductorTabPage.Text = "Conductors"
         ' 
@@ -157,20 +167,32 @@ Partial Class StaffUserControl
         ' 
         ConductorListPanel.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
         ConductorListPanel.Dock = DockStyle.Fill
-        ConductorListPanel.Location = New Point(3, 3)
+        ConductorListPanel.Location = New Point(4, 4)
+        ConductorListPanel.Margin = New Padding(4, 4, 4, 4)
         ConductorListPanel.Name = "ConductorListPanel"
-        ConductorListPanel.Size = New Size(968, 501)
+        ConductorListPanel.Size = New Size(1212, 631)
         ConductorListPanel.TabIndex = 0
+        ' 
+        ' RefreshButton
+        ' 
+        RefreshButton.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        RefreshButton.Location = New Point(546, 18)
+        RefreshButton.Name = "RefreshButton"
+        RefreshButton.Size = New Size(136, 48)
+        RefreshButton.TabIndex = 8
+        RefreshButton.Text = "Refresh"
+        RefreshButton.UseVisualStyleBackColor = True
         ' 
         ' StaffUserControl
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         Controls.Add(StaffBodyPanel)
         Controls.Add(StaffHeaderPanel)
+        Margin = New Padding(4, 4, 4, 4)
         Name = "StaffUserControl"
-        Padding = New Padding(21, 20, 21, 20)
-        Size = New Size(1024, 661)
+        Padding = New Padding(26, 25, 26, 25)
+        Size = New Size(1280, 826)
         StaffHeaderPanel.ResumeLayout(False)
         StaffHeaderPanel.PerformLayout()
         StaffBodyPanel.ResumeLayout(False)
@@ -190,5 +212,6 @@ Partial Class StaffUserControl
     Friend WithEvents ConductorTabPage As TabPage
     Friend WithEvents DriversListPanel As Panel
     Friend WithEvents ConductorListPanel As Panel
+    Friend WithEvents RefreshButton As Button
 
 End Class
