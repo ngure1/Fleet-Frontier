@@ -11,4 +11,9 @@ docker run --name fleet-frontier-server -e MYSQL_ROOT_PASSWORD=default123 -p 330
 3. Ensure the container ``fleet-frontier-server`` is running and connect it to either mysql workbench or your favourite software to run the sql commands.
  **NB:Make sure you use the server as localhost, port as 33062, username as root and password as default123**
 4. After connecting it successfully open the [db_config](./db_config/) folder and run the commands in [fleet_finder.sql](./db_config/fleet_finder.sql) to create the database and populate it with sample data by running the commands in [sample_data.sql](./db_config/sample_data.sql) in the software you connected the server to.
-5. Now open the solution in vusual studio and run it...hopefully it works :sparkles: &#x1F480;
+5. You will need to run a sql command to create a user for login purposes
+```sql
+USE fleet_finder;
+INSERT INTO user(username, password) VALUES ('user1', 'password1');
+``` 
+6. Now open the solution in visual studio and run it...hopefully it works :sparkles: &#x1F480;

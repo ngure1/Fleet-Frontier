@@ -36,7 +36,7 @@ Partial Class LoginForm
         Panel2 = New Panel()
         TextBox1 = New TextBox()
         PictureBox3 = New PictureBox()
-        Button1 = New Button()
+        LoginButton = New Button()
         ControlBarPanel.SuspendLayout()
         CType(FaviconPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         CType(BusIconPictureBox, ComponentModel.ISupportInitialize).BeginInit()
@@ -67,7 +67,7 @@ Partial Class LoginForm
         TitleLabel.ForeColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         TitleLabel.Location = New Point(50, 7)
         TitleLabel.Name = "TitleLabel"
-        TitleLabel.Size = New Size(160, 26)
+        TitleLabel.Size = New Size(186, 31)
         TitleLabel.TabIndex = 4
         TitleLabel.Text = "Fleet Frontier"
         ' 
@@ -135,7 +135,7 @@ Partial Class LoginForm
         ' 
         UsernameTextBox.Location = New Point(59, 6)
         UsernameTextBox.Name = "UsernameTextBox"
-        UsernameTextBox.Size = New Size(230, 32)
+        UsernameTextBox.Size = New Size(230, 37)
         UsernameTextBox.TabIndex = 1
         ' 
         ' UsernamePictureBox
@@ -155,7 +155,7 @@ Partial Class LoginForm
         LoginLabel.Font = New Font("Gabriola", 15F, FontStyle.Bold)
         LoginLabel.Location = New Point(152, 240)
         LoginLabel.Name = "LoginLabel"
-        LoginLabel.Size = New Size(151, 46)
+        LoginLabel.Size = New Size(177, 55)
         LoginLabel.TabIndex = 3
         LoginLabel.Text = "Welcome Back!"
         ' 
@@ -172,7 +172,7 @@ Partial Class LoginForm
         ' 
         TextBox1.Location = New Point(59, 6)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(230, 32)
+        TextBox1.Size = New Size(230, 37)
         TextBox1.TabIndex = 1
         ' 
         ' PictureBox3
@@ -187,30 +187,30 @@ Partial Class LoginForm
         PictureBox3.TabIndex = 0
         PictureBox3.TabStop = False
         ' 
-        ' Button1
+        ' LoginButton
         ' 
-        Button1.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        Button1.FlatAppearance.BorderSize = 0
-        Button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
-        Button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Gabriola", 12F, FontStyle.Bold)
-        Button1.Location = New Point(109, 460)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(230, 36)
-        Button1.TabIndex = 5
-        Button1.Text = "Log In"
-        Button1.TextAlign = ContentAlignment.TopCenter
-        Button1.UseVisualStyleBackColor = False
+        LoginButton.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
+        LoginButton.FlatAppearance.BorderSize = 0
+        LoginButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        LoginButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
+        LoginButton.FlatStyle = FlatStyle.Flat
+        LoginButton.Font = New Font("Gabriola", 12F, FontStyle.Bold)
+        LoginButton.Location = New Point(109, 460)
+        LoginButton.Name = "LoginButton"
+        LoginButton.Size = New Size(230, 36)
+        LoginButton.TabIndex = 5
+        LoginButton.Text = "Log In"
+        LoginButton.TextAlign = ContentAlignment.TopCenter
+        LoginButton.UseVisualStyleBackColor = False
         ' 
         ' LoginForm
         ' 
-        AutoScaleDimensions = New SizeF(9F, 20F)
+        AutoScaleDimensions = New SizeF(11F, 23F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.DimGray
         ClientSize = New Size(453, 579)
         ControlBox = False
-        Controls.Add(Button1)
+        Controls.Add(LoginButton)
         Controls.Add(Panel2)
         Controls.Add(LoginLabel)
         Controls.Add(Panel1)
@@ -248,5 +248,5 @@ Partial Class LoginForm
     Friend WithEvents Panel2 As Panel
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents LoginButton As Button
 End Class
