@@ -33,25 +33,28 @@ Public Class TripsUserControl
         Using connection As New MySqlConnection(ConnectionString)
             connection.Open()
             Dim query As String = "SELECT " &
-    "t.trip_id, " &
-    "t.trip_from, " &
-    "t.trip_to, " &
-    "t.trip_No, " &
-    "t.trip_start_time, " &
-    "d.employee_id AS driver_id, " &
-    "d.employee_name AS driver_name, " &
-    "c.employee_id AS conductor_id, " &
-    "c.employee_name AS conductor_name " &
-"FROM " &
-    "trip t " &
-"JOIN " &
-    "trip_employee ted ON t.trip_id = ted.trip_id " &
-"JOIN " &
-    "employee d ON ted.employee_id = d.employee_id AND d.employee_type = 'Driver' " &
-"JOIN " &
-    "trip_employee tec ON t.trip_id = tec.trip_id " &
-"JOIN " &
-    "employee c ON tec.employee_id = c.employee_id AND c.employee_type = 'Conductor';"
+            "t.trip_id, " &
+            "t.trip_from, " &
+            "t.trip_to, " &
+            "t.trip_start_time, " &
+            "t.has_arrived, " &
+            "d.employee_id AS driver_id, " &
+            "d.employee_name AS driver_name, " &
+            "c.employee_id AS conductor_id, " &
+            "c.employee_name AS conductor_name, " &
+            "v.numberPlate AS vehicle_number_plate " &
+            "FROM " &
+            "trip t " &
+            "JOIN " &
+            "trip_employee ted ON t.trip_id = ted.trip_id " &
+            "JOIN " &
+            "employee d ON ted.employee_id = d.employee_id AND d.employee_type = 'Driver' " &
+            "JOIN " &
+            "trip_employee tec ON t.trip_id = tec.trip_id " &
+            "JOIN " &
+            "employee c ON tec.employee_id = c.employee_id AND c.employee_type = 'Conductor' " &
+            "JOIN " &
+            "vehicle v ON t.vehicle_id = v.vehicle_id"
             Using command As New MySqlCommand(query, connection)
                 Using reader As MySqlDataReader = command.ExecuteReader()
                     While reader.Read()
@@ -67,17 +70,17 @@ Public Class TripsUserControl
                         toLabel.Text = "To: " & reader("trip_to").ToString()
                         toLabel.Location = New Point(10, 30)
 
-                        Dim tripNoLabel As New Label()
-                        tripNoLabel.Text = "Trip No: " & reader("trip_No").ToString()
-                        tripNoLabel.Location = New Point(10, 50)
-
                         Dim startTimeLabel As New Label()
                         startTimeLabel.Text = "Start Time: "
-                        startTimeLabel.Location = New Point(10, 70)
+                        startTimeLabel.Location = New Point(10, 50)
 
                         Dim startTimeValueLabel As New Label()
                         startTimeValueLabel.Text = reader("trip_start_time").ToString()
-                        startTimeValueLabel.Location = New Point(120, 70)
+                        startTimeValueLabel.Location = New Point(120, 50)
+
+                        Dim driverIdLabel As New Label()
+                        driverIdLabel.Text = "Driver Id: " & reader("driver_id").ToString()
+                        driverIdLabel.Location = New Point(10, 70)
 
                         Dim driverNameLabel As New Label()
                         driverNameLabel.Text = "Driver Name: "
@@ -99,10 +102,38 @@ Public Class TripsUserControl
                         conductorNameValueLabel.Text = reader("conductor_name").ToString()
                         conductorNameValueLabel.Location = New Point(120, 130)
 
+                        Dim vehicleLabel As New Label()
+                        vehicleLabel.Text = "Vehicle: " & reader("vehicle_number_plate").ToString() ' Display vehicle number plate
+                        vehicleLabel.Location = New Point(10, 150)
+
+                        Dim hasArrivedLabel As New Label()
+                        hasArrivedLabel.Text = "Status: " & reader("has_arrived").ToString()
+                        hasArrivedLabel.Location = New Point(10, 170)
+
+                        Dim statusDot As New Label()
+                        statusDot.AutoSize = True
+                        statusDot.Location = New Point(120, 170)
+                        statusDot.Font = New Font(statusDot.Font, FontStyle.Bold)
+
+                        ' Check if the trip has arrived
+                        Dim hasArrived As Integer = reader("has_arrived")
+                        If hasArrived Then
+                            statusDot.Text = "Complete"
+                            statusDot.ForeColor = Color.Green
+                        Else
+                            statusDot.Text = "In transit"
+                            statusDot.ForeColor = Color.Red
+                        End If
+
                         Dim updateButton As New Button()
                         updateButton.Text = "Update"
                         updateButton.Location = New Point(300, 10)
-                        ' Add click event handler for update button
+                        Dim tripId As String = reader("trip_id").ToString()
+                        AddHandler updateButton.Click, Sub(sender As Object, e As EventArgs)
+                                                           UpdateButton_Click(sender, e, tripId)
+                                                       End Sub
+
+
 
                         Dim deleteButton As New Button()
                         deleteButton.Text = "Delete"
@@ -113,14 +144,17 @@ Public Class TripsUserControl
 
                         tripPanel.Controls.Add(fromLabel)
                         tripPanel.Controls.Add(toLabel)
-                        tripPanel.Controls.Add(tripNoLabel)
                         tripPanel.Controls.Add(startTimeLabel)
                         tripPanel.Controls.Add(startTimeValueLabel)
+                        tripPanel.Controls.Add(driverIdLabel)
                         tripPanel.Controls.Add(driverNameLabel)
                         tripPanel.Controls.Add(driverNameValueLabel)
                         tripPanel.Controls.Add(conductorIdLabel)
                         tripPanel.Controls.Add(conductorNameLabel)
                         tripPanel.Controls.Add(conductorNameValueLabel)
+                        tripPanel.Controls.Add(vehicleLabel)
+                        tripPanel.Controls.Add(hasArrivedLabel)
+                        tripPanel.Controls.Add(statusDot)
                         tripPanel.Controls.Add(updateButton)
                         tripPanel.Controls.Add(deleteButton)
 
@@ -210,4 +244,59 @@ Public Class TripsUserControl
     Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
         RefreshTripPanels()
     End Sub
+
+    Private Sub UpdateButton_Click(sender As Object, e As EventArgs, tripId As String)
+        ' Fetch trip details based on tripId
+        Dim tripDetails As New Dictionary(Of String, String)()
+        Using connection As New MySqlConnection(ConnectionString)
+            connection.Open()
+
+            Dim query As String = "SELECT " &
+                "t.trip_id, " &
+                "t.trip_from, " &
+                "t.trip_to, " &
+                "t.has_arrived, " &
+                "v.vehicle_id, " &
+                "v.numberPlate, " &
+                "d.employee_id AS driver_id, " &
+                "d.employee_name AS driver_name, " &
+                "c.employee_id AS conductor_id, " &
+                "c.employee_name AS conductor_name " &
+            "FROM " &
+                "trip t " &
+            "JOIN " &
+                "trip_employee ted ON t.trip_id = ted.trip_id " &
+            "JOIN " &
+                "employee d ON ted.employee_id = d.employee_id AND d.employee_type = 'Driver' " &
+            "JOIN " &
+                "trip_employee tec ON t.trip_id = tec.trip_id " &
+            "JOIN " &
+                "employee c ON tec.employee_id = c.employee_id AND c.employee_type = 'Conductor' " &
+            "JOIN " &
+                "vehicle v ON t.vehicle_id = v.vehicle_id " &
+            "WHERE " &
+                "t.trip_id = @tripId;"
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@tripId", tripId)
+                Using reader As MySqlDataReader = command.ExecuteReader()
+                    If reader.Read() Then
+                        tripDetails.Add("trip_from", reader("trip_from").ToString())
+                        tripDetails.Add("trip_to", reader("trip_to").ToString())
+                        tripDetails.Add("has_arrived", reader("has_arrived").ToString())
+                        tripDetails.Add("driver_id", reader("driver_id").ToString())
+                        tripDetails.Add("driver_name", reader("driver_name").ToString())
+                        tripDetails.Add("conductor_id", reader("conductor_id").ToString())
+                        tripDetails.Add("conductor_name", reader("conductor_name").ToString())
+                        tripDetails.Add("vehicle_id", reader("vehicle_id").ToString())
+                        tripDetails.Add("vehicle_number_plate", reader("numberPlate").ToString()) ' Add vehicle ID
+                        ' Add other trip details as needed
+                    End If
+                End Using
+            End Using
+        End Using
+        ' Open UpdateTrip form and pass trip details
+        Dim updateTripForm As New UpdateTrip(tripId, tripDetails)
+        updateTripForm.ShowDialog()
+    End Sub
+
 End Class
