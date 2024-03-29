@@ -12,12 +12,6 @@ Public Class CreateTrip
 
     End Sub
 
-    '' Private _tripsUserControl As TripsUserControl
-
-    'Public Sub New(tripsUserControl As TripsUserControl)
-    '   InitializeComponent()
-    '  _tripsUserControl = tripsUserControl
-    'End Sub
 
     Private Sub PopulateVehicleComboBox()
         ' Fetch data for vehicles
@@ -137,27 +131,22 @@ Public Class CreateTrip
             command.Parameters.AddWithValue("@tripStartTime", tripStartTime)
             command.Parameters.AddWithValue("@hasArrived", hasArrived)
 
-            Dim tripId As Integer = Convert.ToInt32(command.ExecuteScalar()) ' Get the generated trip_id
+            ' Execute the insert query
+            Dim tripId As Integer = Convert.ToInt32(command.ExecuteScalar())
 
             ' Insert data into the trip_employee table
             Dim driverId As Integer = Integer.Parse(DriverComboBox.SelectedItem.ToString().Split("-"c)(0).Trim())
             Dim conductorId As Integer = Integer.Parse(ConductorComboBox.SelectedItem.ToString().Split("-"c)(0).Trim())
 
-            Dim tripEmployeeInsertQuery As String = "INSERT INTO trip_employee (trip_id, employee_id) VALUES (@tripId, @driverId), (@tripId, @conductorId);"
+            Dim tripEmployeeInsertQuery As String = "INSERT INTO trip_employee (trip_id, employee_id, employee_type) VALUES (@tripId, @driverId, 'Driver'), (@tripId, @conductorId, 'Conductor');"
             command = New MySqlCommand(tripEmployeeInsertQuery, connection)
             command.Parameters.AddWithValue("@tripId", tripId)
             command.Parameters.AddWithValue("@driverId", driverId)
             command.Parameters.AddWithValue("@conductorId", conductorId)
+
+            ' Execute the insert query for trip_employee
             command.ExecuteNonQuery()
 
-            ' Update vehicle, driver, and conductor availability to False
-            Dim updateAvailabilityQuery As String = "UPDATE vehicle SET is_available = 0 WHERE vehicle_id = @vehicleId;" &
-                                                "UPDATE employee SET is_available = 0 WHERE employee_id IN (@driverId, @conductorId);"
-            command = New MySqlCommand(updateAvailabilityQuery, connection)
-            command.Parameters.AddWithValue("@vehicleId", vehicleId)
-            command.Parameters.AddWithValue("@driverId", driverId)
-            command.Parameters.AddWithValue("@conductorId", conductorId)
-            command.ExecuteNonQuery()
 
             'Refreshing combo boxes after updating availability
             RefreshComboBoxes()
