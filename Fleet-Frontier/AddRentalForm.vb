@@ -51,6 +51,7 @@ Public Class AddRentalForm
     Private Sub AddRentalButton_Click(sender As Object, e As EventArgs) Handles AddRentalButton.Click
         connection = New MySqlConnection(ConnectionString)
         Try
+            connection.Open()
             Dim customerName As String = CustomerNameTextBox.Text
             Dim customerPhoneNumber As String = CustomerPhoneNumberTextBox.Text
             Dim vehicleId As Integer = Integer.Parse(VehicleComboBox.SelectedItem.ToString().Split("-"c)(0).Trim())
@@ -66,15 +67,16 @@ Public Class AddRentalForm
                     command.Parameters.AddWithValue("@vehicleId", vehicleId)
                     command.Parameters.AddWithValue("@customerName", customerName)
                     command.Parameters.AddWithValue("@customerPhoneNumber", customerPhoneNumber)
-
-                    ' Open the connection
-                    connection.Open()
-
-                    ' Execute the query
                     command.ExecuteNonQuery()
 
-                    ' Inform the user about the successful operation
-                    MessageBox.Show("Rental added successfully.")
+                    ' Update vehicle availability to False
+                    Dim updateVehicleAvailabilityQuery As String = "UPDATE vehicle SET is_available = 0 WHERE vehicle_id = @vehicleId;"
+                    Using updateCommand As New MySqlCommand(updateVehicleAvailabilityQuery, connection)
+                        updateCommand.Parameters.AddWithValue("@vehicleId", vehicleId)
+                        updateCommand.ExecuteNonQuery()
+                        ' Inform the user about the successful operation
+                        MessageBox.Show("Rental added successfully.")
+                    End Using
                 End Using
             End Using
 
