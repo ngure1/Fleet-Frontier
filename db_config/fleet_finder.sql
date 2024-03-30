@@ -65,6 +65,17 @@ CREATE TABLE trip_employee(
 );
 
 
+CREATE TRIGGER update_vehicle_availability_on_update_hire
+AFTER UPDATE ON hire
+FOR EACH ROW
+BEGIN
+    IF NEW.is_returned = TRUE THEN
+        UPDATE vehicle
+        SET is_available = TRUE
+        WHERE vehicle_id = NEW.vehicle_id;
+    END IF;
+END;
+
 CREATE TRIGGER update_employee_and_vehicle_availability
 AFTER UPDATE ON trip
 FOR EACH ROW
@@ -99,3 +110,4 @@ END;
 
 ALTER TABLE trip_employee
 ADD COLUMN employee_type VARCHAR(50) NOT NULL;
+

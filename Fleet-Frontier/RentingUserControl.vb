@@ -93,7 +93,12 @@ Public Class RentingUserControl
                         Dim updateButton As New Button()
                         updateButton.Text = "Update"
                         updateButton.Location = New Point(300, 10)
+
                         ' Add click event handler for update button
+                        Dim hireId As String = reader("hire_id") ' You need to set the hire ID accordingly
+                        AddHandler updateButton.Click, Sub(sender As Object, e As EventArgs)
+                                                           UpdateRentalButton_Click(sender, e, hireId)
+                                                       End Sub
 
                         Dim deleteButton As New Button()
                         deleteButton.Text = "Delete"
@@ -180,4 +185,43 @@ Public Class RentingUserControl
     Private Sub RentingUserControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadRentals()
     End Sub
+
+    Private Sub UpdateRentalButton_Click(sender As Object, e As EventArgs, hireId As String)
+        ' Fetch rental details based on hireId
+        Dim rentalDetails As New Dictionary(Of String, String)()
+        Using connection As New MySqlConnection(ConnectionString)
+            connection.Open()
+
+            Dim query As String = "SELECT " &
+            "h.hire_id, " &
+            "h.vehicle_id, " &
+            "h.customer_name, " &
+            "h.customer_phone_number, " &
+            "h.is_returned, " &
+            "v.numberPlate " &
+        "FROM " &
+            "hire h " &
+        "JOIN " &
+            "vehicle v ON h.vehicle_id = v.vehicle_id " &
+        "WHERE " &
+            "h.hire_id = @hireId;"
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@hireId", hireId)
+                Using reader As MySqlDataReader = command.ExecuteReader()
+                    If reader.Read() Then
+                        rentalDetails.Add("vehicle_id", reader("vehicle_id").ToString())
+                        rentalDetails.Add("customer_name", reader("customer_name").ToString())
+                        rentalDetails.Add("customer_phone_number", reader("customer_phone_number").ToString())
+                        rentalDetails.Add("is_returned", reader("is_returned").ToString())
+                        rentalDetails.Add("vehicle_number_plate", reader("numberPlate").ToString()) ' Add vehicle ID
+                        ' Add other rental details as needed
+                    End If
+                End Using
+            End Using
+        End Using
+        ' Open UpdateRental form and pass rental details
+        Dim updateRentalForm As New UpdateRental(hireId, rentalDetails)
+        updateRentalForm.ShowDialog()
+    End Sub
+
 End Class
