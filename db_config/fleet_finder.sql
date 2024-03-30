@@ -63,3 +63,14 @@ CREATE TABLE trip_employee(
     FOREIGN KEY(trip_id) REFERENCES trip(trip_id),
     FOREIGN KEY(employee_id) REFERENCES employee(employee_id)  
 );
+
+CREATE TRIGGER update_vehicle_availability_on_update_hire
+AFTER UPDATE ON hire
+FOR EACH ROW
+BEGIN
+    IF NEW.is_returned = TRUE THEN
+        UPDATE vehicle
+        SET is_available = TRUE
+        WHERE vehicle_id = NEW.vehicle_id;
+    END IF;
+END;
