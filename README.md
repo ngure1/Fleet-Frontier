@@ -17,7 +17,7 @@ docker run --name fleet-frontier-server -e MYSQL_ROOT_PASSWORD=default123 -p 330
 
 5. It is recommended that if you previously had created and populated the database that you drop it first and create it again because there have been some updates to the commands.For this you will need to run
 ```sql
-DROP DATABASE fleet_finder
+DROP DATABASE fleet_finder;
 ```
 
 5. You will need to run a sql command to create a user for login purposes
