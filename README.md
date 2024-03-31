@@ -1,4 +1,19 @@
 ## FLEET FRONTIER
+## Updating your Fork
+1. Go to your fork and make sure you are on the main branch
+![MainBranchImage](./static/screenshots/github-1.png)
+2. Click on the sync fork button and update the branch
+![Sync Fork Image](./static/screenshots/github-2.png)
+3. It should now read that your branch is up to date with ...
+![Updated Fork Image](./static/screenshots/github-3.png)
+4. Navigate to where the project exists in your computer and change to the main branch by running.
+```bash
+git checkout main
+```
+5. Now run the following command to update your local repository.
+```bash
+git pull 
+```
 ### Database configuration
 1. Assuming you have docker installed ...run the following comand to pull the mysql image
 ```bash
@@ -20,9 +35,9 @@ docker run --name fleet-frontier-server -e MYSQL_ROOT_PASSWORD=default123 -p 330
 DROP DATABASE fleet_finder;
 ```
 
-5. You will need to run a sql command to create a user for login purposes
+6. You will need to run a sql command to create a user for login purposes
 ```sql
 USE fleet_finder;
 INSERT INTO user(username, password) VALUES ('<your_username>', '<your_password>');
 ``` 
-6. Now open the solution in visual studio and run it...hopefully it works :sparkles: &#x1F480;
+7. Now open the solution in visual studio and run it...hopefully it works :sparkles: &#x1F480;
