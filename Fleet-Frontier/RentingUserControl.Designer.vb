@@ -24,11 +24,11 @@ Partial Class RentingUserControl
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RentingUserControl))
         TabPanel = New Panel()
-        BodyPanel = New Panel()
-        RentLabel = New Label()
-        NewRentalButton = New Button()
-        RentSearchBar = New TextBox()
         RefreshButton = New Button()
+        RentSearchBar = New TextBox()
+        NewRentalButton = New Button()
+        RentLabel = New Label()
+        RentalsBodyPanel = New Panel()
         TabPanel.SuspendLayout()
         SuspendLayout()
         ' 
@@ -40,32 +40,34 @@ Partial Class RentingUserControl
         TabPanel.Controls.Add(NewRentalButton)
         TabPanel.Controls.Add(RentLabel)
         TabPanel.Dock = DockStyle.Top
-        TabPanel.Location = New Point(20, 20)
+        TabPanel.Location = New Point(25, 25)
+        TabPanel.Margin = New Padding(4)
         TabPanel.Name = "TabPanel"
-        TabPanel.Size = New Size(984, 66)
+        TabPanel.Size = New Size(1230, 82)
         TabPanel.TabIndex = 0
         ' 
-        ' BodyPanel
+        ' RefreshButton
         ' 
-        BodyPanel.BackColor = Color.Silver
-        BodyPanel.Dock = DockStyle.Fill
-        BodyPanel.Location = New Point(20, 86)
-        BodyPanel.Name = "BodyPanel"
-        BodyPanel.Size = New Size(984, 555)
-        BodyPanel.TabIndex = 1
+        RefreshButton.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        RefreshButton.Location = New Point(585, 16)
+        RefreshButton.Margin = New Padding(2)
+        RefreshButton.Name = "RefreshButton"
+        RefreshButton.Size = New Size(136, 48)
+        RefreshButton.TabIndex = 9
+        RefreshButton.Text = "Refresh"
+        RefreshButton.UseVisualStyleBackColor = True
         ' 
-        ' RentLabel
+        ' RentSearchBar
         ' 
-        RentLabel.AutoSize = True
-        RentLabel.Font = New Font("MV Boli", 15F, FontStyle.Bold)
-        RentLabel.Image = CType(resources.GetObject("RentLabel.Image"), Image)
-        RentLabel.ImageAlign = ContentAlignment.MiddleLeft
-        RentLabel.Location = New Point(14, 17)
-        RentLabel.Name = "RentLabel"
-        RentLabel.Size = New Size(156, 32)
-        RentLabel.TabIndex = 2
-        RentLabel.Text = "  Rent out" & vbCrLf
-        RentLabel.TextAlign = ContentAlignment.MiddleRight
+        RentSearchBar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
+        RentSearchBar.BackColor = Color.White
+        RentSearchBar.Location = New Point(754, 24)
+        RentSearchBar.Margin = New Padding(4)
+        RentSearchBar.MinimumSize = New Size(162, 27)
+        RentSearchBar.Name = "RentSearchBar"
+        RentSearchBar.PlaceholderText = "Search"
+        RentSearchBar.Size = New Size(226, 31)
+        RentSearchBar.TabIndex = 4
         ' 
         ' NewRentalButton
         ' 
@@ -76,51 +78,55 @@ Partial Class RentingUserControl
         NewRentalButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         NewRentalButton.FlatStyle = FlatStyle.Flat
         NewRentalButton.Font = New Font("Gabriola", 12F, FontStyle.Bold)
-        NewRentalButton.Location = New Point(823, 13)
+        NewRentalButton.Location = New Point(1029, 16)
+        NewRentalButton.Margin = New Padding(4)
         NewRentalButton.Name = "NewRentalButton"
-        NewRentalButton.Size = New Size(149, 39)
+        NewRentalButton.Size = New Size(186, 49)
         NewRentalButton.TabIndex = 3
         NewRentalButton.Text = "New Rental"
         NewRentalButton.UseVisualStyleBackColor = False
         ' 
-        ' RentSearchBar
+        ' RentLabel
         ' 
-        RentSearchBar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
-        RentSearchBar.BackColor = Color.White
-        RentSearchBar.Location = New Point(603, 19)
-        RentSearchBar.MinimumSize = New Size(130, 27)
-        RentSearchBar.Name = "RentSearchBar"
-        RentSearchBar.PlaceholderText = "Search"
-        RentSearchBar.Size = New Size(182, 27)
-        RentSearchBar.TabIndex = 4
+        RentLabel.AutoSize = True
+        RentLabel.Font = New Font("MV Boli", 15F, FontStyle.Bold)
+        RentLabel.Image = CType(resources.GetObject("RentLabel.Image"), Image)
+        RentLabel.ImageAlign = ContentAlignment.MiddleLeft
+        RentLabel.Location = New Point(18, 21)
+        RentLabel.Margin = New Padding(4, 0, 4, 0)
+        RentLabel.Name = "RentLabel"
+        RentLabel.Size = New Size(190, 40)
+        RentLabel.TabIndex = 2
+        RentLabel.Text = "  Rent out" & vbCrLf
+        RentLabel.TextAlign = ContentAlignment.MiddleRight
         ' 
-        ' RefreshButton
+        ' RentalsBodyPanel
         ' 
-        RefreshButton.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
-        RefreshButton.Location = New Point(468, 13)
-        RefreshButton.Margin = New Padding(2)
-        RefreshButton.Name = "RefreshButton"
-        RefreshButton.Size = New Size(109, 38)
-        RefreshButton.TabIndex = 9
-        RefreshButton.Text = "Refresh"
-        RefreshButton.UseVisualStyleBackColor = True
+        RentalsBodyPanel.BackColor = Color.Silver
+        RentalsBodyPanel.Dock = DockStyle.Fill
+        RentalsBodyPanel.Location = New Point(25, 107)
+        RentalsBodyPanel.Margin = New Padding(4)
+        RentalsBodyPanel.Name = "RentalsBodyPanel"
+        RentalsBodyPanel.Size = New Size(1230, 694)
+        RentalsBodyPanel.TabIndex = 1
         ' 
         ' RentingUserControl
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
-        Controls.Add(BodyPanel)
+        Controls.Add(RentalsBodyPanel)
         Controls.Add(TabPanel)
+        Margin = New Padding(4)
         Name = "RentingUserControl"
-        Padding = New Padding(20)
-        Size = New Size(1024, 661)
+        Padding = New Padding(25)
+        Size = New Size(1280, 826)
         TabPanel.ResumeLayout(False)
         TabPanel.PerformLayout()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents TabPanel As Panel
-    Friend WithEvents BodyPanel As Panel
+    Friend WithEvents RentalsBodyPanel As Panel
     Friend WithEvents RentLabel As Label
     Friend WithEvents NewRentalButton As Button
     Friend WithEvents RentSearchBar As TextBox
