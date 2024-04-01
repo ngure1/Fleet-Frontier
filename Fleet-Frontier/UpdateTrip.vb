@@ -191,6 +191,8 @@ Public Class UpdateTrip
             End Using
         End Using
 
+        MessageBox.Show("Trip updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
         'After updating, clear the fields
         ClearComboBoxes()
         TripFromComboBox.Focus()
