@@ -22,12 +22,21 @@ Public Class UpdateStaff
 
         ' Set the EmployeeId property
         Me.EmployeeId = employeeData.Id
+        AvailabilityComboBox.Items.AddRange({"True", "False"})
+
+        ' Set the default value of the AvailabilityComboBox based on the data from the database
+        If employeeData.Is_Available = "True" Then
+            AvailabilityComboBox.SelectedIndex = 0 ' True
+        Else
+            AvailabilityComboBox.SelectedIndex = 1 ' False
+        End If
 
         ' Populate the text boxes with the retrieved employee data
         NameTextBox.Text = employeeData.Name
         PhoneNumberTextBox.Text = employeeData.PhoneNumber
         TypeComboBox.Text = employeeData.Type
         StaffDateTimePicker.Value = employeeData.EntryDate
+
     End Sub
 
     ' Button click event to handle update
@@ -41,12 +50,20 @@ Public Class UpdateStaff
                     MessageBox.Show("Employee not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
                 End If
+                ' Convert the availability to the corresponding integer value
+                Dim availabilityValue As Integer
+                If AvailabilityComboBox.SelectedIndex = 0 Then ' True
+                    availabilityValue = 1
+                Else
+                    availabilityValue = 0 ' False
+                End If
 
-                Dim query As String = "UPDATE employee SET employee_name = @name, employee_phone_number = @phoneNumber, employee_type = @type, date_of_entry = @date WHERE employee_id = @employeeId"
+                Dim query As String = "UPDATE employee SET employee_name = @name, employee_phone_number = @phoneNumber, employee_type = @type, is_available = @availability, date_of_entry = @date WHERE employee_id = @employeeId"
                 Using cmd As New MySqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@name", NameTextBox.Text)
                     cmd.Parameters.AddWithValue("@phoneNumber", PhoneNumberTextBox.Text)
                     cmd.Parameters.AddWithValue("@type", TypeComboBox.Text)
+                    cmd.Parameters.AddWithValue("@availability", availabilityValue)
                     cmd.Parameters.AddWithValue("@date", StaffDateTimePicker.Value.ToString("yyyy-MM-dd"))
                     cmd.Parameters.AddWithValue("@employeeId", _employeeId)
                     Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
@@ -92,4 +109,6 @@ Public Class UpdateStaff
         AvailabilityComboBox.SelectedIndex = -1
         AvailabilityComboBox.Text = ""
     End Sub
+
+
 End Class

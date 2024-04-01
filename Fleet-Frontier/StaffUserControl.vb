@@ -32,53 +32,67 @@ Public Class StaffUserControl
         Using connection As New MySqlConnection(ConnectionString)
             Try
                 connection.Open()
-                Dim query As String = "SELECT employee_id, employee_name, employee_type, employee_phone_number, date_of_entry FROM employee"
+                Dim query As String = "SELECT employee_id, employee_name, employee_type, employee_phone_number,is_available, date_of_entry FROM employee"
 
                 Using command As New MySqlCommand(query, connection)
                     Using reader As MySqlDataReader = command.ExecuteReader()
                         While reader.Read()
-                            Dim nameLabel As New Label()
-                            nameLabel.Text = "Name: " & reader("employee_name").ToString()
-                            nameLabel.Location = New Point(10, 10)
+                            Dim employeePanel As New Panel()
+                            employeePanel.BorderStyle = BorderStyle.FixedSingle
+                            employeePanel.Size = New Size(400, 115)
+
+                            Dim labelXPosition As Integer = 10 ' X position for labels
+                            Dim valueXPosition As Integer = 130 ' X position for values
+                            Dim controlYPosition As Integer = 20 ' Starting Y position
+                            Dim spacing As Integer = 30 ' Spacing between controls
+
+                            Dim nameLabelTitle As New Label() ' Label for "Name:" title
+                            nameLabelTitle.Text = "Name: "
+                            nameLabelTitle.Location = New Point(labelXPosition, controlYPosition)
+                            nameLabelTitle.Font = New Font(nameLabelTitle.Font, FontStyle.Regular) ' Set font to normal
+
+                            Dim nameLabel As New Label() ' Label for employee name
+                            nameLabel.Text = reader("employee_name").ToString()
+                            nameLabel.Location = New Point(valueXPosition, controlYPosition)
                             nameLabel.Font = New Font(nameLabel.Font, FontStyle.Regular) ' Set font to normal
 
                             ' Set font to normal for other labels as well
                             Dim phoneLabel As New Label()
                             phoneLabel.Text = "Phone Number:"
-                            phoneLabel.Location = New Point(10, 40)
+                            phoneLabel.Location = New Point(labelXPosition, controlYPosition + spacing)
                             phoneLabel.Font = New Font(phoneLabel.Font, FontStyle.Regular)
 
                             Dim phoneNumberLabel As New Label()
                             phoneNumberLabel.Text = reader("employee_phone_number").ToString()
-                            phoneNumberLabel.Location = New Point(130, 40)
+                            phoneNumberLabel.Location = New Point(valueXPosition, controlYPosition + spacing)
                             phoneNumberLabel.Font = New Font(phoneNumberLabel.Font, FontStyle.Regular)
 
                             Dim entryDateLabel As New Label()
                             entryDateLabel.Text = "Date of Entry:"
-                            entryDateLabel.Location = New Point(10, 70)
+                            entryDateLabel.Location = New Point(labelXPosition, controlYPosition + 2 * spacing)
                             entryDateLabel.Font = New Font(entryDateLabel.Font, FontStyle.Regular)
+
+                            Dim entryDateValueLabel As New Label()
+                            entryDateValueLabel.Text = reader("date_of_entry").ToString()
+                            entryDateValueLabel.Location = New Point(valueXPosition, controlYPosition + 2 * spacing)
+                            entryDateValueLabel.Font = New Font(entryDateValueLabel.Font, FontStyle.Regular)
 
                             Dim deleteButton As New Button()
                             deleteButton.Text = "Delete"
                             deleteButton.Location = New Point(300, 70)
                             deleteButton.Tag = reader("employee_id").ToString() ' Store employee ID as Tag
+                            deleteButton.Size = New Size(80, 40)
                             AddHandler deleteButton.Click, AddressOf DeleteButton_Click
+
 
                             Dim updateButton As New Button()
                             updateButton.Text = "Update"
-                            updateButton.Location = New Point(220, 70)
+                            updateButton.Location = New Point(300, 10)
                             updateButton.Tag = reader("employee_id").ToString() ' Store employee ID as Tag
+                            updateButton.Size = New Size(80, 40)
                             AddHandler updateButton.Click, AddressOf UpdateButton_Click
 
-
-                            Dim entryDateValueLabel As New Label()
-                            entryDateValueLabel.Text = reader("date_of_entry").ToString()
-                            entryDateValueLabel.Location = New Point(130, 70) ' Adjust X position accordingly
-
-                            ' Create a panel to hold employee details
-                            Dim employeePanel As New Panel()
-                            employeePanel.BorderStyle = BorderStyle.FixedSingle
-                            employeePanel.Size = New Size(400, 160)
+                            employeePanel.Controls.Add(nameLabelTitle)
                             employeePanel.Controls.Add(nameLabel)
                             employeePanel.Controls.Add(phoneLabel)
                             employeePanel.Controls.Add(phoneNumberLabel)
@@ -86,6 +100,11 @@ Public Class StaffUserControl
                             employeePanel.Controls.Add(entryDateValueLabel)
                             employeePanel.Controls.Add(deleteButton)
                             employeePanel.Controls.Add(updateButton)
+
+                            ' Add the employee panel to the parent control
+                            Controls.Add(employeePanel)
+
+
 
 
 
@@ -163,6 +182,7 @@ Public Class StaffUserControl
         Public Property Name As String
         Public Property PhoneNumber As String
         Public Property Type As String
+        Public Property Is_Available As String
         Public Property EntryDate As Date
     End Class
 
@@ -199,6 +219,7 @@ Public Class StaffUserControl
                         employeeData.PhoneNumber = reader("employee_phone_number").ToString()
                         employeeData.Type = reader("employee_type").ToString()
                         employeeData.EntryDate = Convert.ToDateTime(reader("date_of_entry"))
+                        employeeData.Is_Available = reader("is_available").ToString()
                     End If
                 End Using
             End Using
