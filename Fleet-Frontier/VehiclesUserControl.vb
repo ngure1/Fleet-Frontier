@@ -53,7 +53,7 @@ Public Class VehiclesUserControl
                     While reader.Read()
                         Dim vehiclePanel As New Panel()
                         vehiclePanel.BorderStyle = BorderStyle.FixedSingle
-                        vehiclePanel.Size = New Size(400, 150)
+                        vehiclePanel.Size = New Size(400, 110)
 
                         Dim numberPlateLabel As New Label()
                         numberPlateLabel.Text = "Number Plate:"
@@ -84,6 +84,7 @@ Public Class VehiclesUserControl
                         Dim updateButton As New Button()
                         updateButton.Text = "Update"
                         updateButton.Location = New Point(300, 10)
+                        updateButton.Size = New Size(80, 30)
                         ' Add click event handler for update button
                         Dim vehicleId As String = reader("vehicle_id").ToString()
                         AddHandler updateButton.Click, Sub(sender As Object, e As EventArgs)
@@ -93,6 +94,7 @@ Public Class VehiclesUserControl
                         Dim deleteButton As New Button()
                         deleteButton.Text = "Delete"
                         deleteButton.Location = New Point(300, 70)
+                        deleteButton.Size = New Size(80, 30)
                         deleteButton.Tag = reader("vehicle_id").ToString() ' Store vehicle ID as Tag
                         AddHandler deleteButton.Click, AddressOf DeleteButton_Click
 
@@ -107,7 +109,7 @@ Public Class VehiclesUserControl
                         vehiclePanel.Controls.Add(deleteButton)
 
                         ' Calculate the position of the vehiclePanel based on the index
-                        Dim panelYPosition As Integer = 10 + (160 * VehicleBodypanel.Controls.Count)
+                        Dim panelYPosition As Integer = 10 + (120 * VehicleBodypanel.Controls.Count)
                         vehiclePanel.Location = New Point(10, panelYPosition)
 
                         VehicleBodypanel.Controls.Add(vehiclePanel) ' Add vehiclePanel to VehicleBodypanel
