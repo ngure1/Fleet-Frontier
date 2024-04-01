@@ -32,57 +32,57 @@ Partial Class HomePageUserControl
         Panel3 = New Panel()
         PictureBox2 = New PictureBox()
         Label2 = New Label()
-        Panel4 = New Panel()
-        Panel5 = New Panel()
-        Panel6 = New Panel()
-        Label3 = New Label()
-        Panel7 = New Panel()
-        Label4 = New Label()
-        Label5 = New Label()
-        Button1 = New Button()
-        Button2 = New Button()
-        Button3 = New Button()
-        PictureBox3 = New PictureBox()
-        PictureBox4 = New PictureBox()
-        PictureBox5 = New PictureBox()
-        PictureBox6 = New PictureBox()
-        Label6 = New Label()
-        Label7 = New Label()
-        Label8 = New Label()
+        VehiclePanel = New Panel()
+        TotalVehiclesLabel = New Label()
+        RentedLabel = New Label()
+        VehicleOnTripLabel = New Label()
+        VehicleAvailableLabel = New Label()
         Label9 = New Label()
-        Label10 = New Label()
-        Label11 = New Label()
-        Label12 = New Label()
-        Label13 = New Label()
-        Label14 = New Label()
-        Label15 = New Label()
-        Label16 = New Label()
-        Label17 = New Label()
+        Label8 = New Label()
+        Label7 = New Label()
+        Label6 = New Label()
+        PictureBox6 = New PictureBox()
+        PictureBox5 = New PictureBox()
+        PictureBox4 = New PictureBox()
+        PictureBox3 = New PictureBox()
+        AddVehicleButton = New Button()
+        Label3 = New Label()
+        TripPanel = New Panel()
+        AddTripsButton = New Button()
+        Label4 = New Label()
+        StaffPanel = New Panel()
+        StaffTotalLabel = New Label()
+        Label20 = New Label()
+        StaffOnTripLabel = New Label()
+        AvailableConductorsLabel = New Label()
+        AvailableDriversLabel = New Label()
         Label18 = New Label()
         Label19 = New Label()
-        Label20 = New Label()
         Label21 = New Label()
         PictureBox7 = New PictureBox()
         PictureBox8 = New PictureBox()
         PictureBox9 = New PictureBox()
         PictureBox10 = New PictureBox()
+        AddStaffButton = New Button()
+        Label5 = New Label()
+        ActivityPanel = New Panel()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel3.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        Panel4.SuspendLayout()
-        Panel5.SuspendLayout()
-        Panel6.SuspendLayout()
-        Panel7.SuspendLayout()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
+        VehiclePanel.SuspendLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        TripPanel.SuspendLayout()
+        StaffPanel.SuspendLayout()
         CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
+        ActivityPanel.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
@@ -171,170 +171,104 @@ Partial Class HomePageUserControl
         Label2.TabIndex = 4
         Label2.Text = "Activity"
         ' 
-        ' Panel4
+        ' VehiclePanel
         ' 
-        Panel4.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        Panel4.Controls.Add(Label13)
-        Panel4.Controls.Add(Label12)
-        Panel4.Controls.Add(Label11)
-        Panel4.Controls.Add(Label10)
-        Panel4.Controls.Add(Label9)
-        Panel4.Controls.Add(Label8)
-        Panel4.Controls.Add(Label7)
-        Panel4.Controls.Add(Label6)
-        Panel4.Controls.Add(PictureBox6)
-        Panel4.Controls.Add(PictureBox5)
-        Panel4.Controls.Add(PictureBox4)
-        Panel4.Controls.Add(PictureBox3)
-        Panel4.Controls.Add(Button2)
-        Panel4.Controls.Add(Label3)
-        Panel4.Location = New Point(434, 48)
-        Panel4.Name = "Panel4"
-        Panel4.Size = New Size(260, 206)
-        Panel4.TabIndex = 5
+        VehiclePanel.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
+        VehiclePanel.Controls.Add(TotalVehiclesLabel)
+        VehiclePanel.Controls.Add(RentedLabel)
+        VehiclePanel.Controls.Add(VehicleOnTripLabel)
+        VehiclePanel.Controls.Add(VehicleAvailableLabel)
+        VehiclePanel.Controls.Add(Label9)
+        VehiclePanel.Controls.Add(Label8)
+        VehiclePanel.Controls.Add(Label7)
+        VehiclePanel.Controls.Add(Label6)
+        VehiclePanel.Controls.Add(PictureBox6)
+        VehiclePanel.Controls.Add(PictureBox5)
+        VehiclePanel.Controls.Add(PictureBox4)
+        VehiclePanel.Controls.Add(PictureBox3)
+        VehiclePanel.Controls.Add(AddVehicleButton)
+        VehiclePanel.Controls.Add(Label3)
+        VehiclePanel.Location = New Point(434, 48)
+        VehiclePanel.Name = "VehiclePanel"
+        VehiclePanel.Size = New Size(260, 206)
+        VehiclePanel.TabIndex = 5
         ' 
-        ' Panel5
+        ' TotalVehiclesLabel
         ' 
-        Panel5.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        Panel5.Controls.Add(Button1)
-        Panel5.Controls.Add(Label4)
-        Panel5.Location = New Point(15, 48)
-        Panel5.Name = "Panel5"
-        Panel5.Padding = New Padding(10)
-        Panel5.Size = New Size(395, 473)
-        Panel5.TabIndex = 6
+        TotalVehiclesLabel.AutoSize = True
+        TotalVehiclesLabel.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        TotalVehiclesLabel.ForeColor = Color.White
+        TotalVehiclesLabel.Location = New Point(188, 163)
+        TotalVehiclesLabel.Name = "TotalVehiclesLabel"
+        TotalVehiclesLabel.Size = New Size(15, 20)
+        TotalVehiclesLabel.TabIndex = 19
+        TotalVehiclesLabel.Text = "*"
         ' 
-        ' Panel6
+        ' RentedLabel
         ' 
-        Panel6.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        Panel6.Controls.Add(Label14)
-        Panel6.Controls.Add(Label20)
-        Panel6.Controls.Add(Label15)
-        Panel6.Controls.Add(Label16)
-        Panel6.Controls.Add(Label17)
-        Panel6.Controls.Add(Label18)
-        Panel6.Controls.Add(Label19)
-        Panel6.Controls.Add(Label21)
-        Panel6.Controls.Add(PictureBox7)
-        Panel6.Controls.Add(PictureBox8)
-        Panel6.Controls.Add(PictureBox9)
-        Panel6.Controls.Add(PictureBox10)
-        Panel6.Controls.Add(Button3)
-        Panel6.Controls.Add(Label5)
-        Panel6.Location = New Point(434, 260)
-        Panel6.Name = "Panel6"
-        Panel6.Size = New Size(260, 261)
-        Panel6.TabIndex = 7
+        RentedLabel.AutoSize = True
+        RentedLabel.BackColor = Color.Orange
+        RentedLabel.Location = New Point(188, 128)
+        RentedLabel.Name = "RentedLabel"
+        RentedLabel.Size = New Size(15, 20)
+        RentedLabel.TabIndex = 18
+        RentedLabel.Text = "*"
         ' 
-        ' Label3
+        ' VehicleOnTripLabel
         ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Gabriola", 12F, FontStyle.Bold)
-        Label3.Location = New Point(63, 9)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(114, 37)
-        Label3.TabIndex = 5
-        Label3.Text = "Vehicle Status"
+        VehicleOnTripLabel.AutoSize = True
+        VehicleOnTripLabel.BackColor = Color.DeepSkyBlue
+        VehicleOnTripLabel.Location = New Point(188, 90)
+        VehicleOnTripLabel.Name = "VehicleOnTripLabel"
+        VehicleOnTripLabel.Size = New Size(15, 20)
+        VehicleOnTripLabel.TabIndex = 17
+        VehicleOnTripLabel.Text = "*"
         ' 
-        ' Panel7
+        ' VehicleAvailableLabel
         ' 
-        Panel7.Controls.Add(Label2)
-        Panel7.Controls.Add(Panel6)
-        Panel7.Controls.Add(Panel5)
-        Panel7.Controls.Add(Panel4)
-        Panel7.Location = New Point(14, 111)
-        Panel7.Name = "Panel7"
-        Panel7.Size = New Size(704, 531)
-        Panel7.TabIndex = 8
+        VehicleAvailableLabel.AutoSize = True
+        VehicleAvailableLabel.BackColor = Color.DarkSeaGreen
+        VehicleAvailableLabel.Location = New Point(188, 55)
+        VehicleAvailableLabel.Name = "VehicleAvailableLabel"
+        VehicleAvailableLabel.Size = New Size(15, 20)
+        VehicleAvailableLabel.TabIndex = 16
+        VehicleAvailableLabel.Text = "*"
         ' 
-        ' Label4
+        ' Label9
         ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Gabriola", 12F, FontStyle.Bold)
-        Label4.Location = New Point(166, 14)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(53, 37)
-        Label4.TabIndex = 5
-        Label4.Text = "Trips"
+        Label9.AutoSize = True
+        Label9.Location = New Point(63, 163)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(42, 20)
+        Label9.TabIndex = 15
+        Label9.Text = "Total"
         ' 
-        ' Label5
+        ' Label8
         ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Gabriola", 12F, FontStyle.Bold)
-        Label5.Location = New Point(104, 9)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(49, 37)
-        Label5.TabIndex = 5
-        Label5.Text = "Staff"
+        Label8.AutoSize = True
+        Label8.Location = New Point(63, 128)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(82, 20)
+        Label8.TabIndex = 14
+        Label8.Text = "Rented out"
         ' 
-        ' Button1
+        ' Label7
         ' 
-        Button1.BackColor = Color.Silver
-        Button1.FlatAppearance.MouseDownBackColor = Color.Gray
-        Button1.FlatAppearance.MouseOverBackColor = Color.Silver
-        Button1.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
-        Button1.Location = New Point(345, 3)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(47, 47)
-        Button1.TabIndex = 6
-        Button1.Text = "+"
-        Button1.UseVisualStyleBackColor = False
+        Label7.AutoSize = True
+        Label7.Location = New Point(63, 91)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(55, 20)
+        Label7.TabIndex = 13
+        Label7.Text = "On trip"
         ' 
-        ' Button2
+        ' Label6
         ' 
-        Button2.BackColor = Color.Silver
-        Button2.FlatAppearance.MouseDownBackColor = Color.Gray
-        Button2.FlatAppearance.MouseOverBackColor = Color.Silver
-        Button2.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
-        Button2.Location = New Point(210, 5)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(47, 47)
-        Button2.TabIndex = 7
-        Button2.Text = "+"
-        Button2.UseVisualStyleBackColor = False
-        ' 
-        ' Button3
-        ' 
-        Button3.BackColor = Color.Silver
-        Button3.FlatAppearance.MouseDownBackColor = Color.Gray
-        Button3.FlatAppearance.MouseOverBackColor = Color.Silver
-        Button3.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
-        Button3.Location = New Point(209, 4)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(47, 47)
-        Button3.TabIndex = 8
-        Button3.Text = "+"
-        Button3.UseVisualStyleBackColor = False
-        ' 
-        ' PictureBox3
-        ' 
-        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(24, 91)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(24, 24)
-        PictureBox3.SizeMode = PictureBoxSizeMode.AutoSize
-        PictureBox3.TabIndex = 8
-        PictureBox3.TabStop = False
-        ' 
-        ' PictureBox4
-        ' 
-        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(24, 55)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(24, 24)
-        PictureBox4.SizeMode = PictureBoxSizeMode.AutoSize
-        PictureBox4.TabIndex = 9
-        PictureBox4.TabStop = False
-        ' 
-        ' PictureBox5
-        ' 
-        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
-        PictureBox5.Location = New Point(24, 163)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(24, 24)
-        PictureBox5.SizeMode = PictureBoxSizeMode.AutoSize
-        PictureBox5.TabIndex = 10
-        PictureBox5.TabStop = False
+        Label6.AutoSize = True
+        Label6.Location = New Point(63, 55)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(71, 20)
+        Label6.TabIndex = 12
+        Label6.Text = "Available"
         ' 
         ' PictureBox6
         ' 
@@ -346,123 +280,164 @@ Partial Class HomePageUserControl
         PictureBox6.TabIndex = 11
         PictureBox6.TabStop = False
         ' 
-        ' Label6
+        ' PictureBox5
         ' 
-        Label6.AutoSize = True
-        Label6.Location = New Point(63, 55)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(71, 20)
-        Label6.TabIndex = 12
-        Label6.Text = "Available"
+        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
+        PictureBox5.Location = New Point(24, 163)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(24, 24)
+        PictureBox5.SizeMode = PictureBoxSizeMode.AutoSize
+        PictureBox5.TabIndex = 10
+        PictureBox5.TabStop = False
         ' 
-        ' Label7
+        ' PictureBox4
         ' 
-        Label7.AutoSize = True
-        Label7.Location = New Point(63, 91)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(55, 20)
-        Label7.TabIndex = 13
-        Label7.Text = "On trip"
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(24, 55)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(24, 24)
+        PictureBox4.SizeMode = PictureBoxSizeMode.AutoSize
+        PictureBox4.TabIndex = 9
+        PictureBox4.TabStop = False
         ' 
-        ' Label8
+        ' PictureBox3
         ' 
-        Label8.AutoSize = True
-        Label8.Location = New Point(63, 128)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(82, 20)
-        Label8.TabIndex = 14
-        Label8.Text = "Rented out"
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(24, 91)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(24, 24)
+        PictureBox3.SizeMode = PictureBoxSizeMode.AutoSize
+        PictureBox3.TabIndex = 8
+        PictureBox3.TabStop = False
         ' 
-        ' Label9
+        ' AddVehicleButton
         ' 
-        Label9.AutoSize = True
-        Label9.Location = New Point(63, 163)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(42, 20)
-        Label9.TabIndex = 15
-        Label9.Text = "Total"
+        AddVehicleButton.BackColor = Color.Silver
+        AddVehicleButton.FlatAppearance.MouseDownBackColor = Color.Gray
+        AddVehicleButton.FlatAppearance.MouseOverBackColor = Color.Silver
+        AddVehicleButton.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
+        AddVehicleButton.Location = New Point(210, 5)
+        AddVehicleButton.Name = "AddVehicleButton"
+        AddVehicleButton.Size = New Size(47, 47)
+        AddVehicleButton.TabIndex = 7
+        AddVehicleButton.Text = "+"
+        AddVehicleButton.UseVisualStyleBackColor = False
         ' 
-        ' Label10
+        ' Label3
         ' 
-        Label10.AutoSize = True
-        Label10.BackColor = Color.DarkSeaGreen
-        Label10.Location = New Point(188, 55)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(15, 20)
-        Label10.TabIndex = 16
-        Label10.Text = "*"
+        Label3.AutoSize = True
+        Label3.Font = New Font("Gabriola", 12F, FontStyle.Bold)
+        Label3.Location = New Point(63, 9)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(114, 37)
+        Label3.TabIndex = 5
+        Label3.Text = "Vehicle Status"
         ' 
-        ' Label11
+        ' TripPanel
         ' 
-        Label11.AutoSize = True
-        Label11.BackColor = Color.DeepSkyBlue
-        Label11.Location = New Point(188, 90)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(15, 20)
-        Label11.TabIndex = 17
-        Label11.Text = "*"
+        TripPanel.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
+        TripPanel.Controls.Add(AddTripsButton)
+        TripPanel.Controls.Add(Label4)
+        TripPanel.Location = New Point(15, 48)
+        TripPanel.Name = "TripPanel"
+        TripPanel.Padding = New Padding(10)
+        TripPanel.Size = New Size(395, 473)
+        TripPanel.TabIndex = 6
         ' 
-        ' Label12
+        ' AddTripsButton
         ' 
-        Label12.AutoSize = True
-        Label12.BackColor = Color.Orange
-        Label12.Location = New Point(188, 128)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(15, 20)
-        Label12.TabIndex = 18
-        Label12.Text = "*"
+        AddTripsButton.BackColor = Color.Silver
+        AddTripsButton.FlatAppearance.MouseDownBackColor = Color.Gray
+        AddTripsButton.FlatAppearance.MouseOverBackColor = Color.Silver
+        AddTripsButton.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
+        AddTripsButton.Location = New Point(345, 3)
+        AddTripsButton.Name = "AddTripsButton"
+        AddTripsButton.Size = New Size(47, 47)
+        AddTripsButton.TabIndex = 6
+        AddTripsButton.Text = "+"
+        AddTripsButton.UseVisualStyleBackColor = False
         ' 
-        ' Label13
+        ' Label4
         ' 
-        Label13.AutoSize = True
-        Label13.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Label13.ForeColor = Color.White
-        Label13.Location = New Point(188, 163)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(15, 20)
-        Label13.TabIndex = 19
-        Label13.Text = "*"
+        Label4.AutoSize = True
+        Label4.Font = New Font("Gabriola", 12F, FontStyle.Bold)
+        Label4.Location = New Point(166, 14)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(53, 37)
+        Label4.TabIndex = 5
+        Label4.Text = "Trips"
         ' 
-        ' Label14
+        ' StaffPanel
         ' 
-        Label14.AutoSize = True
-        Label14.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
-        Label14.ForeColor = Color.White
-        Label14.Location = New Point(221, 179)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(15, 20)
-        Label14.TabIndex = 31
-        Label14.Text = "*"
+        StaffPanel.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
+        StaffPanel.Controls.Add(StaffTotalLabel)
+        StaffPanel.Controls.Add(Label20)
+        StaffPanel.Controls.Add(StaffOnTripLabel)
+        StaffPanel.Controls.Add(AvailableConductorsLabel)
+        StaffPanel.Controls.Add(AvailableDriversLabel)
+        StaffPanel.Controls.Add(Label18)
+        StaffPanel.Controls.Add(Label19)
+        StaffPanel.Controls.Add(Label21)
+        StaffPanel.Controls.Add(PictureBox7)
+        StaffPanel.Controls.Add(PictureBox8)
+        StaffPanel.Controls.Add(PictureBox9)
+        StaffPanel.Controls.Add(PictureBox10)
+        StaffPanel.Controls.Add(AddStaffButton)
+        StaffPanel.Controls.Add(Label5)
+        StaffPanel.Location = New Point(434, 260)
+        StaffPanel.Name = "StaffPanel"
+        StaffPanel.Size = New Size(260, 261)
+        StaffPanel.TabIndex = 7
         ' 
-        ' Label15
+        ' StaffTotalLabel
         ' 
-        Label15.AutoSize = True
-        Label15.BackColor = Color.Orange
-        Label15.Location = New Point(219, 144)
-        Label15.Name = "Label15"
-        Label15.Size = New Size(15, 20)
-        Label15.TabIndex = 30
-        Label15.Text = "*"
+        StaffTotalLabel.AutoSize = True
+        StaffTotalLabel.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
+        StaffTotalLabel.ForeColor = Color.White
+        StaffTotalLabel.Location = New Point(221, 179)
+        StaffTotalLabel.Name = "StaffTotalLabel"
+        StaffTotalLabel.Size = New Size(15, 20)
+        StaffTotalLabel.TabIndex = 31
+        StaffTotalLabel.Text = "*"
         ' 
-        ' Label16
+        ' Label20
         ' 
-        Label16.AutoSize = True
-        Label16.BackColor = Color.DeepSkyBlue
-        Label16.Location = New Point(219, 107)
-        Label16.Name = "Label16"
-        Label16.Size = New Size(15, 20)
-        Label16.TabIndex = 29
-        Label16.Text = "*"
+        Label20.AutoSize = True
+        Label20.Location = New Point(63, 107)
+        Label20.Name = "Label20"
+        Label20.Size = New Size(150, 20)
+        Label20.TabIndex = 25
+        Label20.Text = "Available Conductors"
         ' 
-        ' Label17
+        ' StaffOnTripLabel
         ' 
-        Label17.AutoSize = True
-        Label17.BackColor = Color.DarkSeaGreen
-        Label17.Location = New Point(219, 71)
-        Label17.Name = "Label17"
-        Label17.Size = New Size(15, 20)
-        Label17.TabIndex = 28
-        Label17.Text = "*"
+        StaffOnTripLabel.AutoSize = True
+        StaffOnTripLabel.BackColor = Color.Orange
+        StaffOnTripLabel.Location = New Point(219, 144)
+        StaffOnTripLabel.Name = "StaffOnTripLabel"
+        StaffOnTripLabel.Size = New Size(15, 20)
+        StaffOnTripLabel.TabIndex = 30
+        StaffOnTripLabel.Text = "*"
+        ' 
+        ' AvailableConductorsLabel
+        ' 
+        AvailableConductorsLabel.AutoSize = True
+        AvailableConductorsLabel.BackColor = Color.DeepSkyBlue
+        AvailableConductorsLabel.Location = New Point(219, 107)
+        AvailableConductorsLabel.Name = "AvailableConductorsLabel"
+        AvailableConductorsLabel.Size = New Size(15, 20)
+        AvailableConductorsLabel.TabIndex = 29
+        AvailableConductorsLabel.Text = "*"
+        ' 
+        ' AvailableDriversLabel
+        ' 
+        AvailableDriversLabel.AutoSize = True
+        AvailableDriversLabel.BackColor = Color.DarkSeaGreen
+        AvailableDriversLabel.Location = New Point(219, 71)
+        AvailableDriversLabel.Name = "AvailableDriversLabel"
+        AvailableDriversLabel.Size = New Size(15, 20)
+        AvailableDriversLabel.TabIndex = 28
+        AvailableDriversLabel.Text = "*"
         ' 
         ' Label18
         ' 
@@ -481,15 +456,6 @@ Partial Class HomePageUserControl
         Label19.Size = New Size(55, 20)
         Label19.TabIndex = 26
         Label19.Text = "On trip"
-        ' 
-        ' Label20
-        ' 
-        Label20.AutoSize = True
-        Label20.Location = New Point(63, 107)
-        Label20.Name = "Label20"
-        Label20.Size = New Size(150, 20)
-        Label20.TabIndex = 25
-        Label20.Text = "Available Conductors"
         ' 
         ' Label21
         ' 
@@ -540,12 +506,46 @@ Partial Class HomePageUserControl
         PictureBox10.TabIndex = 20
         PictureBox10.TabStop = False
         ' 
+        ' AddStaffButton
+        ' 
+        AddStaffButton.BackColor = Color.Silver
+        AddStaffButton.FlatAppearance.MouseDownBackColor = Color.Gray
+        AddStaffButton.FlatAppearance.MouseOverBackColor = Color.Silver
+        AddStaffButton.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
+        AddStaffButton.Location = New Point(209, 4)
+        AddStaffButton.Name = "AddStaffButton"
+        AddStaffButton.Size = New Size(47, 47)
+        AddStaffButton.TabIndex = 8
+        AddStaffButton.Text = "+"
+        AddStaffButton.UseVisualStyleBackColor = False
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Gabriola", 12F, FontStyle.Bold)
+        Label5.Location = New Point(104, 9)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(49, 37)
+        Label5.TabIndex = 5
+        Label5.Text = "Staff"
+        ' 
+        ' ActivityPanel
+        ' 
+        ActivityPanel.Controls.Add(Label2)
+        ActivityPanel.Controls.Add(StaffPanel)
+        ActivityPanel.Controls.Add(TripPanel)
+        ActivityPanel.Controls.Add(VehiclePanel)
+        ActivityPanel.Location = New Point(14, 111)
+        ActivityPanel.Name = "ActivityPanel"
+        ActivityPanel.Size = New Size(704, 531)
+        ActivityPanel.TabIndex = 8
+        ' 
         ' HomePageUserControl
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Silver
-        Controls.Add(Panel7)
+        Controls.Add(ActivityPanel)
         Controls.Add(Panel3)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
@@ -559,22 +559,22 @@ Partial Class HomePageUserControl
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        Panel4.ResumeLayout(False)
-        Panel4.PerformLayout()
-        Panel5.ResumeLayout(False)
-        Panel5.PerformLayout()
-        Panel6.ResumeLayout(False)
-        Panel6.PerformLayout()
-        Panel7.ResumeLayout(False)
-        Panel7.PerformLayout()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
+        VehiclePanel.ResumeLayout(False)
+        VehiclePanel.PerformLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        TripPanel.ResumeLayout(False)
+        TripPanel.PerformLayout()
+        StaffPanel.ResumeLayout(False)
+        StaffPanel.PerformLayout()
         CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
+        ActivityPanel.ResumeLayout(False)
+        ActivityPanel.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -587,32 +587,32 @@ Partial Class HomePageUserControl
     Friend WithEvents Panel3 As Panel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Panel4 As Panel
+    Friend WithEvents VehiclePanel As Panel
     Friend WithEvents Label3 As Label
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents TripPanel As Panel
+    Friend WithEvents StaffPanel As Panel
+    Friend WithEvents ActivityPanel As Panel
+    Friend WithEvents AddTripsButton As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents AddVehicleButton As Button
+    Friend WithEvents AddStaffButton As Button
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents TotalVehiclesLabel As Label
+    Friend WithEvents RentedLabel As Label
+    Friend WithEvents VehicleOnTripLabel As Label
+    Friend WithEvents VehicleAvailableLabel As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label17 As Label
+    Friend WithEvents StaffTotalLabel As Label
+    Friend WithEvents StaffOnTripLabel As Label
+    Friend WithEvents AvailableConductorsLabel As Label
+    Friend WithEvents AvailableDriversLabel As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
