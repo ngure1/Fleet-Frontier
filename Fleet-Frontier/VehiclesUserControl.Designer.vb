@@ -26,10 +26,10 @@ Partial Class VehiclesUserControl
         Panel1 = New Panel()
         VehicleBodypanel = New Panel()
         VehicleHeaderPanel = New Panel()
+        RefreshButton = New Button()
         AddVehicleButton = New Button()
         VehiclesLabel = New Label()
         VehicleSearchBar = New TextBox()
-        RefreshButton = New Button()
         Panel1.SuspendLayout()
         VehicleHeaderPanel.SuspendLayout()
         SuspendLayout()
@@ -40,21 +40,19 @@ Partial Class VehiclesUserControl
         Panel1.Controls.Add(VehicleBodypanel)
         Panel1.Controls.Add(VehicleHeaderPanel)
         Panel1.Dock = DockStyle.Fill
-        Panel1.Location = New Point(26, 25)
-        Panel1.Margin = New Padding(4)
+        Panel1.Location = New Point(21, 20)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1228, 776)
+        Panel1.Size = New Size(982, 621)
         Panel1.TabIndex = 0
         ' 
         ' VehicleBodypanel
         ' 
         VehicleBodypanel.AutoScroll = True
         VehicleBodypanel.Dock = DockStyle.Fill
-        VehicleBodypanel.Location = New Point(0, 76)
-        VehicleBodypanel.Margin = New Padding(4)
+        VehicleBodypanel.Location = New Point(0, 61)
         VehicleBodypanel.Name = "VehicleBodypanel"
-        VehicleBodypanel.Padding = New Padding(26, 25, 26, 25)
-        VehicleBodypanel.Size = New Size(1228, 700)
+        VehicleBodypanel.Padding = New Padding(21, 20, 21, 20)
+        VehicleBodypanel.Size = New Size(982, 560)
         VehicleBodypanel.TabIndex = 0
         ' 
         ' VehicleHeaderPanel
@@ -65,10 +63,20 @@ Partial Class VehiclesUserControl
         VehicleHeaderPanel.Controls.Add(VehicleSearchBar)
         VehicleHeaderPanel.Dock = DockStyle.Top
         VehicleHeaderPanel.Location = New Point(0, 0)
-        VehicleHeaderPanel.Margin = New Padding(4)
         VehicleHeaderPanel.Name = "VehicleHeaderPanel"
-        VehicleHeaderPanel.Size = New Size(1228, 76)
+        VehicleHeaderPanel.Size = New Size(982, 61)
         VehicleHeaderPanel.TabIndex = 4
+        ' 
+        ' RefreshButton
+        ' 
+        RefreshButton.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
+        RefreshButton.Location = New Point(437, 11)
+        RefreshButton.Margin = New Padding(2, 2, 2, 2)
+        RefreshButton.Name = "RefreshButton"
+        RefreshButton.Size = New Size(109, 38)
+        RefreshButton.TabIndex = 8
+        RefreshButton.Text = "Refresh"
+        RefreshButton.UseVisualStyleBackColor = True
         ' 
         ' AddVehicleButton
         ' 
@@ -79,10 +87,9 @@ Partial Class VehiclesUserControl
         AddVehicleButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         AddVehicleButton.FlatStyle = FlatStyle.Flat
         AddVehicleButton.Font = New Font("Gabriola", 12F, FontStyle.Bold)
-        AddVehicleButton.Location = New Point(1016, 19)
-        AddVehicleButton.Margin = New Padding(4)
+        AddVehicleButton.Location = New Point(813, 15)
         AddVehicleButton.Name = "AddVehicleButton"
-        AddVehicleButton.Size = New Size(186, 49)
+        AddVehicleButton.Size = New Size(149, 39)
         AddVehicleButton.TabIndex = 2
         AddVehicleButton.Text = "Add Vehicle"
         AddVehicleButton.UseVisualStyleBackColor = False
@@ -93,10 +100,9 @@ Partial Class VehiclesUserControl
         VehiclesLabel.Font = New Font("MV Boli", 15F, FontStyle.Bold)
         VehiclesLabel.Image = CType(resources.GetObject("VehiclesLabel.Image"), Image)
         VehiclesLabel.ImageAlign = ContentAlignment.MiddleLeft
-        VehiclesLabel.Location = New Point(21, 19)
-        VehiclesLabel.Margin = New Padding(4, 0, 4, 0)
+        VehiclesLabel.Location = New Point(17, 15)
         VehiclesLabel.Name = "VehiclesLabel"
-        VehiclesLabel.Size = New Size(165, 40)
+        VehiclesLabel.Size = New Size(135, 32)
         VehiclesLabel.TabIndex = 1
         VehiclesLabel.Text = "  Vehicles"
         VehiclesLabel.TextAlign = ContentAlignment.MiddleRight
@@ -105,33 +111,21 @@ Partial Class VehiclesUserControl
         ' 
         VehicleSearchBar.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
         VehicleSearchBar.BackColor = Color.White
-        VehicleSearchBar.Location = New Point(768, 25)
-        VehicleSearchBar.Margin = New Padding(4)
-        VehicleSearchBar.MinimumSize = New Size(162, 27)
+        VehicleSearchBar.Location = New Point(614, 20)
+        VehicleSearchBar.MinimumSize = New Size(130, 27)
         VehicleSearchBar.Name = "VehicleSearchBar"
         VehicleSearchBar.PlaceholderText = "Search"
-        VehicleSearchBar.Size = New Size(226, 31)
+        VehicleSearchBar.Size = New Size(182, 27)
         VehicleSearchBar.TabIndex = 0
-        ' 
-        ' RefreshButton
-        ' 
-        RefreshButton.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
-        RefreshButton.Location = New Point(546, 14)
-        RefreshButton.Name = "RefreshButton"
-        RefreshButton.Size = New Size(136, 48)
-        RefreshButton.TabIndex = 8
-        RefreshButton.Text = "Refresh"
-        RefreshButton.UseVisualStyleBackColor = True
         ' 
         ' VehiclesUserControl
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         Controls.Add(Panel1)
-        Margin = New Padding(4)
         Name = "VehiclesUserControl"
-        Padding = New Padding(26, 25, 26, 25)
-        Size = New Size(1280, 826)
+        Padding = New Padding(21, 20, 21, 20)
+        Size = New Size(1024, 661)
         Panel1.ResumeLayout(False)
         VehicleHeaderPanel.ResumeLayout(False)
         VehicleHeaderPanel.PerformLayout()
