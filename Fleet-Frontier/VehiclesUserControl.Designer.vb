@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class VehiclesUserControl
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class VehiclesUserControl
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VehiclesUserControl))
         Panel1 = New Panel()
@@ -86,7 +86,7 @@ Partial Class VehiclesUserControl
         AddVehicleButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         AddVehicleButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(255), CByte(128), CByte(0))
         AddVehicleButton.FlatStyle = FlatStyle.Flat
-        AddVehicleButton.Font = New Font("Gabriola", 12F, FontStyle.Bold)
+        AddVehicleButton.Font = New Font("Gabriola", 12.0F, FontStyle.Bold)
         AddVehicleButton.Location = New Point(813, 15)
         AddVehicleButton.Name = "AddVehicleButton"
         AddVehicleButton.Size = New Size(149, 39)
@@ -97,7 +97,7 @@ Partial Class VehiclesUserControl
         ' VehiclesLabel
         ' 
         VehiclesLabel.AutoSize = True
-        VehiclesLabel.Font = New Font("MV Boli", 15F, FontStyle.Bold)
+        VehiclesLabel.Font = New Font("MV Boli", 15.0F, FontStyle.Bold)
         VehiclesLabel.Image = CType(resources.GetObject("VehiclesLabel.Image"), Image)
         VehiclesLabel.ImageAlign = ContentAlignment.MiddleLeft
         VehiclesLabel.Location = New Point(17, 15)
@@ -120,7 +120,7 @@ Partial Class VehiclesUserControl
         ' 
         ' VehiclesUserControl
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
         AutoScaleMode = AutoScaleMode.Font
         Controls.Add(Panel1)
         Name = "VehiclesUserControl"

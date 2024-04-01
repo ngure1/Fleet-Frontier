@@ -191,16 +191,4 @@ Public Class VehiclesUserControl
     Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
         LoadVehicles()
     End Sub
-
-    Private Sub VehiclesLabel_Click(sender As Object, e As EventArgs) Handles VehiclesLabel.Click
-
-    End Sub
-
-    Private Sub VehicleSearchBar_TextChanged(sender As Object, e As EventArgs) Handles VehicleSearchBar.TextChanged
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
 End Class

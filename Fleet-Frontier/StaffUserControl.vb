@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class StaffUserControl
-    Dim ConnectionString As String = "server=localhost;port=33062;userid=root;password='default123';database=fleet_finder"
+    Public Shared ConnectionString As String = "server=localhost;port=33062;userid=root;password='default123';database=fleet_finder"
     ' Declare a shared variable to store the reference to the opened form
     Public openedAddStaffForm As AddStaffForm = Nothing
 
@@ -40,25 +40,36 @@ Public Class StaffUserControl
                             Dim nameLabel As New Label()
                             nameLabel.Text = "Name: " & reader("employee_name").ToString()
                             nameLabel.Location = New Point(10, 10)
-                            nameLabel.Font = New Font(nameLabel.Font, FontStyle.Bold) ' Set font to bold
+                            nameLabel.Font = New Font(nameLabel.Font, FontStyle.Regular) ' Set font to normal
 
+                            ' Set font to normal for other labels as well
                             Dim phoneLabel As New Label()
                             phoneLabel.Text = "Phone Number:"
                             phoneLabel.Location = New Point(10, 40)
+                            phoneLabel.Font = New Font(phoneLabel.Font, FontStyle.Regular)
 
                             Dim phoneNumberLabel As New Label()
                             phoneNumberLabel.Text = reader("employee_phone_number").ToString()
-                            phoneNumberLabel.Location = New Point(130, 40) ' Adjust X position accordingly
+                            phoneNumberLabel.Location = New Point(130, 40)
+                            phoneNumberLabel.Font = New Font(phoneNumberLabel.Font, FontStyle.Regular)
 
                             Dim entryDateLabel As New Label()
                             entryDateLabel.Text = "Date of Entry:"
                             entryDateLabel.Location = New Point(10, 70)
+                            entryDateLabel.Font = New Font(entryDateLabel.Font, FontStyle.Regular)
 
                             Dim deleteButton As New Button()
                             deleteButton.Text = "Delete"
                             deleteButton.Location = New Point(300, 70)
                             deleteButton.Tag = reader("employee_id").ToString() ' Store employee ID as Tag
                             AddHandler deleteButton.Click, AddressOf DeleteButton_Click
+
+                            Dim updateButton As New Button()
+                            updateButton.Text = "Update"
+                            updateButton.Location = New Point(220, 70)
+                            updateButton.Tag = reader("employee_id").ToString() ' Store employee ID as Tag
+                            AddHandler updateButton.Click, AddressOf UpdateButton_Click
+
 
                             Dim entryDateValueLabel As New Label()
                             entryDateValueLabel.Text = reader("date_of_entry").ToString()
@@ -67,24 +78,28 @@ Public Class StaffUserControl
                             ' Create a panel to hold employee details
                             Dim employeePanel As New Panel()
                             employeePanel.BorderStyle = BorderStyle.FixedSingle
-                            employeePanel.Size = New Size(400, 120)
+                            employeePanel.Size = New Size(400, 160)
                             employeePanel.Controls.Add(nameLabel)
                             employeePanel.Controls.Add(phoneLabel)
                             employeePanel.Controls.Add(phoneNumberLabel)
                             employeePanel.Controls.Add(entryDateLabel)
                             employeePanel.Controls.Add(entryDateValueLabel)
                             employeePanel.Controls.Add(deleteButton)
+                            employeePanel.Controls.Add(updateButton)
 
 
-                            ' Calculate the position of the employee panel based on the index
-                            Dim panelYPosition As Integer = 10 + (130 * GetConductorPanelCount())
-                            employeePanel.Location = New Point(10, panelYPosition)
 
                             ' Determine which panel to add the employee details to based on employee type
                             Dim employeeType As String = reader("employee_type").ToString()
                             If employeeType = "Driver" Then
+                                ' Calculate the position of the driver panel based on the index
+                                Dim driverPanelYPosition As Integer = 10 + (130 * GetDriverPanelCount())
+                                employeePanel.Location = New Point(10, driverPanelYPosition)
                                 DriversListPanel.Controls.Add(employeePanel)
                             ElseIf employeeType = "Conductor" Then
+                                ' Calculate the position of the conductor panel based on the index
+                                Dim conductorPanelYPosition As Integer = 10 + (130 * GetConductorPanelCount())
+                                employeePanel.Location = New Point(10, conductorPanelYPosition)
                                 ConductorListPanel.Controls.Add(employeePanel)
                             End If
                         End While
@@ -97,6 +112,10 @@ Public Class StaffUserControl
 
         ' Make ConductorListPanel scrollable
         ConductorListPanel.AutoScroll = True
+
+        ' Make DriverListPanel scrollable
+        DriversListPanel.AutoScroll = True
+
     End Sub
     ' Add this handler to handle the delete button click
     Private Sub DeleteButton_Click(sender As Object, e As EventArgs)
@@ -137,8 +156,65 @@ Public Class StaffUserControl
         End If
     End Sub
 
+
+    ' define the EmployeeData class to represent employee information
+    Public Class EmployeeData
+        Public Property Id As Integer
+        Public Property Name As String
+        Public Property PhoneNumber As String
+        Public Property Type As String
+        Public Property EntryDate As Date
+    End Class
+
+    ' Add a new event handler for the update button click
+    Private Sub UpdateButton_Click(sender As Object, e As EventArgs)
+        Dim button As Button = DirectCast(sender, Button)
+        Dim employeeId As String = button.Tag.ToString()
+
+        ' Retrieve employee data based on employeeId
+        Dim employeeData As EmployeeData = RetrieveEmployeeData(employeeId)
+
+        ' Pass the retrieved employee data to the UpdateStaffForm
+        Dim updateForm As New UpdateStaff(employeeData)
+        updateForm.ShowDialog()
+
+        ' Refresh the employee panels after update
+        RefreshStaffPanels()
+    End Sub
+
+    Private Function RetrieveEmployeeData(employeeId As String) As EmployeeData
+        Dim employeeData As New EmployeeData()
+
+        Using connection As New MySqlConnection(ConnectionString)
+            connection.Open()
+            Dim query As String = "SELECT * FROM employee WHERE employee_id = @employeeId"
+
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@employeeId", employeeId)
+
+                Using reader As MySqlDataReader = command.ExecuteReader()
+                    If reader.Read() Then
+                        employeeData.Id = Convert.ToInt32(reader("employee_id"))
+                        employeeData.Name = reader("employee_name").ToString()
+                        employeeData.PhoneNumber = reader("employee_phone_number").ToString()
+                        employeeData.Type = reader("employee_type").ToString()
+                        employeeData.EntryDate = Convert.ToDateTime(reader("date_of_entry"))
+                    End If
+                End Using
+            End Using
+        End Using
+
+        Return employeeData
+    End Function
+
+
+
     Private Function GetConductorPanelCount() As Integer
         Return ConductorListPanel.Controls.OfType(Of Panel)().Count()
+    End Function
+
+    Private Function GetDriverPanelCount() As Integer
+        Return DriversListPanel.Controls.OfType(Of Panel)().Count()
     End Function
 
     Private Sub ClearEmployeePanels()

@@ -355,6 +355,9 @@ Partial Class MainForm
         VehiclesUserControl1.Margin = New Padding(3, 4, 3, 4)
         VehiclesUserControl1.Name = "VehiclesUserControl1"
         VehiclesUserControl1.Padding = New Padding(18, 29, 18, 29)
+        'VehiclesUserControl1.SelectedVehicleAvailability = Nothing
+        'VehiclesUserControl1.SelectedVehicleFuel = Nothing
+        'VehiclesUserControl1.SelectedVehicleNumberPlate = Nothing
         VehiclesUserControl1.Size = New Size(1024, 661)
         VehiclesUserControl1.TabIndex = 1
         ' 
