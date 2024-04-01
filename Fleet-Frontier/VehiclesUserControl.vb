@@ -85,6 +85,10 @@ Public Class VehiclesUserControl
                         updateButton.Text = "Update"
                         updateButton.Location = New Point(300, 10)
                         ' Add click event handler for update button
+                        Dim vehicleId As String = reader("vehicle_id").ToString()
+                        AddHandler updateButton.Click, Sub(sender As Object, e As EventArgs)
+                                                           UpdateButton_Click(sender, e, vehicleId)
+                                                       End Sub
 
                         Dim deleteButton As New Button()
                         deleteButton.Text = "Delete"
@@ -159,5 +163,32 @@ Public Class VehiclesUserControl
         End If
     End Sub
 
+    Private Sub UpdateButton_Click(sender As Object, e As EventArgs, vehicleId As String)
+        ' Fetch vehicle details based on vehicleId
+        Dim vehicleDetails As New Dictionary(Of String, String)()
+        Using connection As New MySqlConnection(ConnectionString)
+            connection.Open()
+            Dim query As String = "SELECT * FROM vehicle WHERE vehicle_id = @vehicleId"
+            Using command As New MySqlCommand(query, connection)
+                command.Parameters.AddWithValue("@vehicleId", vehicleId)
+                Using reader As MySqlDataReader = command.ExecuteReader()
+                    If reader.Read() Then
+                        vehicleDetails.Add("number_plate", reader("numberPlate").ToString())
+                        vehicleDetails.Add("fuel_cost", reader("fuel_cost/km").ToString())
+                        vehicleDetails.Add("is_available", reader("is_available").ToString())
+                        ' Add other vehicle details as needed
+                    End If
+                End Using
+            End Using
+        End Using
 
+        ' Open UpdateVehicle form and pass vehicle details
+        Dim updateVehicleForm As New UpdateVehicle(vehicleId, vehicleDetails)
+        updateVehicleForm.ShowDialog()
+    End Sub
+
+
+    Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
+        LoadVehicles()
+    End Sub
 End Class
