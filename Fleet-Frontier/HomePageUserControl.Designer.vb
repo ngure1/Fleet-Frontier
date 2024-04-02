@@ -89,15 +89,17 @@ Partial Class HomePageUserControl
         ' 
         Panel1.Controls.Add(MonthCalendar1)
         Panel1.Dock = DockStyle.Right
-        Panel1.Location = New Point(726, 0)
+        Panel1.Location = New Point(908, 0)
+        Panel1.Margin = New Padding(4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(298, 661)
+        Panel1.Size = New Size(372, 826)
         Panel1.TabIndex = 0
         ' 
         ' MonthCalendar1
         ' 
         MonthCalendar1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Right
-        MonthCalendar1.Location = New Point(19, 42)
+        MonthCalendar1.Location = New Point(24, 52)
+        MonthCalendar1.Margin = New Padding(11)
         MonthCalendar1.Name = "MonthCalendar1"
         MonthCalendar1.TabIndex = 0
         ' 
@@ -106,18 +108,20 @@ Partial Class HomePageUserControl
         Panel2.BackColor = Color.White
         Panel2.Controls.Add(TextBox1)
         Panel2.Controls.Add(PictureBox1)
-        Panel2.Location = New Point(152, 12)
+        Panel2.Location = New Point(190, 15)
+        Panel2.Margin = New Padding(4)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(391, 28)
+        Panel2.Size = New Size(489, 35)
         Panel2.TabIndex = 1
         ' 
         ' TextBox1
         ' 
         TextBox1.Dock = DockStyle.Fill
-        TextBox1.Location = New Point(33, 0)
+        TextBox1.Location = New Point(41, 0)
+        TextBox1.Margin = New Padding(4)
         TextBox1.Name = "TextBox1"
         TextBox1.PlaceholderText = "Search"
-        TextBox1.Size = New Size(358, 27)
+        TextBox1.Size = New Size(448, 31)
         TextBox1.TabIndex = 1
         ' 
         ' PictureBox1
@@ -125,8 +129,9 @@ Partial Class HomePageUserControl
         PictureBox1.Dock = DockStyle.Left
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(0, 0)
+        PictureBox1.Margin = New Padding(4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(33, 28)
+        PictureBox1.Size = New Size(41, 35)
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
@@ -134,9 +139,10 @@ Partial Class HomePageUserControl
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Gabriola", 14F, FontStyle.Bold)
-        Label1.Location = New Point(50, 0)
+        Label1.Location = New Point(62, 0)
+        Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(113, 45)
+        Label1.Size = New Size(126, 51)
         Label1.TabIndex = 2
         Label1.Text = "Dashboard"
         ' 
@@ -144,19 +150,21 @@ Partial Class HomePageUserControl
         ' 
         Panel3.Controls.Add(PictureBox2)
         Panel3.Controls.Add(Label1)
-        Panel3.Location = New Point(22, 59)
+        Panel3.Location = New Point(28, 74)
+        Panel3.Margin = New Padding(4)
         Panel3.Name = "Panel3"
-        Panel3.Padding = New Padding(5)
-        Panel3.Size = New Size(177, 45)
+        Panel3.Padding = New Padding(6)
+        Panel3.Size = New Size(221, 56)
         Panel3.TabIndex = 3
         ' 
         ' PictureBox2
         ' 
         PictureBox2.Dock = DockStyle.Left
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(5, 5)
+        PictureBox2.Location = New Point(6, 6)
+        PictureBox2.Margin = New Padding(4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(39, 35)
+        PictureBox2.Size = New Size(49, 44)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 0
         PictureBox2.TabStop = False
@@ -165,9 +173,10 @@ Partial Class HomePageUserControl
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Gabriola", 12F, FontStyle.Bold)
-        Label2.Location = New Point(321, 0)
+        Label2.Location = New Point(401, 0)
+        Label2.Margin = New Padding(4, 0, 4, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(72, 37)
+        Label2.Size = New Size(85, 45)
         Label2.TabIndex = 4
         Label2.Text = "Activity"
         ' 
@@ -188,9 +197,10 @@ Partial Class HomePageUserControl
         VehiclePanel.Controls.Add(PictureBox3)
         VehiclePanel.Controls.Add(AddVehicleButton)
         VehiclePanel.Controls.Add(Label3)
-        VehiclePanel.Location = New Point(434, 48)
+        VehiclePanel.Location = New Point(542, 60)
+        VehiclePanel.Margin = New Padding(4)
         VehiclePanel.Name = "VehiclePanel"
-        VehiclePanel.Size = New Size(260, 206)
+        VehiclePanel.Size = New Size(325, 258)
         VehiclePanel.TabIndex = 5
         ' 
         ' TotalVehiclesLabel
@@ -198,9 +208,10 @@ Partial Class HomePageUserControl
         TotalVehiclesLabel.AutoSize = True
         TotalVehiclesLabel.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         TotalVehiclesLabel.ForeColor = Color.White
-        TotalVehiclesLabel.Location = New Point(188, 163)
+        TotalVehiclesLabel.Location = New Point(235, 204)
+        TotalVehiclesLabel.Margin = New Padding(4, 0, 4, 0)
         TotalVehiclesLabel.Name = "TotalVehiclesLabel"
-        TotalVehiclesLabel.Size = New Size(15, 20)
+        TotalVehiclesLabel.Size = New Size(20, 25)
         TotalVehiclesLabel.TabIndex = 19
         TotalVehiclesLabel.Text = "*"
         ' 
@@ -208,9 +219,10 @@ Partial Class HomePageUserControl
         ' 
         RentedLabel.AutoSize = True
         RentedLabel.BackColor = Color.Orange
-        RentedLabel.Location = New Point(188, 128)
+        RentedLabel.Location = New Point(235, 160)
+        RentedLabel.Margin = New Padding(4, 0, 4, 0)
         RentedLabel.Name = "RentedLabel"
-        RentedLabel.Size = New Size(15, 20)
+        RentedLabel.Size = New Size(20, 25)
         RentedLabel.TabIndex = 18
         RentedLabel.Text = "*"
         ' 
@@ -218,9 +230,10 @@ Partial Class HomePageUserControl
         ' 
         VehicleOnTripLabel.AutoSize = True
         VehicleOnTripLabel.BackColor = Color.DeepSkyBlue
-        VehicleOnTripLabel.Location = New Point(188, 90)
+        VehicleOnTripLabel.Location = New Point(235, 112)
+        VehicleOnTripLabel.Margin = New Padding(4, 0, 4, 0)
         VehicleOnTripLabel.Name = "VehicleOnTripLabel"
-        VehicleOnTripLabel.Size = New Size(15, 20)
+        VehicleOnTripLabel.Size = New Size(20, 25)
         VehicleOnTripLabel.TabIndex = 17
         VehicleOnTripLabel.Text = "*"
         ' 
@@ -228,52 +241,58 @@ Partial Class HomePageUserControl
         ' 
         VehicleAvailableLabel.AutoSize = True
         VehicleAvailableLabel.BackColor = Color.DarkSeaGreen
-        VehicleAvailableLabel.Location = New Point(188, 55)
+        VehicleAvailableLabel.Location = New Point(235, 69)
+        VehicleAvailableLabel.Margin = New Padding(4, 0, 4, 0)
         VehicleAvailableLabel.Name = "VehicleAvailableLabel"
-        VehicleAvailableLabel.Size = New Size(15, 20)
+        VehicleAvailableLabel.Size = New Size(20, 25)
         VehicleAvailableLabel.TabIndex = 16
         VehicleAvailableLabel.Text = "*"
         ' 
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(63, 163)
+        Label9.Location = New Point(79, 204)
+        Label9.Margin = New Padding(4, 0, 4, 0)
         Label9.Name = "Label9"
-        Label9.Size = New Size(42, 20)
+        Label9.Size = New Size(49, 25)
         Label9.TabIndex = 15
         Label9.Text = "Total"
         ' 
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(63, 128)
+        Label8.Location = New Point(79, 160)
+        Label8.Margin = New Padding(4, 0, 4, 0)
         Label8.Name = "Label8"
-        Label8.Size = New Size(82, 20)
+        Label8.Size = New Size(99, 25)
         Label8.TabIndex = 14
         Label8.Text = "Rented out"
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(63, 91)
+        Label7.Location = New Point(79, 114)
+        Label7.Margin = New Padding(4, 0, 4, 0)
         Label7.Name = "Label7"
-        Label7.Size = New Size(55, 20)
+        Label7.Size = New Size(68, 25)
         Label7.TabIndex = 13
         Label7.Text = "On trip"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(63, 55)
+        Label6.Location = New Point(79, 69)
+        Label6.Margin = New Padding(4, 0, 4, 0)
         Label6.Name = "Label6"
-        Label6.Size = New Size(71, 20)
+        Label6.Size = New Size(83, 25)
         Label6.TabIndex = 12
         Label6.Text = "Available"
         ' 
         ' PictureBox6
         ' 
         PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), Image)
-        PictureBox6.Location = New Point(24, 128)
+        PictureBox6.Location = New Point(30, 160)
+        PictureBox6.Margin = New Padding(4)
         PictureBox6.Name = "PictureBox6"
         PictureBox6.Size = New Size(24, 24)
         PictureBox6.SizeMode = PictureBoxSizeMode.AutoSize
@@ -283,7 +302,8 @@ Partial Class HomePageUserControl
         ' PictureBox5
         ' 
         PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
-        PictureBox5.Location = New Point(24, 163)
+        PictureBox5.Location = New Point(30, 204)
+        PictureBox5.Margin = New Padding(4)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(24, 24)
         PictureBox5.SizeMode = PictureBoxSizeMode.AutoSize
@@ -293,7 +313,8 @@ Partial Class HomePageUserControl
         ' PictureBox4
         ' 
         PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(24, 55)
+        PictureBox4.Location = New Point(30, 69)
+        PictureBox4.Margin = New Padding(4)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(24, 24)
         PictureBox4.SizeMode = PictureBoxSizeMode.AutoSize
@@ -303,7 +324,8 @@ Partial Class HomePageUserControl
         ' PictureBox3
         ' 
         PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(24, 91)
+        PictureBox3.Location = New Point(30, 114)
+        PictureBox3.Margin = New Padding(4)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(24, 24)
         PictureBox3.SizeMode = PictureBoxSizeMode.AutoSize
@@ -316,9 +338,10 @@ Partial Class HomePageUserControl
         AddVehicleButton.FlatAppearance.MouseDownBackColor = Color.Gray
         AddVehicleButton.FlatAppearance.MouseOverBackColor = Color.Silver
         AddVehicleButton.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
-        AddVehicleButton.Location = New Point(210, 5)
+        AddVehicleButton.Location = New Point(262, 6)
+        AddVehicleButton.Margin = New Padding(4)
         AddVehicleButton.Name = "AddVehicleButton"
-        AddVehicleButton.Size = New Size(47, 47)
+        AddVehicleButton.Size = New Size(59, 59)
         AddVehicleButton.TabIndex = 7
         AddVehicleButton.Text = "+"
         AddVehicleButton.UseVisualStyleBackColor = False
@@ -327,21 +350,24 @@ Partial Class HomePageUserControl
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Gabriola", 12F, FontStyle.Bold)
-        Label3.Location = New Point(63, 9)
+        Label3.Location = New Point(79, 11)
+        Label3.Margin = New Padding(4, 0, 4, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(114, 37)
+        Label3.Size = New Size(135, 45)
         Label3.TabIndex = 5
         Label3.Text = "Vehicle Status"
         ' 
         ' TripPanel
         ' 
+        TripPanel.AutoScroll = True
         TripPanel.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
         TripPanel.Controls.Add(AddTripsButton)
         TripPanel.Controls.Add(Label4)
-        TripPanel.Location = New Point(15, 48)
+        TripPanel.Location = New Point(4, 66)
+        TripPanel.Margin = New Padding(4)
         TripPanel.Name = "TripPanel"
-        TripPanel.Padding = New Padding(10)
-        TripPanel.Size = New Size(395, 473)
+        TripPanel.Padding = New Padding(12)
+        TripPanel.Size = New Size(530, 591)
         TripPanel.TabIndex = 6
         ' 
         ' AddTripsButton
@@ -350,9 +376,10 @@ Partial Class HomePageUserControl
         AddTripsButton.FlatAppearance.MouseDownBackColor = Color.Gray
         AddTripsButton.FlatAppearance.MouseOverBackColor = Color.Silver
         AddTripsButton.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
-        AddTripsButton.Location = New Point(345, 3)
+        AddTripsButton.Location = New Point(431, 4)
+        AddTripsButton.Margin = New Padding(4)
         AddTripsButton.Name = "AddTripsButton"
-        AddTripsButton.Size = New Size(47, 47)
+        AddTripsButton.Size = New Size(59, 59)
         AddTripsButton.TabIndex = 6
         AddTripsButton.Text = "+"
         AddTripsButton.UseVisualStyleBackColor = False
@@ -361,9 +388,10 @@ Partial Class HomePageUserControl
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Gabriola", 12F, FontStyle.Bold)
-        Label4.Location = New Point(166, 14)
+        Label4.Location = New Point(208, 18)
+        Label4.Margin = New Padding(4, 0, 4, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(53, 37)
+        Label4.Size = New Size(62, 45)
         Label4.TabIndex = 5
         Label4.Text = "Trips"
         ' 
@@ -384,9 +412,10 @@ Partial Class HomePageUserControl
         StaffPanel.Controls.Add(PictureBox10)
         StaffPanel.Controls.Add(AddStaffButton)
         StaffPanel.Controls.Add(Label5)
-        StaffPanel.Location = New Point(434, 260)
+        StaffPanel.Location = New Point(542, 325)
+        StaffPanel.Margin = New Padding(4)
         StaffPanel.Name = "StaffPanel"
-        StaffPanel.Size = New Size(260, 261)
+        StaffPanel.Size = New Size(325, 326)
         StaffPanel.TabIndex = 7
         ' 
         ' StaffTotalLabel
@@ -394,18 +423,20 @@ Partial Class HomePageUserControl
         StaffTotalLabel.AutoSize = True
         StaffTotalLabel.BackColor = Color.FromArgb(CByte(64), CByte(64), CByte(64))
         StaffTotalLabel.ForeColor = Color.White
-        StaffTotalLabel.Location = New Point(221, 179)
+        StaffTotalLabel.Location = New Point(276, 224)
+        StaffTotalLabel.Margin = New Padding(4, 0, 4, 0)
         StaffTotalLabel.Name = "StaffTotalLabel"
-        StaffTotalLabel.Size = New Size(15, 20)
+        StaffTotalLabel.Size = New Size(20, 25)
         StaffTotalLabel.TabIndex = 31
         StaffTotalLabel.Text = "*"
         ' 
         ' Label20
         ' 
         Label20.AutoSize = True
-        Label20.Location = New Point(63, 107)
+        Label20.Location = New Point(79, 134)
+        Label20.Margin = New Padding(4, 0, 4, 0)
         Label20.Name = "Label20"
-        Label20.Size = New Size(150, 20)
+        Label20.Size = New Size(180, 25)
         Label20.TabIndex = 25
         Label20.Text = "Available Conductors"
         ' 
@@ -413,9 +444,10 @@ Partial Class HomePageUserControl
         ' 
         StaffOnTripLabel.AutoSize = True
         StaffOnTripLabel.BackColor = Color.Orange
-        StaffOnTripLabel.Location = New Point(219, 144)
+        StaffOnTripLabel.Location = New Point(274, 180)
+        StaffOnTripLabel.Margin = New Padding(4, 0, 4, 0)
         StaffOnTripLabel.Name = "StaffOnTripLabel"
-        StaffOnTripLabel.Size = New Size(15, 20)
+        StaffOnTripLabel.Size = New Size(20, 25)
         StaffOnTripLabel.TabIndex = 30
         StaffOnTripLabel.Text = "*"
         ' 
@@ -423,9 +455,10 @@ Partial Class HomePageUserControl
         ' 
         AvailableConductorsLabel.AutoSize = True
         AvailableConductorsLabel.BackColor = Color.DeepSkyBlue
-        AvailableConductorsLabel.Location = New Point(219, 107)
+        AvailableConductorsLabel.Location = New Point(274, 134)
+        AvailableConductorsLabel.Margin = New Padding(4, 0, 4, 0)
         AvailableConductorsLabel.Name = "AvailableConductorsLabel"
-        AvailableConductorsLabel.Size = New Size(15, 20)
+        AvailableConductorsLabel.Size = New Size(20, 25)
         AvailableConductorsLabel.TabIndex = 29
         AvailableConductorsLabel.Text = "*"
         ' 
@@ -433,43 +466,48 @@ Partial Class HomePageUserControl
         ' 
         AvailableDriversLabel.AutoSize = True
         AvailableDriversLabel.BackColor = Color.DarkSeaGreen
-        AvailableDriversLabel.Location = New Point(219, 71)
+        AvailableDriversLabel.Location = New Point(274, 89)
+        AvailableDriversLabel.Margin = New Padding(4, 0, 4, 0)
         AvailableDriversLabel.Name = "AvailableDriversLabel"
-        AvailableDriversLabel.Size = New Size(15, 20)
+        AvailableDriversLabel.Size = New Size(20, 25)
         AvailableDriversLabel.TabIndex = 28
         AvailableDriversLabel.Text = "*"
         ' 
         ' Label18
         ' 
         Label18.AutoSize = True
-        Label18.Location = New Point(63, 179)
+        Label18.Location = New Point(79, 224)
+        Label18.Margin = New Padding(4, 0, 4, 0)
         Label18.Name = "Label18"
-        Label18.Size = New Size(42, 20)
+        Label18.Size = New Size(49, 25)
         Label18.TabIndex = 27
         Label18.Text = "Total"
         ' 
         ' Label19
         ' 
         Label19.AutoSize = True
-        Label19.Location = New Point(63, 144)
+        Label19.Location = New Point(79, 180)
+        Label19.Margin = New Padding(4, 0, 4, 0)
         Label19.Name = "Label19"
-        Label19.Size = New Size(55, 20)
+        Label19.Size = New Size(68, 25)
         Label19.TabIndex = 26
         Label19.Text = "On trip"
         ' 
         ' Label21
         ' 
         Label21.AutoSize = True
-        Label21.Location = New Point(63, 71)
+        Label21.Location = New Point(79, 89)
+        Label21.Margin = New Padding(4, 0, 4, 0)
         Label21.Name = "Label21"
-        Label21.Size = New Size(121, 20)
+        Label21.Size = New Size(143, 25)
         Label21.TabIndex = 24
         Label21.Text = "Available Drivers"
         ' 
         ' PictureBox7
         ' 
         PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
-        PictureBox7.Location = New Point(24, 144)
+        PictureBox7.Location = New Point(30, 180)
+        PictureBox7.Margin = New Padding(4)
         PictureBox7.Name = "PictureBox7"
         PictureBox7.Size = New Size(24, 24)
         PictureBox7.SizeMode = PictureBoxSizeMode.AutoSize
@@ -479,7 +517,8 @@ Partial Class HomePageUserControl
         ' PictureBox8
         ' 
         PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
-        PictureBox8.Location = New Point(24, 179)
+        PictureBox8.Location = New Point(30, 224)
+        PictureBox8.Margin = New Padding(4)
         PictureBox8.Name = "PictureBox8"
         PictureBox8.Size = New Size(24, 24)
         PictureBox8.SizeMode = PictureBoxSizeMode.AutoSize
@@ -489,7 +528,8 @@ Partial Class HomePageUserControl
         ' PictureBox9
         ' 
         PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
-        PictureBox9.Location = New Point(24, 71)
+        PictureBox9.Location = New Point(30, 89)
+        PictureBox9.Margin = New Padding(4)
         PictureBox9.Name = "PictureBox9"
         PictureBox9.Size = New Size(24, 24)
         PictureBox9.SizeMode = PictureBoxSizeMode.AutoSize
@@ -499,7 +539,8 @@ Partial Class HomePageUserControl
         ' PictureBox10
         ' 
         PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), Image)
-        PictureBox10.Location = New Point(24, 107)
+        PictureBox10.Location = New Point(30, 134)
+        PictureBox10.Margin = New Padding(4)
         PictureBox10.Name = "PictureBox10"
         PictureBox10.Size = New Size(24, 24)
         PictureBox10.SizeMode = PictureBoxSizeMode.AutoSize
@@ -512,9 +553,10 @@ Partial Class HomePageUserControl
         AddStaffButton.FlatAppearance.MouseDownBackColor = Color.Gray
         AddStaffButton.FlatAppearance.MouseOverBackColor = Color.Silver
         AddStaffButton.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
-        AddStaffButton.Location = New Point(209, 4)
+        AddStaffButton.Location = New Point(261, 5)
+        AddStaffButton.Margin = New Padding(4)
         AddStaffButton.Name = "AddStaffButton"
-        AddStaffButton.Size = New Size(47, 47)
+        AddStaffButton.Size = New Size(59, 59)
         AddStaffButton.TabIndex = 8
         AddStaffButton.Text = "+"
         AddStaffButton.UseVisualStyleBackColor = False
@@ -523,9 +565,10 @@ Partial Class HomePageUserControl
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Gabriola", 12F, FontStyle.Bold)
-        Label5.Location = New Point(104, 9)
+        Label5.Location = New Point(130, 11)
+        Label5.Margin = New Padding(4, 0, 4, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(49, 37)
+        Label5.Size = New Size(57, 45)
         Label5.TabIndex = 5
         Label5.Text = "Staff"
         ' 
@@ -535,14 +578,15 @@ Partial Class HomePageUserControl
         ActivityPanel.Controls.Add(StaffPanel)
         ActivityPanel.Controls.Add(TripPanel)
         ActivityPanel.Controls.Add(VehiclePanel)
-        ActivityPanel.Location = New Point(14, 111)
+        ActivityPanel.Location = New Point(18, 139)
+        ActivityPanel.Margin = New Padding(4)
         ActivityPanel.Name = "ActivityPanel"
-        ActivityPanel.Size = New Size(704, 531)
+        ActivityPanel.Size = New Size(880, 664)
         ActivityPanel.TabIndex = 8
         ' 
         ' HomePageUserControl
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Silver
         Controls.Add(ActivityPanel)
@@ -551,7 +595,7 @@ Partial Class HomePageUserControl
         Controls.Add(Panel1)
         Margin = New Padding(1)
         Name = "HomePageUserControl"
-        Size = New Size(1024, 661)
+        Size = New Size(1280, 826)
         Panel1.ResumeLayout(False)
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
