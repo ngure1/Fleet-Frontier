@@ -49,19 +49,21 @@ Public Class AddRentalForm
     End Sub
 
     Private Sub AddRentalButton_Click(sender As Object, e As EventArgs) Handles AddRentalButton.Click
-        connection = New MySqlConnection(ConnectionString)
         Try
-            connection.Open()
             Dim customerName As String = CustomerNameTextBox.Text
             Dim customerPhoneNumber As String = CustomerPhoneNumberTextBox.Text
-            Dim vehicleId As Integer = Integer.Parse(VehicleComboBox.SelectedItem.ToString().Split("-"c)(0).Trim())
 
+            ' Check if a vehicle is selected
+            If VehicleComboBox.SelectedItem IsNot Nothing Then
+                Dim vehicleId As Integer = Integer.Parse(VehicleComboBox.SelectedItem.ToString().Split("-"c)(0).Trim())
 
-            ' Construct the SQL query with placeholders
-            Dim createRentalQuery As String = "INSERT INTO hire (vehicle_id, customer_name, customer_phone_number, is_returned) VALUES (@vehicleId, @customerName, @customerPhoneNumber, FALSE);"
+                ' Construct the SQL query with placeholders
+                Dim createRentalQuery As String = "INSERT INTO hire (vehicle_id, customer_name, customer_phone_number, is_returned) VALUES (@vehicleId, @customerName, @customerPhoneNumber, FALSE);"
 
-            ' Create a MySqlConnection and MySqlCommand
-            Using connection As New MySqlConnection(ConnectionString)
+                ' Open the connection
+                connection.Open()
+
+                ' Create a MySqlCommand
                 Using command As New MySqlCommand(createRentalQuery, connection)
                     ' Add parameters
                     command.Parameters.AddWithValue("@vehicleId", vehicleId)
@@ -78,11 +80,18 @@ Public Class AddRentalForm
                         MessageBox.Show("Rental added successfully.")
                     End Using
                 End Using
-            End Using
-
+            Else
+                MessageBox.Show("Please select a vehicle.")
+            End If
         Catch ex As Exception
             ' Handle any exceptions
             MessageBox.Show($"Error adding rental: {ex.Message}")
+        Finally
+            ' Close the connection
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
         End Try
     End Sub
+
 End Class
