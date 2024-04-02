@@ -1,13 +1,13 @@
-CREATE DATABASE fleet_finder;
+CREATE DATABASE IF NOT EXISTS fleet_finder;
 USE fleet_finder;
 
-CREATE TABLE user (
+CREATE TABLE IF NOT EXISTS `user` (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE vehicle(
+CREATE TABLE IF NOT EXISTS vehicle (
     vehicle_id INT AUTO_INCREMENT NOT NULL,
     numberPlate  VARCHAR(20) NOT NULL,
     `fuel_cost/km` DECIMAL NOT NULL,
@@ -17,33 +17,7 @@ CREATE TABLE vehicle(
     PRIMARY KEY(vehicle_id)
 );
 
-CREATE TABLE hire(
-    hire_id INT AUTO_INCREMENT,
-    vehicle_id INT,
-    customer_name VARCHAR(50) NOT NULL,
-    customer_phone_number VARCHAR(20) NOT NULL,
-    is_returned BOOLEAN DEFAULT FALSE NOT NULL,
-
-    PRIMARY KEY(hire_id),
-    FOREIGN KEY(vehicle_id) REFERENCES vehicle(vehicle_id)
-    
-);
-
-CREATE TABLE trip(
-    trip_id INT AUTO_INCREMENT,
-    vehicle_id INT,
-    trip_from VARCHAR(50) NOT NULL,
-    trip_to VARCHAR(50) NOT NULL,
-    trip_No INT NOT NULL,
-    trip_start_time TIME NOT NULL,
-    has_arrived BOOLEAN DEFAULT FALSE NOT NULL,
-
-    PRIMARY KEY(trip_id),
-    FOREIGN KEY(vehicle_id) REFERENCES vehicle(vehicle_id)
-    
-);
-
-CREATE TABLE employee(
+CREATE TABLE IF NOT EXISTS employee (
     employee_id INT AUTO_INCREMENT,
     employee_name VARCHAR(50) NOT NULL,
     employee_type VARCHAR(50) NOT NULL,
@@ -54,18 +28,44 @@ CREATE TABLE employee(
     PRIMARY KEY(employee_id)
 );
 
-CREATE TABLE trip_employee(
+CREATE TABLE IF NOT EXISTS hire (
+    hire_id INT AUTO_INCREMENT,
+    vehicle_id INT,
+    customer_name VARCHAR(50) NOT NULL,
+    customer_phone_number VARCHAR(20) NOT NULL,
+    is_returned BOOLEAN DEFAULT FALSE NOT NULL,
+
+    PRIMARY KEY(hire_id),
+    FOREIGN KEY(vehicle_id) REFERENCES vehicle(vehicle_id)
+);
+
+CREATE TABLE IF NOT EXISTS trip (
+    trip_id INT AUTO_INCREMENT,
+    vehicle_id INT,
+    trip_from VARCHAR(50) NOT NULL,
+    trip_to VARCHAR(50) NOT NULL,
+    trip_No INT NOT NULL,
+    trip_start_time TIME NOT NULL,
+    has_arrived BOOLEAN DEFAULT FALSE NOT NULL,
+
+    PRIMARY KEY(trip_id),
+    FOREIGN KEY(vehicle_id) REFERENCES vehicle(vehicle_id)
+);
+
+CREATE TABLE IF NOT EXISTS trip_employee (
     trip_employee_id INT AUTO_INCREMENT,
     trip_id INT,
     employee_id INT,
+    employee_type VARCHAR(50),  -- Add the employee_type column
 
     PRIMARY KEY(trip_employee_id),
     FOREIGN KEY(trip_id) REFERENCES trip(trip_id),
-    FOREIGN KEY(employee_id) REFERENCES employee(employee_id)  
+    FOREIGN KEY(employee_id) REFERENCES employee(employee_id)
 );
 
+CREATE INDEX idx_employee_id_type ON employee(employee_id, employee_type);  -- Add index to employee table
 
-CREATE TRIGGER update_vehicle_availability_on_update_hire
+CREATE TRIGGER IF NOT EXISTS update_vehicle_availability_on_update_hire
 AFTER UPDATE ON hire
 FOR EACH ROW
 BEGIN
@@ -76,7 +76,7 @@ BEGIN
     END IF;
 END;
 
-CREATE TRIGGER update_employee_and_vehicle_availability
+CREATE TRIGGER IF NOT EXISTS update_employee_and_vehicle_availability
 AFTER UPDATE ON trip
 FOR EACH ROW
 BEGIN
@@ -109,5 +109,4 @@ BEGIN
 END;
 
 ALTER TABLE trip_employee
-ADD COLUMN employee_type VARCHAR(50) NOT NULL;
-
+MODIFY COLUMN employee_type VARCHAR(50) NOT NULL;

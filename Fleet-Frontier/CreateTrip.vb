@@ -148,6 +148,24 @@ Public Class CreateTrip
             command.ExecuteNonQuery()
 
 
+            ' Update driver availability
+            Dim updateDriverQuery As String = "UPDATE employee SET is_available = FALSE WHERE employee_id IN (SELECT employee_id FROM trip_employee WHERE trip_id = @tripId AND employee_type = 'Driver');"
+            command = New MySqlCommand(updateDriverQuery, connection)
+            command.Parameters.AddWithValue("@tripId", tripId)
+            command.ExecuteNonQuery()
+
+            ' Update conductor availability
+            Dim updateConductorQuery As String = "UPDATE employee SET is_available = FALSE WHERE employee_id IN (SELECT employee_id FROM trip_employee WHERE trip_id = @tripId AND employee_type = 'Conductor');"
+            command = New MySqlCommand(updateConductorQuery, connection)
+            command.Parameters.AddWithValue("@tripId", tripId)
+            command.ExecuteNonQuery()
+
+            ' Update vehicle availability
+            Dim updateVehicleQuery As String = "UPDATE vehicle SET is_available = FALSE WHERE vehicle_id = @vehicleId;"
+            command = New MySqlCommand(updateVehicleQuery, connection)
+            command.Parameters.AddWithValue("@vehicleId", vehicleId)
+            command.ExecuteNonQuery()
+
             'Refreshing combo boxes after updating availability
             RefreshComboBoxes()
 

@@ -50,7 +50,7 @@ Public Class RentingUserControl
                     While reader.Read()
                         Dim rentalPanel As New Panel()
                         rentalPanel.BorderStyle = BorderStyle.FixedSingle
-                        rentalPanel.Size = New Size(400, 200)
+                        rentalPanel.Size = New Size(400, 100)
 
                         ' Customer Name Label
                         Dim customerNameHeaderLabel As New Label()
@@ -93,6 +93,7 @@ Public Class RentingUserControl
                         Dim updateButton As New Button()
                         updateButton.Text = "Update"
                         updateButton.Location = New Point(300, 10)
+                        updateButton.Size = New Size(80, 30)
 
                         ' Add click event handler for update button
                         Dim hireId As String = reader("hire_id") ' You need to set the hire ID accordingly
@@ -102,7 +103,8 @@ Public Class RentingUserControl
 
                         Dim deleteButton As New Button()
                         deleteButton.Text = "Delete"
-                        deleteButton.Location = New Point(300, 160)
+                        deleteButton.Location = New Point(300, 60)
+                        deleteButton.Size = New Size(80, 30)
                         deleteButton.Tag = reader("hire_id").ToString() ' Store hire ID as Tag
                         AddHandler deleteButton.Click, AddressOf DeleteRentalButton_Click
 
@@ -120,7 +122,7 @@ Public Class RentingUserControl
 
 
                         ' Calculate the position of the rentalPanel based on the index
-                        Dim panelYPosition As Integer = 10 + (210 * RentalsBodyPanel.Controls.Count)
+                        Dim panelYPosition As Integer = 10 + (110 * RentalsBodyPanel.Controls.Count)
                         rentalPanel.Location = New Point(10, panelYPosition)
 
                         RentalsBodyPanel.Controls.Add(rentalPanel) ' Add rentalPanel to RentalsBodyPanel

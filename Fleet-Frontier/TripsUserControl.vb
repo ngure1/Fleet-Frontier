@@ -63,12 +63,20 @@ Public Class TripsUserControl
                         tripPanel.Size = New Size(400, 200)
 
                         Dim fromLabel As New Label()
-                        fromLabel.Text = "From: " & reader("trip_from").ToString()
+                        fromLabel.Text = "From: "
                         fromLabel.Location = New Point(10, 10)
 
+                        Dim fromValueLabel As New Label()
+                        fromValueLabel.Text = reader("trip_from").ToString()
+                        fromValueLabel.Location = New Point(120, 10)
+
                         Dim toLabel As New Label()
-                        toLabel.Text = "To: " & reader("trip_to").ToString()
+                        toLabel.Text = "To: "
                         toLabel.Location = New Point(10, 30)
+
+                        Dim toValueLabel As New Label()
+                        toValueLabel.Text = reader("trip_to").ToString()
+                        toValueLabel.Location = New Point(120, 30)
 
                         Dim startTimeLabel As New Label()
                         startTimeLabel.Text = "Start Time: "
@@ -79,8 +87,12 @@ Public Class TripsUserControl
                         startTimeValueLabel.Location = New Point(120, 50)
 
                         Dim driverIdLabel As New Label()
-                        driverIdLabel.Text = "Driver Id: " & reader("driver_id").ToString()
+                        driverIdLabel.Text = "Driver Id: "
                         driverIdLabel.Location = New Point(10, 70)
+
+                        Dim driverIdValueLabel As New Label()
+                        driverIdValueLabel.Text = reader("driver_id").ToString()
+                        driverIdValueLabel.Location = New Point(120, 70)
 
                         Dim driverNameLabel As New Label()
                         driverNameLabel.Text = "Driver Name: "
@@ -91,8 +103,12 @@ Public Class TripsUserControl
                         driverNameValueLabel.Location = New Point(120, 90)
 
                         Dim conductorIdLabel As New Label()
-                        conductorIdLabel.Text = "Conductor ID: " & reader("conductor_id").ToString()
+                        conductorIdLabel.Text = "Conductor ID: "
                         conductorIdLabel.Location = New Point(10, 110)
+
+                        Dim conductorIdValueLabel As New Label()
+                        conductorIdValueLabel.Text = reader("conductor_id").ToString()
+                        conductorIdValueLabel.Location = New Point(120, 110)
 
                         Dim conductorNameLabel As New Label()
                         conductorNameLabel.Text = "Donda's Name:"
@@ -103,16 +119,20 @@ Public Class TripsUserControl
                         conductorNameValueLabel.Location = New Point(120, 130)
 
                         Dim vehicleLabel As New Label()
-                        vehicleLabel.Text = "Vehicle: " & reader("vehicle_number_plate").ToString() ' Display vehicle number plate
+                        vehicleLabel.Text = "Vehicle: "
                         vehicleLabel.Location = New Point(10, 150)
 
+                        Dim vehicleValueLabel As New Label()
+                        vehicleValueLabel.Text = reader("vehicle_number_plate").ToString() ' Display vehicle number plate
+                        vehicleValueLabel.Location = New Point(120, 150)
+
                         Dim hasArrivedLabel As New Label()
-                        hasArrivedLabel.Text = "Status: " & reader("has_arrived").ToString()
+                        hasArrivedLabel.Text = "Status: "
                         hasArrivedLabel.Location = New Point(10, 170)
 
                         Dim statusDot As New Label()
                         statusDot.AutoSize = True
-                        statusDot.Location = New Point(120, 170)
+                        statusDot.Location = New Point(120, 180)
                         statusDot.Font = New Font(statusDot.Font, FontStyle.Bold)
 
                         ' Check if the trip has arrived
@@ -128,6 +148,7 @@ Public Class TripsUserControl
                         Dim updateButton As New Button()
                         updateButton.Text = "Update"
                         updateButton.Location = New Point(300, 10)
+                        updateButton.Size = New Size(80, 30)
                         Dim tripId As String = reader("trip_id").ToString()
                         AddHandler updateButton.Click, Sub(sender As Object, e As EventArgs)
                                                            UpdateButton_Click(sender, e, tripId)
@@ -138,21 +159,27 @@ Public Class TripsUserControl
                         Dim deleteButton As New Button()
                         deleteButton.Text = "Delete"
                         deleteButton.Location = New Point(300, 160)
+                        deleteButton.Size = New Size(80, 30)
                         deleteButton.Tag = reader("trip_id").ToString() ' Store trip ID as Tag
                         AddHandler deleteButton.Click, AddressOf DeleteButton_Click
 
 
                         tripPanel.Controls.Add(fromLabel)
+                        tripPanel.Controls.Add(fromValueLabel)
                         tripPanel.Controls.Add(toLabel)
+                        tripPanel.Controls.Add(toValueLabel)
                         tripPanel.Controls.Add(startTimeLabel)
                         tripPanel.Controls.Add(startTimeValueLabel)
                         tripPanel.Controls.Add(driverIdLabel)
+                        tripPanel.Controls.Add(driverIdValueLabel)
                         tripPanel.Controls.Add(driverNameLabel)
                         tripPanel.Controls.Add(driverNameValueLabel)
                         tripPanel.Controls.Add(conductorIdLabel)
+                        tripPanel.Controls.Add(conductorIdValueLabel)
                         tripPanel.Controls.Add(conductorNameLabel)
                         tripPanel.Controls.Add(conductorNameValueLabel)
                         tripPanel.Controls.Add(vehicleLabel)
+                        tripPanel.Controls.Add(vehicleValueLabel)
                         tripPanel.Controls.Add(hasArrivedLabel)
                         tripPanel.Controls.Add(statusDot)
                         tripPanel.Controls.Add(updateButton)
